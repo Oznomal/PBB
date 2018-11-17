@@ -45,10 +45,13 @@ public class Main {
         Random random = new Random();
 
 
-        int length = UserAgentConstants.VERY_COMMON_USER_AGENTS.size();
+        int length = UserAgentConstants.VERY_COMMON_COMPUTER_USER_AGENTS.size();
         String userAgent = UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX +
-                UserAgentConstants.VERY_COMMON_USER_AGENTS.get(random.nextInt(length));
+                UserAgentConstants.VERY_COMMON_COMPUTER_USER_AGENTS.get(random.nextInt(length));
         System.out.println("User Agent String: " + userAgent);
+
+        List<String> testing = UserAgentConstants.VERY_COMMON_MOBILE_USER_AGENTS;
+        System.out.println("Break Here");
         options.addArguments(userAgent);
         Browser browser = new Browser(new ChromeDriver(options));
         browser.visit("https://www.whatismybrowser.com/detect/what-is-my-user-agent");
