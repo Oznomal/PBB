@@ -8,6 +8,10 @@
     <artifactId>probowlbot</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <src.dir>src/main/java</src.dir>
+    </properties>
+
     <dependencies>
         <!-- JAUNT -->
         <dependency>
@@ -47,7 +51,8 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src</sourceDirectory>
+        <sourceDirectory>${src.dir}</sourceDirectory>
+
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

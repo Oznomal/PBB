@@ -1,28 +1,22 @@
 package com.lamonzo.pbb;
 
 import com.jauntium.Browser;
-import com.jauntium.Elements;
 import com.jauntium.Element;
 import com.lamonzo.pbb.util.BrowserUtil;
-import com.lamonzo.pbb.util.constants.UserAgentConstants;
-import main.java.com.lamonzo.pbb.util.constants.ScrapingConstants;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaOptions;
+import com.lamonzo.pbb.constants.ScrapingConstants;
+import lombok.extern.slf4j.Slf4j;
+
 
 import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
 
+@Slf4j
 public class Main {
     public static void main(String[] args) {
 
         Browser browser = BrowserUtil.getBrowser();
-        browser.visit("https://www.whoishostingthis.com/tools/user-agent/");
+        //browser.visit("https://www.whoishostingthis.com/tools/user-agent/");
+
+        browser.visit(ScrapingConstants.PRO_BOWL_VOTING_URL);
         try {
 //            Element li = browser.doc.findFirst("<li id=button-KR>");
 //            List<Element> children = li.getChildElements();

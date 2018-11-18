@@ -1,4 +1,4 @@
-package main.java.com.lamonzo.pbb.util.constants;
+package com.lamonzo.pbb.constants;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -94,8 +94,8 @@ public final class ScrapingConstants {
             KICKERS_TAB_LINK,
             RETURN_SPECIALISTS_TAB_LINK,
             PUNTER_TAB_LINK,
-            SPECIAL_TEAMERS_TAB_LINK)
-            .collect(Collectors.toCollection(HashSet::new));
+            SPECIAL_TEAMERS_TAB_LINK
+    ).collect(Collectors.toCollection(HashSet::new));
 
     //================================================================================================================//
 

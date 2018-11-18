@@ -1,1 +1,5 @@
 com\lamonzo\pbb\Main.class
+com\lamonzo\pbb\constants\ScrapingConstants.class
+com\lamonzo\pbb\util\BrowserUtil.class
+com\lamonzo\pbb\constants\UserAgentConstants.class
+com\lamonzo\pbb\constants\ProxyConstants.class
