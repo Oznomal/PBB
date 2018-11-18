@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ProxyUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/constants/UserAgentConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/constants/UserAgentConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/constants/UserAgentConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/constants/UserAgentConstants.class" afterDir="false" />
-    </list>
+    <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,11 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="61" lean-forward="true" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="26" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -170,8 +158,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="184" />
-    <option name="y" value="360" />
+    <option name="x" value="1389" />
+    <option name="y" value="259" />
     <option name="width" value="2318" />
     <option name="height" value="1608" />
   </component>
@@ -273,7 +261,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542521395723" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542521520676" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Oznomis React+Java/Oznomis Rest API" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -359,15 +347,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542421944774</updated>
-      <workItem from="1542421948858" duration="26780000" />
+      <workItem from="1542421948858" duration="27190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26780000" />
+    <option name="totallyTimeSpent" value="27190000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="123" y="240" width="1545" height="1072" extended-state="0" />
+    <frame x="926" y="173" width="1545" height="1072" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -375,16 +363,16 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33939394" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33939394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.32917318" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" weight="0.24102964" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43343982" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3174727" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.54368174" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -453,11 +441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="61" lean-forward="true" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
