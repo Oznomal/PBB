@@ -10,8 +10,25 @@ public final class ScrapingConstants {
     //================================================================================================================//
     //== FIELDS ==
 
-    //== URLS
+    //== URLS ==
     public static final String PRO_BOWL_VOTING_URL = "http://www.nfl.com/probowl/ballot";
+    public static final String GOOGLE_URL = "https://google.com";
+    public static final String NFL_URL = "http://nfl.com";
+
+    //== GOOGLE SEARCH ==
+    //SEARCH STRINGS
+    public static final String GOOGLE_PRO_BOWL_VOTING_SEARCH_STRING ="NFL Pro Bowl Voting";
+    public static final String GOOGLE_NFL_SEARCH_STRING = "NFL";
+
+    //GOOGLE SEARCH PAGE ELEMENTS
+    public static final String GOOGLE_SEARCH_BALLOT_LINK = "<a href=http://www.nfl.com/probowl/ballot>";
+    public static final String GOOGLE_SEARCH_NFL_LINK = "<a href=https://www.nfl.com/>";
+
+
+    //== NFL WEBSITE MAIN PAGE ==
+    //PAGE ELEMENTS
+    public static final String NFL_FEATURED_VOTE_LINK ="<a href=http://www.nfl.com/probowlvote>";
+
 
     // == BALLOT NAVIGATION
     //OFFENSE
