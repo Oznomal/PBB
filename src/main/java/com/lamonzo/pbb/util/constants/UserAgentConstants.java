@@ -22,6 +22,8 @@ public class UserAgentConstants {
     //== FIELDS ==
 
     //==CHROME USER AGENTS
+    public static final String CHROME_DRIVER_PATH = "E:/Programming/WebDrivers/Chrome/chromedriver.exe";
+    public static final String CHROME_DRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";
     public static final String CHROME_USER_AGENT_OPTION_PREFIX = "--user-agent=";
 
     //=========================

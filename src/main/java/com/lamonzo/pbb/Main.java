@@ -3,6 +3,7 @@ package com.lamonzo.pbb;
 import com.jauntium.Browser;
 import com.jauntium.Elements;
 import com.jauntium.Element;
+import com.lamonzo.pbb.util.BrowserUtil;
 import com.lamonzo.pbb.util.constants.UserAgentConstants;
 import main.java.com.lamonzo.pbb.util.constants.ScrapingConstants;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,41 +21,8 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
 
-        //CHROME
-        //System.setProperty("webdriver.chrome.driver", "E:/Programming/WebDrivers/Chrome/chromedriver.exe");
-        //Browser browser = new Browser(new ChromeDriver());
-
-        //FIREFOX
-        //System.setProperty("webdriver.gecko.driver", "E:/Programming/WebDrivers/Firefox/geckodriver.exe");
-
-        //IE 11 (HAS BUGS)
-        //System.setProperty("webdriver.ie.driver", "E:/Programming/WebDrivers/IE/IEDriverServer.exe");
-
-        //EDGE
-        //System.setProperty("webdriver.edge.driver", "E:/Programming/WebDrivers/Edge/MicrosoftWebDriver.exe");
-
-        //OPERA (OPTIONS MUST BE SET FIRST)
-        //OperaOptions operaOptions = new OperaOptions();
-        //operaOptions.setBinary("C:\\Program Files\\Opera\\54.0.2952.60\\opera.exe");
-        //System.setProperty("webdriver.opera.driver", "E:/Programming/WebDrivers/Opera/operadriver.exe");
-        //Browser browser = new Browser(new OperaDriver(operaOptions));
-
-        System.setProperty("webdriver.chrome.driver", "E:/Programming/WebDrivers/Chrome/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-
-        Random random = new Random();
-
-
-        int length = UserAgentConstants.VERY_COMMON_COMPUTER_USER_AGENTS.size();
-        String userAgent = UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX +
-                UserAgentConstants.VERY_COMMON_COMPUTER_USER_AGENTS.get(random.nextInt(length));
-        System.out.println("User Agent String: " + userAgent);
-
-        List<String> testing = UserAgentConstants.VERY_COMMON_MOBILE_USER_AGENTS;
-        System.out.println("Break Here");
-        options.addArguments(userAgent);
-        Browser browser = new Browser(new ChromeDriver(options));
-        browser.visit("https://www.whatismybrowser.com/detect/what-is-my-user-agent");
+        Browser browser = BrowserUtil.getBrowser();
+        browser.visit("https://www.whoishostingthis.com/tools/user-agent/");
         try {
 //            Element li = browser.doc.findFirst("<li id=button-KR>");
 //            List<Element> children = li.getChildElements();
