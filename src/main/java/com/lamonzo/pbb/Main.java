@@ -9,6 +9,8 @@ import com.lamonzo.pbb.util.BrowserUtil;
 import com.lamonzo.pbb.constants.ScrapingConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.exec.Executor;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 import java.util.*;
@@ -16,9 +18,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Slf4j
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
 
+        SpringApplication.run(Main.class, args);
 //////////////////////////////////////////////////////////////////////////////////
 //        ExecutorService es = Executors.newFixedThreadPool(3);
 //        for(int i = 0; i < 4; i++){
@@ -65,7 +69,8 @@ public class Main {
                   for(Element playerElement : players){
                       Player player = new Player();
 
-                      //TODO: This can be abstracted to a method since it is long
+                      //TODO: This can be abstracted to a method
+                      //GET PLAYER NAME INFO
                       String [] arr = playerElement.getAttribute("data-sort-name").split(" ");
                       StringBuilder sb = new StringBuilder();
                       for(int i = arr.length - 1; i >= 0; i--)
