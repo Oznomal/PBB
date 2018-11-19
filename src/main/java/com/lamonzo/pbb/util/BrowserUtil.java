@@ -26,7 +26,7 @@ public class BrowserUtil {
         Random random = new Random();
 
         //Determine if the UA will be mobile or computer based
-        if(random.nextInt(2) == 0){
+        if(random.nextInt(1) == 0){
             userAgentList = UserAgentConstants.VERY_COMMON_COMPUTER_USER_AGENTS;
         }else{
             userAgentList = UserAgentConstants.VERY_COMMON_MOBILE_USER_AGENTS;
@@ -39,7 +39,7 @@ public class BrowserUtil {
         ChromeOptions options = new ChromeOptions();
         String agent = userAgentList.get(random.nextInt(userAgentList.size()));
         options.addArguments(UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX + agent);
-        options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);
+        //options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);
 
         //Create and return the browser
         Browser browser = new Browser(new ChromeDriver(options));

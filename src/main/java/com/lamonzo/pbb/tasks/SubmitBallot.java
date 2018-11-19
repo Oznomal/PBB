@@ -22,6 +22,7 @@ public class SubmitBallot implements Runnable{
         //TODO: Determine if we are going to directly go to the probowl ballot link or be redirected from google
         try {
             visitBallotPage(browser);
+            makeBallotSelections(browser);
         }
         catch(JauntiumException | InterruptedException ex){
             log.warn("Error navigating to ballot page: " + ex.getMessage());
@@ -31,6 +32,10 @@ public class SubmitBallot implements Runnable{
 
     //================================================================================================================//
     //== PRIVATE METHODS
+
+
+    //*****************************************************************************************************************
+    //VISITING BALLOT PAGE SECTION
 
     /**
      * Visits the pro bowl ballot page, but first decides the path to get there
@@ -70,7 +75,6 @@ public class SubmitBallot implements Runnable{
     private void followDirectLink(Browser browser){
         browser.visit(ScrapingConstants.PRO_BOWL_VOTING_URL);
     }
-
 
     //Navigate to ballot from the NFL.com page
     private void nflRedirect(Browser browser) throws JauntiumException, InterruptedException{
@@ -128,4 +132,26 @@ public class SubmitBallot implements Runnable{
         //Wait a minimum of 1.3 secs and max of 4 secs before clicking link
         Thread.sleep(1300 + random.nextInt(2700));
     }
+    //END OF VISITING BALLOT PAGE SECTION
+    //*****************************************************************************************************************
+
+    //*****************************************************************************************************************
+    //BALLOT SELECTION SECTION
+
+    /**
+     * Selects random players for ballot
+     * @param browser an instance of the Chrome browser
+     */
+    private void makeBallotSelections(Browser browser){
+        Random random = new Random();
+        int positionCount = 1 + random.nextInt(19); //The number of positions to submit ballots for
+
+        for(int i = 0; i < positionCount; i++){
+
+        }
+
+    }
+
+    //END OF BALLOT SELECTION
+    //*****************************************************************************************************************
 }
