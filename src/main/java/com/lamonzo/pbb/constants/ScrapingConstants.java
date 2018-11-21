@@ -79,6 +79,21 @@ public final class ScrapingConstants {
             SPECIAL_TEAMERS_TAB_LINK
     ).collect(Collectors.toCollection(HashSet::new));
 
+
+    //== POSITION INFORMATION (LOCATED AT THE TOP OF EACH TAB)
+    public static final String POSITION_INFO_LIST = "<ul id=ballot-pos-nav-info-nfl>";
+    public static final String POSITION_STAT_TYPES_LIST = "<ul id=ballot-sort-nav-nfc>";
+
+    //PLAYER TABLE
+    public static final String PLAYER_INFO_DIV = "<div class=name-pos>";
+    public static final String PLAYER_NAME_ATTRIBUTE = "data-sort-name";
+    public static final String PLAYER_TEAM_LOGO = "<img class=team>";
+    public static final String PLAYER_TEAM_NAME_ATTRIBUTE = "data-sort-team";
+    public static final String PLAYER_HTML_ID_ATTRIBUTE = "id";
+    public static final String PLAYER_STATS_LIST = "<ul class=stats>";
+    public static final String STAT_PREFIX = "<li class=";
+    public static final String STAT_SUFFIX = ">";
+
     //================================================================================================================//
 
     //== CONSTRUCTOR ==

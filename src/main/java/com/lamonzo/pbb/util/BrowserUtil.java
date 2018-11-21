@@ -26,6 +26,7 @@ public class BrowserUtil {
         Random random = new Random();
 
         //Determine if the UA will be mobile or computer based
+        //TODO: Switch the number back to 2 to start using mobile user-agents again (Requires Updates)
         if(random.nextInt(1) == 0){
             userAgentList = UserAgentConstants.VERY_COMMON_COMPUTER_USER_AGENTS;
         }else{
@@ -39,6 +40,8 @@ public class BrowserUtil {
         ChromeOptions options = new ChromeOptions();
         String agent = userAgentList.get(random.nextInt(userAgentList.size()));
         options.addArguments(UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX + agent);
+
+        //TODO: Uncomment this line to begin using the proxy service, but avoid using to avoid charges
         //options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);
 
         //Create and return the browser
