@@ -1,0 +1,17 @@
+# MYSQL SETUP
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+
+    hibernate:
+      ddl-auto: create-drop
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/pbb
+    username: root
+    password:

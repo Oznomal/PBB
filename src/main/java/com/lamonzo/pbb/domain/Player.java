@@ -29,7 +29,7 @@ public class Player {
     private Position position;
 
     //Each player can have many stats
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "player")
     private List<Stat> stats;
 
     //== CONSTRUCTOR ==

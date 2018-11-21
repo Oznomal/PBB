@@ -21,6 +21,7 @@ public class Stat {
     private double value;
 
     @ManyToOne
+    @JoinColumn(name = "player_id", updatable = false, nullable = false)
     private Player player;
 
 

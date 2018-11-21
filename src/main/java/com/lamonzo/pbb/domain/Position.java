@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
 import javax.persistence.*;
-import java.util.List;
 
 @Getter
 @Setter
@@ -23,10 +21,6 @@ public class Position {
 
     private String positionName;
     private int maxVotes;
-
-    //One position is shared by many players
-    @OneToMany
-    private List<Player> players;
 
     //== CONSTRUCTORS ==
     public Position(){}

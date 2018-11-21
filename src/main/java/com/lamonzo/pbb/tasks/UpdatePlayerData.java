@@ -133,7 +133,7 @@ public class UpdatePlayerData implements Runnable {
             player.setHtmlIdentifier(parent.getParent().getAttribute(ScrapingConstants.PLAYER_HTML_ID_ATTRIBUTE));
             player.setTeam(parent.findFirst(ScrapingConstants.PLAYER_TEAM_LOGO)
                     .getAttribute(ScrapingConstants.PLAYER_TEAM_NAME_ATTRIBUTE));
-            player.setStats(scrapePlayerStats(parent, statMap));
+            player.setStats(scrapePlayerStats(parent, statMap, player));
 
             //TODO: Save the player to the DB
             playerRepository.save(player);
@@ -151,7 +151,8 @@ public class UpdatePlayerData implements Runnable {
     }
 
     //Scrapes the players stats from the playerElement
-    private List<Stat> scrapePlayerStats(Element playerParent, Map<String, String> statTypeMap) throws NotFound{
+    private List<Stat> scrapePlayerStats(Element playerParent, Map<String, String> statTypeMap,
+                                         Player player) throws NotFound{
         List<Stat> playerStats = new ArrayList<>();
         if(!statTypeMap.isEmpty()){
             Element statsParent = playerParent.getFirst(ScrapingConstants.PLAYER_STATS_LIST);
@@ -162,6 +163,7 @@ public class UpdatePlayerData implements Runnable {
                 Stat stat = new Stat();
                 stat.setType(statTypeMap.get(statId));
                 stat.setValue(convertStatToNumericalValue(value));
+                stat.setPlayer(player);
 
                 playerStats.add(stat);
             }
