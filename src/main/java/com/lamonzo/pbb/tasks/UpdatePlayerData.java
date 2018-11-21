@@ -7,8 +7,10 @@ import com.lamonzo.pbb.constants.ScrapingConstants;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.domain.Stat;
+import com.lamonzo.pbb.domain.StatType;
 import com.lamonzo.pbb.repository.PlayerRepository;
 import com.lamonzo.pbb.repository.PositionRepository;
+import com.lamonzo.pbb.repository.StatTypeRepository;
 import com.lamonzo.pbb.util.BrowserUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,9 @@ public class UpdatePlayerData implements Runnable {
     @Autowired
     private PlayerRepository playerRepository;
 
+    @Autowired
+    private StatTypeRepository statTypeRepository;
+
     private String positionTabHtmlLink;
 
     //== CONSTRUCTOR ==
@@ -62,7 +67,7 @@ public class UpdatePlayerData implements Runnable {
 
             //Gather the position information (position name, max votes, and applicable stat types)
             Position position = collectPositionData(browser);
-            Map<String, String> statMap = collectPositionStatTypes(browser);
+            Map<String, StatType> statMap = collectPositionStatTypes(browser);
 
             //Gather the player information
             collectPlayerData(browser, position, statMap);
@@ -103,16 +108,21 @@ public class UpdatePlayerData implements Runnable {
     }
 
     //Creates a map of the statID (stat1, stat2, etc) and the stat type (yards, forced fumbles, etc)
-    private Map<String, String> collectPositionStatTypes(Browser browser) throws NotFound {
-        Map<String, String> statMap = new HashMap<>();
+    private Map<String, StatType> collectPositionStatTypes(Browser browser) throws NotFound {
+        Map<String, StatType> statMap = new HashMap<>();
         Element statParent = browser.doc.findFirst(ScrapingConstants.POSITION_STAT_TYPES_LIST);
 
         for (int i = 1; i <= 4; i++) {
             String statId = "stat" + i;
-            String statType = statParent.findFirst(ScrapingConstants.STAT_PREFIX + statId
+            String type = statParent.findFirst(ScrapingConstants.STAT_PREFIX + statId
                     + ScrapingConstants.STAT_SUFFIX).getTextContent().trim();
-            if (!statType.isEmpty())
+
+            if (!type.isEmpty()) {
+                StatType statType = new StatType();
+                statType.setStatType(type);
                 statMap.put(statId, statType);
+                statTypeRepository.save(statType);
+            }
             else
                 break;
         }
@@ -120,7 +130,7 @@ public class UpdatePlayerData implements Runnable {
         return statMap;
     }
 
-    private void collectPlayerData(Browser browser, Position playerPosition, Map<String, String> statMap)
+    private void collectPlayerData(Browser browser, Position playerPosition, Map<String, StatType> statMap)
             throws NotFound{
         List<Element> players = browser.doc.findEvery(ScrapingConstants.PLAYER_INFO_DIV).toList();
 
@@ -151,7 +161,7 @@ public class UpdatePlayerData implements Runnable {
     }
 
     //Scrapes the players stats from the playerElement
-    private List<Stat> scrapePlayerStats(Element playerParent, Map<String, String> statTypeMap,
+    private List<Stat> scrapePlayerStats(Element playerParent, Map<String, StatType> statTypeMap,
                                          Player player) throws NotFound{
         List<Stat> playerStats = new ArrayList<>();
         if(!statTypeMap.isEmpty()){

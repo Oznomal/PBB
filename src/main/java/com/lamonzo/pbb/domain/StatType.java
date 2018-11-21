@@ -8,24 +8,17 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-@Entity
-public class Stat {
+@Entity(name = "stat_type")
+public class StatType {
 
     //== FIELDS ==
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Long id;
-    private double value;
 
-    @ManyToOne
-    private StatType type;
+    private String statType;
 
-    @ManyToOne
-    @JoinColumn(name = "player_id", updatable = false, nullable = false)
-    private Player player;
-
-
-    //== CONSTRUCTOR ==
-    public Stat (){}
+    //== CONSTRUCTORS ==
+    public StatType(){}
 }
