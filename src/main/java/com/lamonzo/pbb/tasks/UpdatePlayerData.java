@@ -7,8 +7,11 @@ import com.lamonzo.pbb.constants.ScrapingConstants;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.domain.Stat;
+import com.lamonzo.pbb.repository.PlayerRepository;
+import com.lamonzo.pbb.repository.PositionRepository;
 import com.lamonzo.pbb.util.BrowserUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +32,12 @@ import java.util.Map;
 public class UpdatePlayerData implements Runnable {
 
     //== FIELDS ==
+    @Autowired
+    private PositionRepository positionRepository;
+
+    @Autowired
+    private PlayerRepository playerRepository;
+
     private String positionTabHtmlLink;
 
     //== CONSTRUCTOR ==
@@ -76,7 +85,8 @@ public class UpdatePlayerData implements Runnable {
 
         //Remove the 's' from the end of the position name except from 'safeties' which will be replaced with 'safety'
         String pos = positionInfoList.get(0).getTextContent().trim();
-        if(pos!= null && !pos.isEmpty() && pos.substring(pos.length() - 8).equalsIgnoreCase("Safeties"))
+        if(pos!= null && !pos.isEmpty() && pos.length() >= 8 &&
+                pos.substring(pos.length() - 8).equalsIgnoreCase("Safeties"))
             pos = pos.substring(0, pos.length() - 8) + "Safety";
 
         else if(pos != null && !pos.isEmpty() && pos.charAt(pos.length()-1) == 's')
@@ -87,13 +97,13 @@ public class UpdatePlayerData implements Runnable {
         position.setMaxVotes(Integer.parseInt(votingInfo[2]));
 
         //TODO: Save the position to the DB
+        positionRepository.save(position);
 
         return position;
     }
 
     //Creates a map of the statID (stat1, stat2, etc) and the stat type (yards, forced fumbles, etc)
     private Map<String, String> collectPositionStatTypes(Browser browser) throws NotFound {
-        //TODO: Figure out way to map the stat type data effectively
         Map<String, String> statMap = new HashMap<>();
         Element statParent = browser.doc.findFirst(ScrapingConstants.POSITION_STAT_TYPES_LIST);
 
@@ -126,6 +136,7 @@ public class UpdatePlayerData implements Runnable {
             player.setStats(scrapePlayerStats(parent, statMap));
 
             //TODO: Save the player to the DB
+            playerRepository.save(player);
             System.out.println(player);
         }
     }

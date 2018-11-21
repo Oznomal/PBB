@@ -1,21 +1,35 @@
 package com.lamonzo.pbb.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
 @Setter
+@Entity
 public class Player {
 
     //== FIELDS ==
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
+    private Long id;
+
     private String name;
-    private Position position;
     private String team;
     private String htmlIdentifier;
 
-    //Needs a one to many relation ship, one player will have many stats
+    //Multiple players will share the same position
+    @ManyToOne
+    private Position position;
+
+    //Each player can have many stats
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Stat> stats;
 
     //== CONSTRUCTOR ==
