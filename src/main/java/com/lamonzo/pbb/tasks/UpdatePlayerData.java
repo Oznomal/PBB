@@ -9,6 +9,8 @@ import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.domain.Stat;
 import com.lamonzo.pbb.util.BrowserUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,12 +24,16 @@ import java.util.Map;
  * This is used when the application starts up
  */
 @Slf4j
+@Component
+@Scope("prototype")
 public class UpdatePlayerData implements Runnable {
 
     //== FIELDS ==
     private String positionTabHtmlLink;
 
     //== CONSTRUCTOR ==
+    public UpdatePlayerData(){}
+
     public UpdatePlayerData(String positionTabHtmlLink){
         this.positionTabHtmlLink = positionTabHtmlLink;
     }
@@ -160,7 +166,7 @@ public class UpdatePlayerData implements Runnable {
             return Double.MIN_VALUE;
 
         //Replace comma in stats that are above 999
-        stat.replace(",", "");
+        stat = stat.replace(",", "");
 
         return Double.parseDouble(stat);
     }

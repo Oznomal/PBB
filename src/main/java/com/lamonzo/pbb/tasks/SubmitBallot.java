@@ -7,6 +7,9 @@ import com.jauntium.JauntiumException;
 import com.lamonzo.pbb.constants.ScrapingConstants;
 import com.lamonzo.pbb.util.BrowserUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
@@ -14,6 +17,8 @@ import java.util.Random;
  * Thread Safe class to handle generating a new browser and submitting a pro bowl ballot
  */
 @Slf4j
+@Component
+@Scope("prototype")
 public class SubmitBallot implements Runnable{
     @Override
     public void run() {
