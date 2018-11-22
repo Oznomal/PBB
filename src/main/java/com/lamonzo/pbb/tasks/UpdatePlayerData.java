@@ -118,10 +118,15 @@ public class UpdatePlayerData implements Runnable {
                     + ScrapingConstants.STAT_SUFFIX).getTextContent().trim();
 
             if (!type.isEmpty()) {
-                StatType statType = new StatType();
-                statType.setStatType(type);
+                //TODO: Implement service layer for these types of transactions
+                StatType statType = statTypeRepository.findStatTypeByStatType(type);
+                if(statType == null) {
+                    statType = new StatType();
+                    statType.setStatType(type);
+                    statTypeRepository.save(statType);
+                }
+
                 statMap.put(statId, statType);
-                statTypeRepository.save(statType);
             }
             else
                 break;

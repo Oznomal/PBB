@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -17,6 +18,8 @@ public class StatType {
     @Setter(AccessLevel.NONE)
     private Long id;
 
+    @NotNull
+    @Column(nullable = false, unique = true)
     private String statType;
 
     //== CONSTRUCTORS ==

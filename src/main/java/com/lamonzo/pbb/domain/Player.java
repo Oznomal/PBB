@@ -3,9 +3,9 @@ package com.lamonzo.pbb.domain;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Getter
@@ -20,12 +20,21 @@ public class Player {
     @Setter(AccessLevel.NONE)
     private Long id;
 
+    @NotNull
+    @Column(nullable = false)
     private String name;
+
+    @NotNull
+    @Column(nullable = false)
     private String team;
+
+    @NotNull
+    @Column(nullable = false, unique = true)
     private String htmlIdentifier;
 
     //Multiple players will share the same position
     @ManyToOne
+    @NotNull
     private Position position;
 
     //Each player can have many stats

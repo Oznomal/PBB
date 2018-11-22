@@ -128,8 +128,6 @@ public class UserAgentConstants {
             "AppleWebKit/538.1 (KHTML, like Gecko) Chrome/v1.0.0 Safari/538.1";
     public static final String VC_COMP_USER_AGENT_46 = "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) " +
             "Gecko/20150101 Firefox/47.0 (Chrome)";
-    public static final String VC_COMP_USER_AGENT_47 = "Mozilla/5.0 (SMART-TV; X11; Linux armv7l) " +
-            "AppleWebKit/537.42 (KHTML, like Gecko) Chromium/25.0.1349.2 Chrome/25.0.1349.2 Safari/537.42";
     public static final String VC_COMP_USER_AGENT_48 = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML";
     public static final String VC_COMP_USER_AGENT_49 = "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) " +
             "Gecko/20150101 Firefox/20.0 (Chrome)";
@@ -182,7 +180,6 @@ public class UserAgentConstants {
             VC_COMP_USER_AGENT_44,
             VC_COMP_USER_AGENT_45,
             VC_COMP_USER_AGENT_46,
-            VC_COMP_USER_AGENT_47,
             VC_COMP_USER_AGENT_48,
             VC_COMP_USER_AGENT_49
     ).collect(Collectors.toList());

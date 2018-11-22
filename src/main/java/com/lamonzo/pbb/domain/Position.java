@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -19,7 +20,12 @@ public class Position {
     @Setter(AccessLevel.NONE)
     private Long id;
 
+    @NotNull
+    @Column(nullable = false, unique = true)
     private String positionName;
+
+    @NotNull
+    @Column(nullable = false)
     private int maxVotes;
 
     //== CONSTRUCTORS ==
