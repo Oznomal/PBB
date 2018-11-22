@@ -7,7 +7,6 @@
            fx:controller="com.lamonzo.pbb.controller.MainController"
            fx:id="mainContainerStackPane">
 
-
     <!-- ______________________________________________________________________________ -->
     <!-- INCLUDE ANY DIALOG PANES THAT WILL NEED TO BE DISPLAYED AS A MODAL BELOW HERE  -->
     <!-- ______________________________________________________________________________ -->
@@ -26,18 +25,24 @@
         <!-- THIS SECTION CONTAINS THE PLAYERS THE USER HAS SELECTED FOR THE BALLOT -->
         <!-- ______________________________________________________________________ -->
         <left>
+            <fx:include fx:id="userBallot" source="../components/UserBallot.fxml"/>
         </left>
 
         <!-- ____________________________________________________________________________________________ -->
         <!-- THIS SECTION CONTAINS THE TABS (POSITIONS) AND TABLE FOR ALL PLAYERS WHO HAVE BEEN NOMINATED -->
         <!-- ____________________________________________________________________________________________ -->
         <center>
+            <fx:include fx:id="playerTable" source="../components/PlayerTable.fxml"/>
         </center>
 
         <!-- ____________________________________________ -->
         <!-- THIS SECTION CONTAINS THE FOOTER INFORMATION -->
         <!-- ____________________________________________ -->
         <bottom>
+            <VBox>
+                <fx:include fx:id="options" source="../components/Options.fxml"/>
+                <fx:include fx:id="footer" source="../components/Footer.fxml"/>
+            </VBox>
         </bottom>
 
         <!-- _________________________________________________________ -->

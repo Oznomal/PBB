@@ -1,7 +1,3 @@
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -10,7 +6,6 @@
            xmlns="http://javafx.com/javafx/8.0.111"
            fx:controller="com.lamonzo.pbb.controller.MainController"
            fx:id="mainContainerStackPane">
-
 
     <!-- ______________________________________________________________________________ -->
     <!-- INCLUDE ANY DIALOG PANES THAT WILL NEED TO BE DISPLAYED AS A MODAL BELOW HERE  -->
@@ -30,14 +25,14 @@
         <!-- THIS SECTION CONTAINS THE PLAYERS THE USER HAS SELECTED FOR THE BALLOT -->
         <!-- ______________________________________________________________________ -->
         <left>
-            <!--<fx:include fx:id="embeddedFileBrowser" source="contents/FileBrowserWindow.fxml" />-->
+            <fx:include fx:id="userBallot" source="../components/UserBallot.fxml"/>
         </left>
 
         <!-- ____________________________________________________________________________________________ -->
         <!-- THIS SECTION CONTAINS THE TABS (POSITIONS) AND TABLE FOR ALL PLAYERS WHO HAVE BEEN NOMINATED -->
         <!-- ____________________________________________________________________________________________ -->
         <center>
-            <!--<fx:include fx:id="embeddedSongDisplayWindow" source="contents/SongDisplayWindow.fxml" />-->
+            <fx:include fx:id="playerTable" source="../components/PlayerTable.fxml"/>
         </center>
 
         <!-- ____________________________________________ -->
@@ -45,8 +40,8 @@
         <!-- ____________________________________________ -->
         <bottom>
             <VBox>
-                <!--<fx:include fx:id="consoleWindow" source="contents/consoleTabPane/ConsoleTabPaneManager.fxml"/>-->
-                <!--<fx:include fx:id="footer" source="contents/footer.fxml"/>-->
+                <fx:include fx:id="options" source="../components/Options.fxml"/>
+                <fx:include fx:id="footer" source="../components/Footer.fxml"/>
             </VBox>
         </bottom>
 

@@ -45,11 +45,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         //importPlayerData();
 
-        Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
-        double width = visualBounds.getWidth() / 2;
-        double height = visualBounds.getHeight() / 2;
-
-        primaryStage.setScene(new Scene(rootNode, width, height));
+        primaryStage.setScene(new Scene(rootNode, 1500, 1000));
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
