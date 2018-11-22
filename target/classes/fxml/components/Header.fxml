@@ -7,15 +7,16 @@
 <?import javafx.geometry.Insets?>
 <?import java.net.URL?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Separator?>
 <VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" prefWidth="400">
 
     <HBox>
-        <ImageView styleClass="header-logo">
+        <ImageView>
             <image>
                 <Image url="@../../img/PBB-Shield-012050.png"/>
             </image>
             <HBox.margin>
-                <Insets left="30.0" top="15.0"/>
+                <Insets left="30.0" top="15.0" bottom="15.0"/>
             </HBox.margin>
         </ImageView>
 
@@ -32,6 +33,8 @@
         <!-- The 2 Regions are used to center the content in between them -->
         <Region HBox.hgrow="ALWAYS"/>
     </HBox>
+
+    <Separator />
 
     <stylesheets>
         <URL value="@../../css/Header.css"/>

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../fonts/Montserrat-SemiBold.ttf");
+}
+
+.section-heading{
+    -fx-font-family: Montserrat;
+    -fx-font-size: 24px;
+    -fx-font-weight: 200;
+}

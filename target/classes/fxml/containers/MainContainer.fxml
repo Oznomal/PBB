@@ -2,6 +2,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import java.net.URL?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
            xmlns="http://javafx.com/javafx/8.0.111"
            fx:controller="com.lamonzo.pbb.controller.MainController"
@@ -49,6 +50,7 @@
         <!-- INCLUDE COMMON STYLESHEETS FOR THE WHOLE APPLICATION HERE -->
         <!-- _________________________________________________________ -->
         <stylesheets>
+            <URL value="@../../css/Common.css"/>
         </stylesheets>
     </BorderPane>
 </StackPane>
