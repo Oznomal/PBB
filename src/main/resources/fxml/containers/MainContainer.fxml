@@ -1,0 +1,49 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           xmlns="http://javafx.com/javafx/8.0.111"
+           fx:controller="com.lamonzo.pbb.controller.MainController"
+           fx:id="mainContainerStackPane">
+
+
+    <!-- ______________________________________________________________________________ -->
+    <!-- INCLUDE ANY DIALOG PANES THAT WILL NEED TO BE DISPLAYED AS A MODAL BELOW HERE  -->
+    <!-- ______________________________________________________________________________ -->
+    <!--<fx:include source="components/" />-->
+
+    <BorderPane id="main-container-border-pane" styleClass="border-pane">
+
+        <!-- ______________________________________________________ -->
+        <!-- THIS SECTION CONTAINS THE TITLE AND LOGO IF APPLICABLE -->
+        <!-- ______________________________________________________ -->
+        <top>
+            <fx:include fx:id="header" source="../components/Header.fxml"/>
+        </top>
+
+        <!-- ______________________________________________________________________ -->
+        <!-- THIS SECTION CONTAINS THE PLAYERS THE USER HAS SELECTED FOR THE BALLOT -->
+        <!-- ______________________________________________________________________ -->
+        <left>
+        </left>
+
+        <!-- ____________________________________________________________________________________________ -->
+        <!-- THIS SECTION CONTAINS THE TABS (POSITIONS) AND TABLE FOR ALL PLAYERS WHO HAVE BEEN NOMINATED -->
+        <!-- ____________________________________________________________________________________________ -->
+        <center>
+        </center>
+
+        <!-- ____________________________________________ -->
+        <!-- THIS SECTION CONTAINS THE FOOTER INFORMATION -->
+        <!-- ____________________________________________ -->
+        <bottom>
+        </bottom>
+
+        <!-- _________________________________________________________ -->
+        <!-- INCLUDE COMMON STYLESHEETS FOR THE WHOLE APPLICATION HERE -->
+        <!-- _________________________________________________________ -->
+        <stylesheets>
+        </stylesheets>
+    </BorderPane>
+</StackPane>

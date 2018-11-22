@@ -1,0 +1,11 @@
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" prefWidth="400">
+
+    <Label>HIIIIIIIIIIIIIIIIIIIIIIII</Label>
+
+    <stylesheets>
+
+    </stylesheets>
+</VBox>

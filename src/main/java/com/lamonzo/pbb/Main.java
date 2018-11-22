@@ -11,13 +11,10 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.task.TaskExecutor;
 
 import java.util.Iterator;
@@ -39,7 +36,7 @@ public class Main extends Application {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
         context = builder.run(getParameters().getRaw().toArray(new String[0]));
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/containers/MainContainer.fxml"));
         loader.setControllerFactory(context::getBean);
         rootNode = loader.load();
     }
@@ -49,8 +46,8 @@ public class Main extends Application {
         //importPlayerData();
 
         Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
-        double width = visualBounds.getWidth();
-        double height = visualBounds.getHeight();
+        double width = visualBounds.getWidth() / 2;
+        double height = visualBounds.getHeight() / 2;
 
         primaryStage.setScene(new Scene(rootNode, width, height));
         primaryStage.centerOnScreen();
