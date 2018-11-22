@@ -1,5 +1,6 @@
 package com.lamonzo.pbb.config;
 
+import com.lamonzo.pbb.constants.SpringConstants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.TaskExecutor;
@@ -14,7 +15,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configuration
 public class ThreadConfig {
 
-    @Bean(name = "singleCoreTaskExecutor")
+    @Bean(name = SpringConstants.SINGLE_TASK_EXECUTOR)
     public TaskExecutor singleThreadPoolTaskExecutor(){
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(1);
@@ -25,7 +26,7 @@ public class ThreadConfig {
         return executor;
     }
 
-    @Bean(name = "multiCoreTaskExecutor")
+    @Bean(name = SpringConstants.MULTI_TASK_EXECUTOR)
     public TaskExecutor multiThreadPoolTaskExecutor(){
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(4);

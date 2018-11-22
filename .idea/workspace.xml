@@ -5,17 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Lamonzo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Lamonzo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/ApplicationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/ApplicationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/ApplicationEntryPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/ApplicationEntryPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/config/ThreadConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/config/ThreadConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ProxyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ProxyConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ScrapingConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ScrapingConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/UserAgentConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/UserAgentConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Stat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Stat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/StatType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/StatType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PlayerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PlayerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PositionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PositionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/StatRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/StatRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/StatTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/StatTypeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/BrowserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/BrowserUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,33 +80,38 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="31113" />
+          <entry key="fxml" value="15" />
+          <entry key="java" value="32150" />
           <entry key="txt" value="16" />
-          <entry key="xml" value="393" />
-          <entry key="yml" value="156" />
+          <entry key="xml" value="463" />
+          <entry key="yml" value="174" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="31113" />
+          <entry key="JAVA" value="32150" />
           <entry key="PLAIN_TEXT" value="26" />
-          <entry key="XML" value="393" />
-          <entry key="YAML" value="156" />
+          <entry key="XML" value="478" />
+          <entry key="YAML" value="174" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="7" />
-          <entry key="java" value="57" />
-          <entry key="xml" value="3" />
+          <entry key="fxml" value="1" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="62" />
+          <entry key="pom" value="1" />
+          <entry key="xml" value="4" />
           <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="57" />
-          <entry key="XML" value="3" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="62" />
+          <entry key="XML" value="6" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
@@ -108,10 +141,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="208">
+              <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,27 +153,62 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1598">
+              <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1717">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-                <element signature="e#486#487#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/ApplicationEntryPoint.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="289">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -157,46 +225,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#425#426#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -235,13 +268,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ScrapingConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/EntryPoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/StatRepositiory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/PositionRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/StatRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/PlayerRepository.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java" />
@@ -257,8 +287,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/ApplicationEntryPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/main.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -297,11 +333,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1299" />
-    <option name="y" value="105" />
-    <option name="width" value="2129" />
-    <option name="height" value="1971" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1479" />
+    <option name="y" value="670" />
+    <option name="width" value="2196" />
+    <option name="height" value="1866" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -366,77 +402,7 @@
               <item name="PBB" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
@@ -444,6 +410,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
@@ -463,11 +430,11 @@
     <property name="DatabaseDriversLRU" value="h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542880628159" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542885638635" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Ozira Heroku App/Ozira-Rest-Api" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -567,7 +534,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105000000" />
+    <option name="totallyTimeSpent" value="110047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,10 +546,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="866" y="70" width="1419" height="1314" extended-state="0" />
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49915254" visible="true" weight="0.32082415" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49915254" visible="true" weight="0.17335984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -591,30 +558,30 @@
       <window_info id="Favorites" order="6" sideWeight="0.50084746" side_tool="true" weight="0.28159645" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.61049956" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.56084245" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3954758" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329661" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.40639627" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.44115156" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.35647425" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32684165" />
       <window_info anchor="bottom" id="Spring" order="12" />
-      <window_info anchor="right" id="Bean Validation" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32947975" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.7168986" />
+      <window_info anchor="right" id="Bean Validation" order="0" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32947975" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.6902134" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49915254" visible="true" weight="0.28902167" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915254" visible="true" weight="0.17335984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -623,26 +590,27 @@
       <window_info id="Favorites" order="6" sideWeight="0.50084746" side_tool="true" weight="0.28159645" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.39157566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4297972" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.56084245" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3954758" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329661" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.319221" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.44115156" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.35647425" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32684165" />
       <window_info anchor="bottom" id="Spring" order="12" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.7168986" />
+      <window_info anchor="right" id="Bean Validation" order="0" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32947975" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.6902134" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -705,25 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -834,20 +783,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#370#371#0" expanded="true" />
@@ -859,14 +798,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#427#428#0" expanded="true" />
@@ -913,16 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -933,20 +862,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/PBB.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-parent/2.1.0.RELEASE/spring-boot-starter-parent-2.1.0.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" column="21" selection-start-line="94" selection-start-column="21" selection-end-line="94" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/ApplicationEntryPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="510">
+          <caret line="30" selection-start-line="30" selection-end-line="33" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -967,7 +965,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1015,7 +1013,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: cglib:cglib-nodep:3.2.4</last-edited>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
