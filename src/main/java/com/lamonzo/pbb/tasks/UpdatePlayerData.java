@@ -8,9 +8,9 @@ import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.domain.Stat;
 import com.lamonzo.pbb.domain.StatType;
-import com.lamonzo.pbb.repository.PlayerRepository;
-import com.lamonzo.pbb.repository.PositionRepository;
-import com.lamonzo.pbb.repository.StatTypeRepository;
+import com.lamonzo.pbb.service.PlayerService;
+import com.lamonzo.pbb.service.PositionService;
+import com.lamonzo.pbb.service.StatTypeService;
 import com.lamonzo.pbb.util.BrowserUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,13 +35,13 @@ public class UpdatePlayerData implements Runnable {
 
     //== FIELDS ==
     @Autowired
-    private PositionRepository positionRepository;
+    private StatTypeService statTypeService;
 
     @Autowired
-    private PlayerRepository playerRepository;
+    private PositionService positionService;
 
     @Autowired
-    private StatTypeRepository statTypeRepository;
+    private PlayerService playerService;
 
     private String positionTabHtmlLink;
 
@@ -100,9 +100,7 @@ public class UpdatePlayerData implements Runnable {
         Position position = new Position();
         position.setPositionName(pos);
         position.setMaxVotes(Integer.parseInt(votingInfo[2]));
-
-        //TODO: Save the position to the DB
-        positionRepository.save(position);
+        positionService.saveOrUpdatePosition(position);
 
         return position;
     }
@@ -118,12 +116,11 @@ public class UpdatePlayerData implements Runnable {
                     + ScrapingConstants.STAT_SUFFIX).getTextContent().trim();
 
             if (!type.isEmpty()) {
-                //TODO: Implement service layer for these types of transactions
-                StatType statType = statTypeRepository.findStatTypeByStatType(type);
+                StatType statType = statTypeService.findStatTypeByName(type);
                 if(statType == null) {
                     statType = new StatType();
                     statType.setStatType(type);
-                    statTypeRepository.save(statType);
+                    statTypeService.saveStatType(statType);
                 }
 
                 statMap.put(statId, statType);
@@ -149,10 +146,7 @@ public class UpdatePlayerData implements Runnable {
             player.setTeam(parent.findFirst(ScrapingConstants.PLAYER_TEAM_LOGO)
                     .getAttribute(ScrapingConstants.PLAYER_TEAM_NAME_ATTRIBUTE));
             player.setStats(scrapePlayerStats(parent, statMap, player));
-
-            //TODO: Save the player to the DB
-            playerRepository.save(player);
-            System.out.println(player);
+            playerService.saveOrUpdatePlayer(player);
         }
     }
 

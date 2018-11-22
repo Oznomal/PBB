@@ -15,6 +15,7 @@ public class BrowserUtil {
 
     private static final String CHROME_DRIVER_PATH = "E:/Programming/WebDrivers/Chrome/chromedriver.exe";
     private static final String CHROME_DRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";
+    private static final String CHROME_HEADLESS_OPTION = "--headless";
 
     /**
      * Generates a browser with a random User Agent
@@ -40,6 +41,7 @@ public class BrowserUtil {
         ChromeOptions options = new ChromeOptions();
         String agent = userAgentList.get(random.nextInt(userAgentList.size()));
         options.addArguments(UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX + agent);
+        options.addArguments(CHROME_HEADLESS_OPTION);
 
         //TODO: Uncomment this line to begin using the proxy service, but avoid using to avoid charges
         //options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);

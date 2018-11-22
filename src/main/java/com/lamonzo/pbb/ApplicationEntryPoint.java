@@ -28,11 +28,10 @@ public class ApplicationEntryPoint implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Iterator<String> iterator = ScrapingConstants.ALL_POSITION_TAB_LINKS.iterator();
-        while(iterator.hasNext()){
-            taskExecutor.execute(applicationContext.getBean(UpdatePlayerData.class, iterator.next()));
-        }
-
+//        Iterator<String> iterator = ScrapingConstants.ALL_POSITION_TAB_LINKS.iterator();
+//        while(iterator.hasNext()){
+//            taskExecutor.execute(applicationContext.getBean(UpdatePlayerData.class, iterator.next()));
+//        }
 
         //taskExecutor.execute(applicationContext.getBean(UpdatePlayerData.class, ScrapingConstants.QUARTERBACK_TAB_LINK));
     }
