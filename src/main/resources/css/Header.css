@@ -1,0 +1,10 @@
+/*Installing Custom NFL Font*/
+@font-face {
+    font-family: 'Freshman';
+    src: url('../fonts/Freshman.ttf');
+}
+
+.header-label{
+    -fx-font-family: "Freshman";
+    -fx-font-size: 80px;
+}

@@ -5,22 +5,35 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.Region?>
 <VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" prefWidth="400">
 
     <HBox>
-        <ImageView id="header-logo">
+        <ImageView styleClass="header-logo">
             <image>
-                <Image url="@../../img/PBB-Shield-012.png"/>
+                <Image url="@../../img/PBB-Shield-012050.png"/>
             </image>
             <HBox.margin>
-                <Insets left="20.0" top="20.0"/>
+                <Insets left="30.0" top="15.0"/>
             </HBox.margin>
         </ImageView>
 
-        <Label id="header-label">Pro Bowl Bot</Label>
+        <!-- The 2 Regions are used to center the content in between them -->
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <Label styleClass="header-label" HBox.hgrow="ALWAYS">
+            THE PRO BOWL BOT
+            <HBox.margin>
+                <Insets top="30.0"/>
+            </HBox.margin>
+        </Label>
+
+        <!-- The 2 Regions are used to center the content in between them -->
+        <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
     <stylesheets>
-
+        <URL value="@../../css/Header.css"/>
     </stylesheets>
 </VBox>
