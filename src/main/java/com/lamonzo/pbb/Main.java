@@ -11,11 +11,15 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import org.scenicview.ScenicView;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import org.springframework.core.task.TaskExecutor;
+
+//import org.scenicview.ScenicView;
+
 
 import java.util.Iterator;
 
@@ -48,6 +52,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(rootNode, 1500, 1000));
         primaryStage.centerOnScreen();
         primaryStage.show();
+        //ScenicView.show(rootNode);
     }
 
     @Override

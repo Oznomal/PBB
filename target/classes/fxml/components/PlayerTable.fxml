@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -30,7 +28,7 @@
         <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
-    <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+    <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" disableAnimation="true">
         <tabs>
             <!-- OFFENSE -->
             <fx:include fx:id="quarterBackTab"      source="tabs/QuarterBackTab.fxml" />

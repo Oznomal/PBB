@@ -28,7 +28,7 @@
         <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
-    <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+    <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" disableAnimation="true">
         <tabs>
             <!-- OFFENSE -->
             <fx:include fx:id="quarterBackTab"      source="tabs/QuarterBackTab.fxml" />

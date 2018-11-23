@@ -1,10 +1,23 @@
+/*FONTS*/
 @font-face {
     font-family: 'Montserrat';
     src: url("../fonts/Montserrat-Regular.ttf");
 }
 
+/*HEADINGS*/
 .section-heading{
     -fx-font-family: Montserrat;
     -fx-font-size: 24px;
     -fx-font-weight: 400;
 }
+
+/*TABS*/
+.jfx-tab-pane .tab{
+    -fx-pref-width: 52px;
+    -fx-max-width: 52px;
+}
+
+.tab-selected-line {
+    -fx-background-color: transparent;
+}
+
