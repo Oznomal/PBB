@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import com.jfoenix.controls.JFXTreeTableColumn?>
+<Tab xmlns:fx="http://javafx.com/fxml/1"
+     xmlns="http://javafx.com/javafx/8"
+     id="tackleTab" text="T">
+
+    <content>
+        <JFXTreeTableView VBox.vgrow="ALWAYS">
+            <columns>
+                <JFXTreeTableColumn text="Name"/>
+                <JFXTreeTableColumn text="Position"/>
+                <JFXTreeTableColumn text="Team"/>
+                <JFXTreeTableColumn text="Select"/>
+            </columns>
+        </JFXTreeTableView>
+    </content>
+</Tab>

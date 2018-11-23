@@ -32,9 +32,9 @@
         <!-- ____________________________________________________________________________________________ -->
         <!-- THIS SECTION CONTAINS THE TABS (POSITIONS) AND TABLE FOR ALL PLAYERS WHO HAVE BEEN NOMINATED -->
         <!-- ____________________________________________________________________________________________ -->
-        <center>
+        <right>
             <fx:include fx:id="playerTable" source="../components/PlayerTable.fxml"/>
-        </center>
+        </right>
 
         <!-- ____________________________________________ -->
         <!-- THIS SECTION CONTAINS THE FOOTER INFORMATION -->

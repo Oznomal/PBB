@@ -6,10 +6,61 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      prefHeight="700" maxHeight="700"
+      prefWidth="1100" maxWidth="1100">
 
+    <!-- CONSTANTS -->
+    <fx:define>
+        <Double fx:id="leftMargin" fx:value="20.0"/>
+        <Double fx:id="rightMargin" fx:value="30.0"/>
+    </fx:define>
 
-    <Label>Player Table</Label>
-</AnchorPane>
+    <HBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label styleClass="section-heading">
+            PRO BOWL NOMINEES
+            <HBox.margin>
+                <Insets top="20.0" bottom="10.0" left="$leftMargin" right="$rightMargin"/>
+            </HBox.margin>
+        </Label>
+        <Region HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <!-- OFFENSE -->
+            <fx:include fx:id="quarterBackTab"      source="tabs/QuarterBackTab.fxml" />
+            <fx:include fx:id="runningBackTab"      source="tabs/RunningBackTab.fxml" />
+            <fx:include fx:id="wideReceiverTab"     source="tabs/WideReceiverTab.fxml" />
+            <fx:include fx:id="fullBackTab"         source="tabs/FullBackTab.fxml" />
+            <fx:include fx:id="tightEndTab"         source="tabs/TightEndTab.fxml" />
+            <fx:include fx:id="tackleTab"           source="tabs/TackleTab.fxml" />
+            <fx:include fx:id="guardTab"            source="tabs/GuardTab.fxml" />
+            <fx:include fx:id="centerTab"           source="tabs/CenterTab.fxml" />
+
+            <!-- DEFENSE -->
+            <fx:include fx:id="defensiveEndTab"         source="tabs/DefensiveEndTab.fxml" />
+            <fx:include fx:id="defensiveTackleTab"      source="tabs/DefensiveTackleTab.fxml" />
+            <fx:include fx:id="insideLinebackerTab"     source="tabs/InsideLinebackerTab.fxml" />
+            <fx:include fx:id="outsideLinebackerTab"    source="tabs/OutsideLinebackerTab.fxml" />
+            <fx:include fx:id="cornerBackTab"           source="tabs/CornerBackTab.fxml" />
+            <fx:include fx:id="strongSafetyTab"         source="tabs/StrongSafetyTab.fxml" />
+            <fx:include fx:id="freeSafetyTab"           source="tabs/FreeSafetyTab.fxml" />
+
+            <!-- SPECIAL TEAMS -->
+            <fx:include fx:id="kickerTab"               source="tabs/KickerTab.fxml" />
+            <fx:include fx:id="returnSpecialistTab"     source="tabs/ReturnSpecialistTab.fxml" />
+            <fx:include fx:id="punterTab"               source="tabs/PunterTab.fxml" />
+            <fx:include fx:id="specialTeamerTab"        source="tabs/SpecialTeamerTab.fxml" />
+        </tabs>
+
+        <VBox.margin>
+            <Insets left="$leftMargin" right="$rightMargin"/>
+        </VBox.margin>
+    </JFXTabPane>
+
+</VBox>
