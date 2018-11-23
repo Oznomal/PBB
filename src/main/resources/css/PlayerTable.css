@@ -1,0 +1,32 @@
+/**********************************************************************************************************************/
+/*TABS*/
+.jfx-tab-pane .tab{
+    /*Set the width of the tabs*/
+    -fx-pref-width: 75px;
+    -fx-max-width: 75px;
+}
+
+.tab-selected-line {
+    /*Hide the underline since there is a JFoenix bug causing it to be 125% length*/
+    -fx-background-color: transparent;
+}
+
+
+/**********************************************************************************************************************/
+/*TREE TABLE VIEW CELLS*/
+.tree-table-cell:centered{
+    /*Centers cell content*/
+    -fx-alignment: center;
+}
+
+.tree-table-cell:padded{
+    /*Adjusts default padding to add 10px of left padding*/
+    -fx-padding: 3 2 1 10;
+}
+
+/**********************************************************************************************************************/
+/*BUTTONS*/
+.jfx-button{
+    -fx-background-radius: 2px;
+    -fx-background-color: #D3D3D3;
+}

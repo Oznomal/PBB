@@ -6,6 +6,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import java.net.URL?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       prefHeight="700" maxHeight="700"
@@ -17,6 +18,7 @@
         <Double fx:id="rightMargin" fx:value="30.0"/>
     </fx:define>
 
+    <!-- SECTION HEADING -->
     <HBox>
         <Region HBox.hgrow="ALWAYS"/>
         <Label styleClass="section-heading">
@@ -28,6 +30,7 @@
         <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
+    <!-- POSITION TABS -->
     <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" disableAnimation="true">
         <tabs>
             <!-- OFFENSE -->
@@ -60,5 +63,9 @@
             <Insets left="$leftMargin" right="$rightMargin"/>
         </VBox.margin>
     </JFXTabPane>
+
+    <stylesheets>
+        <URL value="@../../css/PlayerTable.css"/>
+    </stylesheets>
 
 </VBox>

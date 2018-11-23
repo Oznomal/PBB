@@ -55,6 +55,7 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(rootNode, 1500, 1000));
         primaryStage.centerOnScreen();
+        primaryStage.setResizable(false);
         primaryStage.show();
         //ScenicView.show(rootNode);
     }

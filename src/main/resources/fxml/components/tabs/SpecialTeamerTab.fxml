@@ -10,15 +10,16 @@
 <?import com.jfoenix.controls.JFXTreeTableColumn?>
 <Tab xmlns:fx="http://javafx.com/fxml/1"
      xmlns="http://javafx.com/javafx/8"
+     fx:controller="com.lamonzo.pbb.controller.tab.SpecialTeamerTabController"
      id="specialTeamerTab" text="ST">
 
     <content>
-        <JFXTreeTableView VBox.vgrow="ALWAYS">
+        <JFXTreeTableView fx:id="playerTableView" VBox.vgrow="ALWAYS">
             <columns>
-                <JFXTreeTableColumn text="Name"/>
-                <JFXTreeTableColumn text="Position"/>
-                <JFXTreeTableColumn text="Team"/>
-                <JFXTreeTableColumn text="Select"/>
+                <JFXTreeTableColumn fx:id="nameColumn" text="Name"/>
+                <JFXTreeTableColumn fx:id="positionColumn" text="Position"/>
+                <JFXTreeTableColumn fx:id="teamColumn" text="Team"/>
+                <JFXTreeTableColumn fx:id="selectColumn" text="Select"/>
             </columns>
         </JFXTreeTableView>
     </content>
