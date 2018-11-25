@@ -48,6 +48,7 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
 
         if(pto.getIsSelected().getValue()) {
             newValue = new SimpleBooleanProperty(false);
+            dataModel.getBallotList().remove(pto.getPlayer());
             selectBtn.setText(CssConstants.UNSELECTED_BTN_TEXT);
         }
         else {

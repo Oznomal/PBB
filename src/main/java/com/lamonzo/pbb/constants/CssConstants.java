@@ -19,7 +19,7 @@ public final class CssConstants {
 
     //TEXT FOR DYNAMIC BUTTONS
     public static final String UNSELECTED_BTN_TEXT = "Select Player";
-    public static final String SELECTED_BTN_TEXT = "Selected";
+    public static final String SELECTED_BTN_TEXT = "Remove Player";
 
     //== CONSTRUCTORS ==
     private CssConstants(){}
