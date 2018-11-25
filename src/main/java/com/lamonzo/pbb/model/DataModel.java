@@ -7,6 +7,8 @@ import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +34,9 @@ public class DataModel {
 
     private Map<String, ObservableList<PlayerTreeObject>> playerData;
 
+    @Getter
+    private ObservableList<Label> ballotList = FXCollections.observableArrayList();
+
     //== PUBLIC METHODS ==
     @PostConstruct
     private void fetchData(){
@@ -49,9 +54,7 @@ public class DataModel {
         }
     }
 
-    //== CUSTOM ACCESS METHODS ==
     public ObservableList<PlayerTreeObject> getPlayerDataByPosition(String position){
         return playerData.get(position);
     }
-
 }

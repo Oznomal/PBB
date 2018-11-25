@@ -30,4 +30,9 @@ public class Position {
 
     //== CONSTRUCTORS ==
     public Position(){}
+
+    public Position(String name, int maxVotes){
+        this.positionName = name;
+        this.maxVotes = maxVotes;
+    }
 }

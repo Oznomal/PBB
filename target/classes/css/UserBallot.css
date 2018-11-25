@@ -1,0 +1,16 @@
+/**********************************************************************************************************************/
+/*FONTS*/
+@font-face {
+    font-family: 'Primetime';
+    src: url("../fonts/Primetime.ttf");
+}
+
+@font-face {
+    font-family: "Code";
+    src: url("../fonts/CODE-Bold.otf");
+}
+
+.position-label{
+    -fx-font-family: Primetime;
+    -fx-text-fill: #555;
+}

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import java.net.URL?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lamonzo.pbb.controller.UserBallotController"
       prefWidth="400" maxWidth="400"
       prefHeight="700" maxHeight="700">
 
@@ -18,6 +20,7 @@
         <Double fx:id="leftMargin" fx:value="30.0"/>
     </fx:define>
 
+    <!-- SECTION HEADER -->
     <HBox>
         <Region HBox.hgrow="ALWAYS"/>
         <Label styleClass="section-heading">
@@ -29,16 +32,15 @@
         <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
-    <JFXListView VBox.vgrow="ALWAYS">
-        <Label>Test 1</Label>
-        <Label>Test 2</Label>
-        <Label>Test 3</Label>
-        <Label>Test 4</Label>
-        <Label>Test 5</Label>
-
+    <!-- LIST VIEW -->
+    <JFXListView fx:id="userBallotListView" VBox.vgrow="ALWAYS">
         <!-- SPACING THE LIST VIEW FROM THE SIDE OF THE APPLICATION -->
         <VBox.margin>
             <Insets left="$leftMargin"/>
         </VBox.margin>
     </JFXListView>
+
+    <stylesheets>
+        <URL value="@../../css/UserBallot.css"/>
+    </stylesheets>
 </VBox>

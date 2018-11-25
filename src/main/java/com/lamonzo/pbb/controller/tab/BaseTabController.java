@@ -9,15 +9,20 @@ import com.lamonzo.pbb.constants.CssConstants;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.model.DataModel;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableCell;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
+import javafx.util.Callback;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -47,7 +52,7 @@ public abstract class BaseTabController implements Initializable {
     protected JFXTreeTableColumn<PlayerTreeObject, String> teamColumn;
 
     @FXML
-    protected JFXTreeTableColumn selectColumn;
+    protected JFXTreeTableColumn<PlayerTreeObject, String> selectColumn;
 
 
     //== PUBLIC METHODS ==
@@ -61,32 +66,28 @@ public abstract class BaseTabController implements Initializable {
                 -> param.getValue().getValue().getPosition());
         teamColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<PlayerTreeObject, String> param)
                 -> param.getValue().getValue().getTeam());
-        selectColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>(null));
+        selectColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<PlayerTreeObject, String> param) -> null);
+        // selectColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>(null));
 
         //SETTING CELL FACTORY
         setPseudoClassForStringColumn(nameColumn, CssConstants.PSEUDO_PADDED);
         setPseudoClassForStringColumn(positionColumn, CssConstants.PSEUDO_CENTERED);
         setPseudoClassForStringColumn(teamColumn, CssConstants.PSEUDO_CENTERED);
+
         selectColumn.setCellFactory(column -> {
             TreeTableCell<PlayerTreeObject, String> cell = new TreeTableCell<>(){
-                JFXButton selectBtn = new JFXButton(UNSELECTED_BTN_TEXT);
+                final JFXButton selectBtn = new JFXButton(UNSELECTED_BTN_TEXT);
 
                 @Override
                 protected void updateItem(String item, boolean empty) {
                     super.updateItem(item, empty);
-
                     setText(null);
+
                     if(empty){
                         setGraphic(null);
                     }else{
-                        //selectBtn.setPrefSize();
-                        selectBtn.setOnAction(event -> {
-                            PlayerTreeObject player = getTreeTableRow().getTreeItem().getValue();
-                            System.out.println("Selected Button For: " + player.getName().getValue());
-//                            selectBtn.setText(selectBtn.getText().equals(UNSELECTED_BTN_TEXT)
-//                                    ? SELECTED_BTN_TEXT : UNSELECTED_BTN_TEXT);
-                            //TODO: HANDLE BUTTON CLICKS
-                        });
+                        selectBtn.setOnAction(event ->
+                                handleSelectPlayerButtonClick(selectBtn, getTreeTableRow().getTreeItem().getValue()));
                         setGraphic(selectBtn);
                     }
                 }
@@ -140,5 +141,18 @@ public abstract class BaseTabController implements Initializable {
         }else{
             log.warn("Player List is Empty for: " + position);
         }
+    }
+
+    protected void handleSelectPlayerButtonClick(JFXButton btn, PlayerTreeObject playerTreeObject){
+        if(btn.getText().equals(UNSELECTED_BTN_TEXT)){
+            Player player = playerTreeObject.getPlayer();
+            String content = player.getName() + " | " + player.getPosition().getPositionName()
+                    + " | " + player.getTeam();
+            Label label = new Label(content);
+            dataModel.getBallotList().add(label);
+            btn.setText(SELECTED_BTN_TEXT);
+        }
+
+        System.out.println("Selected Button For: " + playerTreeObject.getName().getValue());
     }
 }
