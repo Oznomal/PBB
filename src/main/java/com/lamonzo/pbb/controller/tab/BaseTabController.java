@@ -1,30 +1,24 @@
 package com.lamonzo.pbb.controller.tab;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import com.lamonzo.pbb.cell.SelectButtonCell;
 import com.lamonzo.pbb.constants.CssConstants;
-import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.model.DataModel;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableCell;
 import javafx.scene.control.TreeTableColumn;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TreeItemPropertyValueFactory;
-import javafx.util.Callback;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,9 +27,6 @@ import java.util.ResourceBundle;
 public abstract class BaseTabController implements Initializable {
 
     //== FIELDS ==
-    protected static final String UNSELECTED_BTN_TEXT = "Select Player";
-    protected static final String SELECTED_BTN_TEXT = "Selected";
-
     @Autowired
     protected DataModel dataModel;
 
@@ -52,7 +43,7 @@ public abstract class BaseTabController implements Initializable {
     protected JFXTreeTableColumn<PlayerTreeObject, String> teamColumn;
 
     @FXML
-    protected JFXTreeTableColumn<PlayerTreeObject, String> selectColumn;
+    protected JFXTreeTableColumn<PlayerTreeObject, Boolean> selectColumn;
 
 
     //== PUBLIC METHODS ==
@@ -66,33 +57,15 @@ public abstract class BaseTabController implements Initializable {
                 -> param.getValue().getValue().getPosition());
         teamColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<PlayerTreeObject, String> param)
                 -> param.getValue().getValue().getTeam());
-        selectColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<PlayerTreeObject, String> param) -> null);
-        // selectColumn.setCellValueFactory(new TreeItemPropertyValueFactory<>(null));
+        selectColumn.setCellValueFactory((TreeTableColumn.CellDataFeatures<PlayerTreeObject, Boolean> param)
+                -> param.getValue().getValue().getIsSelected());
 
         //SETTING CELL FACTORY
         setPseudoClassForStringColumn(nameColumn, CssConstants.PSEUDO_PADDED);
         setPseudoClassForStringColumn(positionColumn, CssConstants.PSEUDO_CENTERED);
         setPseudoClassForStringColumn(teamColumn, CssConstants.PSEUDO_CENTERED);
-
         selectColumn.setCellFactory(column -> {
-            TreeTableCell<PlayerTreeObject, String> cell = new TreeTableCell<>(){
-                final JFXButton selectBtn = new JFXButton(UNSELECTED_BTN_TEXT);
-
-                @Override
-                protected void updateItem(String item, boolean empty) {
-                    super.updateItem(item, empty);
-                    setText(null);
-
-                    if(empty){
-                        setGraphic(null);
-                    }else{
-                        selectBtn.setOnAction(event ->
-                                handleSelectPlayerButtonClick(selectBtn, getTreeTableRow().getTreeItem().getValue()));
-                        setGraphic(selectBtn);
-                    }
-                }
-            };
-
+            TreeTableCell<PlayerTreeObject, Boolean> cell = getSelectButtonCell();
             cell.pseudoClassStateChanged(PseudoClass.getPseudoClass(CssConstants.PSEUDO_CENTERED), true);
             return cell;
         });
@@ -108,6 +81,13 @@ public abstract class BaseTabController implements Initializable {
         selectColumn.setPrefWidth(200);
     }
 
+    //== SPRING PROTOTYPE LOOKUPS ==
+    @Lookup
+    SelectButtonCell getSelectButtonCell(){
+        return null;
+    }
+
+    //== PROTECTED METHODS ==
     /**
      * Adds a CSS Pseudo class to a String column
      * @param column the JFXTreeTableColumn
@@ -141,18 +121,5 @@ public abstract class BaseTabController implements Initializable {
         }else{
             log.warn("Player List is Empty for: " + position);
         }
-    }
-
-    protected void handleSelectPlayerButtonClick(JFXButton btn, PlayerTreeObject playerTreeObject){
-        if(btn.getText().equals(UNSELECTED_BTN_TEXT)){
-            Player player = playerTreeObject.getPlayer();
-            String content = player.getName() + " | " + player.getPosition().getPositionName()
-                    + " | " + player.getTeam();
-            Label label = new Label(content);
-            dataModel.getBallotList().add(label);
-            btn.setText(SELECTED_BTN_TEXT);
-        }
-
-        System.out.println("Selected Button For: " + playerTreeObject.getName().getValue());
     }
 }

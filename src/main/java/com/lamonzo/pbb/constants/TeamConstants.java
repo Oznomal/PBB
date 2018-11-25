@@ -24,7 +24,7 @@ public final class TeamConstants {
     public static final String JAX = "JAX";
     public static final String KC = "KC";
     public static final String LAC = "LAC";
-    public static final String LAR = "LAR";
+    public static final String LAR = "LA";
     public static final String MIA = "MIA";
     public static final String MIN = "MIN";
     public static final String NE = "NE";

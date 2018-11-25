@@ -20,6 +20,7 @@
         <Double fx:id="leftMargin" fx:value="30.0"/>
     </fx:define>
 
+    <!-- SECTION HEADER -->
     <HBox>
         <Region HBox.hgrow="ALWAYS"/>
         <Label styleClass="section-heading">
@@ -31,148 +32,9 @@
         <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
+    <!-- LIST VIEW -->
     <JFXListView fx:id="userBallotListView" VBox.vgrow="ALWAYS">
         <!-- SPACING THE LIST VIEW FROM THE SIDE OF THE APPLICATION -->
-        <HBox>
-            <Label>
-                Lamonzo Arroyo
-                <HBox.margin>
-                    <Insets right="10.0"/>
-                </HBox.margin>
-            </Label>
-            <Label styleClass="position-label">
-                RB
-                <HBox.margin>
-                    <Insets top="1.0"/>
-                </HBox.margin>
-            </Label>
-            <Region HBox.hgrow="ALWAYS"/>
-            <ImageView preserveRatio="true" fitHeight="20">
-                <image>
-                    <Image url="@../../img/teams/ATL-Logo.png" smooth="true"/>
-                </image>
-                <HBox.margin>
-                    <Insets right="5.0"/>
-                </HBox.margin>
-            </ImageView>
-            <Label styleClass="team-label">
-                ATL
-            </Label>
-        </HBox>
-
-        <HBox>
-            <Label>
-                Katherine Wakefield
-                <HBox.margin>
-                    <Insets right="10.0"/>
-                </HBox.margin>
-            </Label>
-            <Label styleClass="position-label">
-                QB
-                <HBox.margin>
-                    <Insets top="1.0"/>
-                </HBox.margin>
-            </Label>
-            <Region HBox.hgrow="ALWAYS"/>
-            <ImageView preserveRatio="true" fitHeight="20">
-                <image>
-                    <Image url="@../../img/teams/BAL-Logo.png"/>
-                </image>
-                <HBox.margin>
-                    <Insets right="5.0"/>
-                </HBox.margin>
-            </ImageView>
-            <Label styleClass="team-label">
-                BAL
-            </Label>
-        </HBox>
-
-        <HBox>
-            <Label>
-                John Doe
-                <HBox.margin>
-                    <Insets right="10.0"/>
-                </HBox.margin>
-            </Label>
-            <Label styleClass="position-label">
-                K
-                <HBox.margin>
-                    <Insets top="1.0"/>
-                </HBox.margin>
-            </Label>
-            <Region HBox.hgrow="ALWAYS"/>
-            <StackPane>
-                <ImageView preserveRatio="true" fitHeight="20" styleClass="team-logo-stack-pane">
-                    <image>
-                        <Image url="@../../img/teams/ARI-Logo-Transparent.png"/>
-                    </image>
-                    <HBox.margin>
-                        <Insets right="5.0"/>
-                    </HBox.margin>
-                </ImageView>
-            </StackPane>
-            <Label styleClass="team-label">
-                ARI
-            </Label>
-        </HBox>
-
-        <HBox>
-            <Label>
-                Blake Countess
-                <HBox.margin>
-                    <Insets right="10.0"/>
-                </HBox.margin>
-            </Label>
-            <Label styleClass="position-label">
-                RS
-                <HBox.margin>
-                    <Insets top="1.0"/>
-                </HBox.margin>
-            </Label>
-            <Region HBox.hgrow="ALWAYS"/>
-
-            <Label styleClass="team-label">
-                LAR
-            </Label>
-            <ImageView preserveRatio="true" fitHeight="20">
-                <image>
-                    <Image url="@../../img/teams/LAR-Logo.png"/>
-                </image>
-                <HBox.margin>
-                    <Insets right="5.0"/>
-                </HBox.margin>
-            </ImageView>
-        </HBox>
-
-        <HBox>
-            <Label>
-                Reggie Morris
-                <HBox.margin>
-                    <Insets right="10.0"/>
-                </HBox.margin>
-            </Label>
-            <Label styleClass="position-label">
-                OLB
-                <HBox.margin>
-                    <Insets top="1.0"/>
-                </HBox.margin>
-            </Label>
-            <Region HBox.hgrow="ALWAYS"/>
-
-            <Label styleClass="team-label">
-                CLE
-            </Label>
-            <ImageView preserveRatio="true" fitHeight="20">
-                <image>
-                    <Image url="@../../img/teams/CLE-Logo.png"/>
-                </image>
-                <HBox.margin>
-                    <Insets right="5.0"/>
-                </HBox.margin>
-            </ImageView>
-        </HBox>
-
-
         <VBox.margin>
             <Insets left="$leftMargin"/>
         </VBox.margin>

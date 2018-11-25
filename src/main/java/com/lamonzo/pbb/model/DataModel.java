@@ -35,7 +35,7 @@ public class DataModel {
     private Map<String, ObservableList<PlayerTreeObject>> playerData;
 
     @Getter
-    private ObservableList<Label> ballotList = FXCollections.observableArrayList();
+    private ObservableList<Player> ballotList = FXCollections.observableArrayList();
 
     //== PUBLIC METHODS ==
     @PostConstruct
