@@ -1,5 +1,6 @@
 package com.lamonzo.pbb.controller.tab;
 
+import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTreeTableColumn;
 import com.jfoenix.controls.JFXTreeTableView;
 import com.jfoenix.controls.RecursiveTreeItem;
@@ -10,12 +11,14 @@ import com.lamonzo.pbb.constants.StatConstants;
 import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.domain.Stat;
 import com.lamonzo.pbb.model.DataModel;
+import com.lamonzo.pbb.service.PositionService;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.ObservableList;
 import javafx.css.PseudoClass;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableCell;
 import javafx.scene.control.TreeTableColumn;
@@ -35,6 +38,9 @@ public abstract class BaseTabController implements Initializable {
     @Autowired
     protected DataModel dataModel;
 
+    @Autowired
+    protected PositionService positionService;
+
     @FXML
     protected JFXTreeTableView<PlayerTreeObject> playerTableView;
 
@@ -50,6 +56,16 @@ public abstract class BaseTabController implements Initializable {
     @FXML
     protected JFXTreeTableColumn<PlayerTreeObject, Boolean> selectColumn;
 
+    @FXML
+    protected Label voteCountLabel;
+
+    @FXML
+    protected Label maxVotesLabel;
+
+    @FXML
+    protected JFXTextField positionFilter;
+
+    protected int maxVotes;
 
     //== PUBLIC METHODS ==
     //Sets default fields that are shared amongst all tabs
@@ -84,6 +100,14 @@ public abstract class BaseTabController implements Initializable {
         positionColumn.setPrefWidth(300);
         teamColumn.setPrefWidth(100);
         selectColumn.setPrefWidth(200);
+
+        //SETUP POSITION FILTER
+        positionFilter.textProperty().addListener((o, oldVal, newVal) -> {
+            playerTableView.setPredicate(pto ->
+                    pto.getValue().getName().get().toLowerCase().contains(newVal.toLowerCase()) ||
+                            pto.getValue().getTeam().get().toLowerCase().contains(newVal.toLowerCase())
+            );
+        });
     }
 
     //== PROTECTED METHODS ==
@@ -107,6 +131,11 @@ public abstract class BaseTabController implements Initializable {
             playerTableView.setRoot(root);
             playerTableView.setShowRoot(false);
             playerTableView.setEditable(false);
+
+            //SETUP THE VOTING COUNT INFORMATION
+            maxVotes = dataModel.getPositionByName(position).getMaxVotes();
+            maxVotesLabel.setText("OF " + maxVotes + " VOTES ");
+            voteCountLabel.textProperty().bind(dataModel.getPositionVoteMap().get(position));
         }else{
             log.warn("Player List is Empty for: " + position);
         }

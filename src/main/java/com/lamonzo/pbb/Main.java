@@ -2,10 +2,6 @@ package com.lamonzo.pbb;
 
 import com.lamonzo.pbb.constants.ScrapingConstants;
 import com.lamonzo.pbb.constants.SpringConstants;
-import com.lamonzo.pbb.domain.Player;
-import com.lamonzo.pbb.domain.Position;
-import com.lamonzo.pbb.service.PlayerService;
-import com.lamonzo.pbb.service.PositionService;
 import com.lamonzo.pbb.tasks.UpdatePlayerData;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -57,6 +53,7 @@ public class Main extends Application {
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
         primaryStage.show();
+        primaryStage.getScene().getStylesheets().add("https://fonts.googleapis.com/css?family=Julius+Sans+One");
         //ScenicView.show(rootNode);
     }
 

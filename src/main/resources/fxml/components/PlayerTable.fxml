@@ -7,9 +7,10 @@
 <?import javafx.geometry.Insets?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import java.net.URL?>
+
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      prefHeight="700" maxHeight="700"
+      prefHeight="750" maxHeight="750"
       prefWidth="1100" maxWidth="1100">
 
     <!-- CONSTANTS -->
@@ -31,7 +32,8 @@
     </HBox>
 
     <!-- POSITION TABS -->
-    <JFXTabPane prefHeight="700.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" disableAnimation="true">
+    <JFXTabPane prefHeight="700" maxHeight="700"
+                tabClosingPolicy="UNAVAILABLE" disableAnimation="true">
         <tabs>
             <!-- OFFENSE -->
             <fx:include fx:id="quarterBackTab"      source="tabs/QuarterBackTab.fxml" />

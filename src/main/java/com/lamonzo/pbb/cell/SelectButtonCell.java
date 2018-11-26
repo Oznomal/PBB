@@ -36,27 +36,50 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
         }
         else if(getTreeTableRow().getTreeItem() != null) {
             PlayerTreeObject pto = getTreeTableRow().getTreeItem().getValue();
+
+            //HANDLE BUTTON CLICKS
             selectBtn.setOnAction(event -> handleSelectPlayerButtonClick(pto));
-            selectBtn.setText(pto.getIsSelected().getValue() ? CssConstants.SELECTED_BTN_TEXT
+
+            //SET BUTTON TEXT
+            selectBtn.setText(pto.getIsSelected().get() ? CssConstants.SELECTED_BTN_TEXT
                     : CssConstants.UNSELECTED_BTN_TEXT);
+
+            //SET THE GRAPHIC
             setGraphic(selectBtn);
         }
     }
 
+    //== PRIVATE METHODS ==
     private void handleSelectPlayerButtonClick(PlayerTreeObject pto){
-        BooleanProperty newValue;
+        String pos = pto.getPosition().get();
+        BooleanProperty newValue = new SimpleBooleanProperty(false);
+
+        int currVoteCount = getCurrentVoteCount(pos);
 
         if(pto.getIsSelected().getValue()) {
             newValue = new SimpleBooleanProperty(false);
             dataModel.getBallotList().remove(pto.getPlayer());
             selectBtn.setText(CssConstants.UNSELECTED_BTN_TEXT);
+            currVoteCount = currVoteCount > 0 ? --currVoteCount : 0;
         }
-        else {
+        else if(currVoteCount < dataModel.getPositionByName(pos).getMaxVotes()){
             newValue = new SimpleBooleanProperty(true);
             dataModel.getBallotList().add(pto.getPlayer());
             selectBtn.setText(CssConstants.SELECTED_BTN_TEXT);
+            currVoteCount++;
         }
 
+        updateCurrentVoteCount(pos, currVoteCount);
         pto.setIsSelected(newValue);
+    }
+
+    private int getCurrentVoteCount(String position){
+        String voteCountString = dataModel.getPositionVoteMap().get(position).get();
+        return Integer.parseInt(voteCountString);
+    }
+
+    private void updateCurrentVoteCount(String position, int value){
+        String newValue = Integer.toString(value);
+        dataModel.getPositionVoteMap().get(position).setValue(newValue);
     }
 }

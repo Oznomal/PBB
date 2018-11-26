@@ -30,3 +30,21 @@
     -fx-background-radius: 2px;
     -fx-background-color: #D3D3D3;
 }
+
+/**********************************************************************************************************************/
+/*TEXT*/
+@font-face {
+    -fx-font-family: "Montserrat SemiBold";
+    src: url("../fonts/Montserrat-SemiBold.ttf")
+}
+
+.voting-label{
+    -fx-font-family: "Montserrat SemiBold";
+    -fx-font-size: 18px;
+    -fx-font-style: italic;
+}
+
+.filter-label{
+    -fx-font-family: "Montserrat SemiBold";
+    -fx-font-size: 16px;
+}

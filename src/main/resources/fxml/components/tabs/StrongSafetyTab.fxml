@@ -5,19 +5,40 @@
 
 <?import com.jfoenix.controls.JFXTreeTableView?>
 <?import com.jfoenix.controls.JFXTreeTableColumn?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <Tab xmlns:fx="http://javafx.com/fxml/1"
      xmlns="http://javafx.com/javafx/8"
      fx:controller="com.lamonzo.pbb.controller.tab.StrongSafetyTabController"
      id="strongSafetyTab" text="SS">
 
     <content>
-        <JFXTreeTableView fx:id="playerTableView" VBox.vgrow="ALWAYS">
-            <columns>
-                <JFXTreeTableColumn fx:id="nameColumn" text="Name"/>
-                <JFXTreeTableColumn fx:id="positionColumn" text="Position"/>
-                <JFXTreeTableColumn fx:id="teamColumn" text="Team"/>
-                <JFXTreeTableColumn fx:id="selectColumn" text="Select"/>
-            </columns>
-        </JFXTreeTableView>
+        <VBox>
+            <JFXTreeTableView fx:id="playerTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <JFXTreeTableColumn fx:id="nameColumn" text="Name"/>
+                    <JFXTreeTableColumn fx:id="positionColumn" text="Position"/>
+                    <JFXTreeTableColumn fx:id="teamColumn" text="Team"/>
+                    <JFXTreeTableColumn fx:id="selectColumn" text="Select"/>
+                </columns>
+            </JFXTreeTableView>
+
+            <HBox prefHeight="50" minHeight="50" maxHeight="50" alignment="CENTER_LEFT">
+                <Label fx:id="voteCountLabel" styleClass="voting-label">
+                    <HBox.margin>
+                        <Insets right="3"/>
+                    </HBox.margin>
+                </Label>
+                <Label fx:id="maxVotesLabel" styleClass="voting-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="filterLabel" styleClass="filter-label">
+                    Position Filter:
+                    <HBox.margin>
+                        <Insets right="10" top="1"/>
+                    </HBox.margin>
+                </Label>
+                <JFXTextField fx:id="positionFilter" />
+            </HBox>
+        </VBox>
     </content>
 </Tab>

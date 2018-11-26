@@ -15,7 +15,6 @@ public class PositionServiceImpl implements PositionService{
 
     //== FIELDS ==
     private final PositionRepository positionRepository;
-    private List<Position> positionList;
 
     //== CONSTRUCTORS ==
     public PositionServiceImpl(PositionRepository positionRepository){
@@ -39,5 +38,15 @@ public class PositionServiceImpl implements PositionService{
     @Override
     public Iterable<Position> getAllPositions() {
         return positionRepository.findAll();
+    }
+
+    @Override
+    public Position findByPositionName(String positionName) {
+        return positionRepository.findByPositionName(positionName);
+    }
+
+    @Override
+    public Integer getMaxVotesByPositionName(String positionName) {
+        return positionRepository.getMaxVotesByPositionName(positionName);
     }
 }
