@@ -5,7 +5,21 @@
     src: url("../fonts/Primetime.ttf");
 }
 
+/**********************************************************************************************************************/
+/*LABELS*/
 .position-label{
     -fx-font-family: Primetime;
     -fx-text-fill: #555;
+}
+
+/**********************************************************************************************************************/
+/*BUTTONS*/
+.submit-btn{
+    -fx-background-color: #D3D3D3;
+    -fx-background-radius: 0;
+    -fx-padding: 8 8;
+}
+
+.submit-btn:hover{
+    -fx-background-color: #939393;
 }

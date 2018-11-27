@@ -41,7 +41,7 @@ public class BrowserUtil {
         ChromeOptions options = new ChromeOptions();
         String agent = userAgentList.get(random.nextInt(userAgentList.size()));
         options.addArguments(UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX + agent);
-        options.addArguments(CHROME_HEADLESS_OPTION);
+        //options.addArguments(CHROME_HEADLESS_OPTION);
 
         //TODO: Uncomment this line to begin using the proxy service, but avoid using to avoid charges
         //options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);

@@ -40,10 +40,7 @@
         <!-- THIS SECTION CONTAINS THE FOOTER INFORMATION -->
         <!-- ____________________________________________ -->
         <bottom>
-            <VBox>
-                <fx:include fx:id="options" source="../components/Options.fxml"/>
-                <fx:include fx:id="footer" source="../components/Footer.fxml"/>
-            </VBox>
+            <fx:include fx:id="footer" source="../components/Footer.fxml"/>
         </bottom>
 
         <!-- _________________________________________________________ -->

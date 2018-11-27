@@ -37,7 +37,7 @@
                         <Insets right="10" top="1"/>
                     </HBox.margin>
                 </Label>
-                <JFXTextField fx:id="positionFilter" />
+                <JFXTextField fx:id="positionFilter" promptText="Search ... "/>
             </HBox>
         </VBox>
     </content>

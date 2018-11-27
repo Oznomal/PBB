@@ -100,6 +100,7 @@ public class UpdatePlayerData implements Runnable {
         Position position = new Position();
         position.setPositionName(pos);
         position.setMaxVotes(Integer.parseInt(votingInfo[2]));
+        position.setTabHtmlLink(positionTabHtmlLink);
         positionService.saveOrUpdatePosition(position);
 
         return position;

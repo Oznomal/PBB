@@ -1,17 +1,18 @@
 package com.lamonzo.pbb.tasks;
 
-import com.jauntium.Browser;
-import com.jauntium.Element;
-import com.jauntium.Form;
-import com.jauntium.JauntiumException;
+import com.jauntium.*;
 import com.lamonzo.pbb.constants.ScrapingConstants;
+import com.lamonzo.pbb.domain.Player;
+import com.lamonzo.pbb.domain.Position;
+import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.util.BrowserUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.Random;
+import java.util.*;
 
 /**
  * Thread Safe class to handle generating a new browser and submitting a pro bowl ballot
@@ -20,6 +21,20 @@ import java.util.Random;
 @Component
 @Scope("prototype")
 public class SubmitBallot implements Runnable{
+
+    //================================================================================================================//
+    //== FIELDS ==
+    private final DataModel dataModel;
+
+    //================================================================================================================//
+    //== CONSTRUCTORS ==
+    @Autowired
+    public SubmitBallot(DataModel dataModel){
+        this.dataModel = dataModel;
+    }
+
+    //================================================================================================================//
+    //== PUBLIC METHODS
     @Override
     public void run() {
         Browser browser = BrowserUtil.getBrowser();
@@ -38,7 +53,6 @@ public class SubmitBallot implements Runnable{
     //================================================================================================================//
     //== PRIVATE METHODS
 
-
     //*****************************************************************************************************************
     //VISITING BALLOT PAGE SECTION
 
@@ -56,7 +70,7 @@ public class SubmitBallot implements Runnable{
      */
     private void visitBallotPage(Browser browser) throws JauntiumException, InterruptedException{
         Random random = new Random();
-        int option = random.nextInt(2); //TODO: Bump up to 4 if Google Bot Detection is able to be bypassed
+        int option = random.nextInt(1); //TODO: Bump up to 4 if Google Bot Detection is able to be bypassed
 
         switch (option) {
             case (0):
@@ -147,14 +161,70 @@ public class SubmitBallot implements Runnable{
      * Selects random players for ballot
      * @param browser an instance of the Chrome browser
      */
-    private void makeBallotSelections(Browser browser){
+    private void makeBallotSelections(Browser browser) throws NotFound, InterruptedException {
+        Map<Position, List<Player>> finalBallotMap = buildFinalBallot();
         Random random = new Random();
-        int positionCount = 1 + random.nextInt(19); //The number of positions to submit ballots for
 
-        for(int i = 0; i < positionCount; i++){
+        for(Position pos : finalBallotMap.keySet()){
+            Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
+            tab.click();
 
+            for(Player player : finalBallotMap.get(pos)){
+
+            }
+        }
+    }
+
+    //Builds the final ballot by taking the players that the user selected and mixing in a random number
+    //of other selections for the remaining positions.
+    private Map<Position, List<Player>> buildFinalBallot(){
+        //1. Divide players up into hash map for positions
+        Map<Position, List<Player>> ppMap = new HashMap<>();
+        for(Player player : dataModel.getBallotList()){
+            if(!ppMap.containsKey(player.getPosition())){
+                List<Player> playerList = new ArrayList<>();
+                playerList.add(player);
+                ppMap.put(player.getPosition(), playerList);
+            }else{
+                ppMap.get(player.getPosition()).add(player);
+            }
         }
 
+        //2. Get the remaining positions
+        List<Position> remainingPositions = dataModel.getAllPositions();
+        for(Position pos : ppMap.keySet())
+            remainingPositions.remove(pos);
+
+        //3. Determine how many extra random positions we are going to vote for
+        Random random = new Random();
+        int extraVotes = random.nextInt(remainingPositions.size() + 1);
+
+        //4. Determine how many times we will vote for each random position
+        Map<Position, Integer> extraVotesPosMap = new HashMap<>();
+        for(int i = 0; i < extraVotes; i++){
+            int index = random.nextInt(remainingPositions.size());
+
+            Position pos = remainingPositions.get(index);
+            int posVotes = random.nextInt(pos.getMaxVotes()) + 1;
+
+            extraVotesPosMap.put(pos, posVotes);
+
+            remainingPositions.remove(index);
+        }
+
+        //5. Add random players from the random positions that we are going to vote for to the ppMap
+        for(Position pos : extraVotesPosMap.keySet()){
+            List<Player> players = new ArrayList<>(dataModel.getPlayersByPosition(pos.getPositionName()));
+            List<Player> toAdd = new ArrayList<>();
+            for(int i = 0; i < extraVotesPosMap.get(pos); i++){
+                int index = random.nextInt(players.size());
+                toAdd.add(players.get(index));
+                players.remove(index);
+            }
+            ppMap.put(pos, toAdd);
+        }
+
+        return ppMap;
     }
 
     //END OF BALLOT SELECTION

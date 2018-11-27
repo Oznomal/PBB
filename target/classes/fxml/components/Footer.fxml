@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.geometry.Insets?>
+<?import java.lang.Double?>
+<?import java.net.URL?>
 <HBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml">
+      xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER">
 
-    <Label>Footer</Label>
+    <fx:define>
+        <Double fx:id="margin" fx:value="5.0"/>
+        <Double fx:id="rightMargin" fx:value="5.0"/>
+    </fx:define>
 
+    <Label styleClass="footer-text">
+        Designed and Developed by Oznomal
+        <HBox.margin>
+            <Insets left="$margin" bottom="$margin"/>
+        </HBox.margin>
+    </Label>
+    <Region HBox.hgrow="ALWAYS"/>
+    <Label styleClass="footer-text">
+        Pro Bowl Bot Version 1.0
+        <HBox.margin>
+            <Insets right="$margin" bottom="$margin"/>
+        </HBox.margin>
+    </Label>
+
+    <stylesheets>
+        <URL value="@../../css/Footer.css"/>
+    </stylesheets>
 </HBox>

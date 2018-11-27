@@ -53,7 +53,6 @@ public class Main extends Application {
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
         primaryStage.show();
-        primaryStage.getScene().getStylesheets().add("https://fonts.googleapis.com/css?family=Julius+Sans+One");
         //ScenicView.show(rootNode);
     }
 

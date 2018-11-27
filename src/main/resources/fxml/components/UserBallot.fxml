@@ -6,14 +6,15 @@
 
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
+
 <?import java.net.URL?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lamonzo.pbb.controller.UserBallotController"
       prefWidth="400" maxWidth="400"
-      prefHeight="700" maxHeight="700">
+      prefHeight="750" maxHeight="750">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -39,6 +40,18 @@
             <Insets left="$leftMargin"/>
         </VBox.margin>
     </JFXListView>
+
+    <HBox prefHeight="50" minHeight="50" maxHeight="50" alignment="CENTER_LEFT">
+        <JFXButton fx:id="submitButton" styleClass="submit-btn">
+
+            Submit Ballot
+        </JFXButton>
+        <Region HBox.hgrow="ALWAYS"/>
+        <JFXSlider blockIncrement="1.0" cache="true" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickMarks="true" showTickLabels="true" snapToTicks="true" value="2.0"></JFXSlider>
+        <VBox.margin>
+            <Insets left="$leftMargin"/>
+        </VBox.margin>
+    </HBox>
 
     <stylesheets>
         <URL value="@../../css/UserBallot.css"/>
