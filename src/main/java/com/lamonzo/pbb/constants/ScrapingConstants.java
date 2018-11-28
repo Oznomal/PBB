@@ -92,7 +92,15 @@ public final class ScrapingConstants {
     public static final String PLAYER_HTML_ID_ATTRIBUTE = "id";
     public static final String PLAYER_STATS_LIST = "<ul class=stats>";
     public static final String STAT_PREFIX = "<li class=";
-    public static final String STAT_SUFFIX = ">";
+    public static final String CLOSE_ANCHOR = ">";
+
+    //SUBMITTING THE BALLOT
+    public static final String PLAYER_SELECTOR_DIV_PREFIX = "<li id=";
+    public static final String VOTE_BUTTON = "<a class=btn-vote>";
+    public static final String PLAYER_DIV_XPATH_PREFIX = "//li[@id='";
+    public static final String PLAYER_DIV_XPATH_SUFFIX = "']";
+    public static final String PLAYER_VOTE_BTN_XPATH = "//a[@class='btn-vote']";
+
 
     //================================================================================================================//
 

@@ -6,7 +6,12 @@ import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.util.BrowserUtil;
+import jdk.jfr.Timespan;
+import jdk.jshell.tool.JavaShellToolBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
@@ -163,14 +168,60 @@ public class SubmitBallot implements Runnable{
      */
     private void makeBallotSelections(Browser browser) throws NotFound, InterruptedException {
         Map<Position, List<Player>> finalBallotMap = buildFinalBallot();
-        Random random = new Random();
+        JavascriptExecutor jse = (JavascriptExecutor) browser.driver;
 
+        //browser.driver.manage().window().maximize();
         for(Position pos : finalBallotMap.keySet()){
+            jse.executeScript("window.scrollTo(0, 0)");
             Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
             tab.click();
 
-            for(Player player : finalBallotMap.get(pos)){
+            preformRandomSleep(500);
 
+            for(Player player : finalBallotMap.get(pos)){
+                int attempts = 0;
+                String scroll = "0";
+
+                while(attempts < 10) {
+                    try {
+                        jse.executeScript("window.scrollTo(0, " + scroll + ")");
+
+
+                        //Configure XPath Strings
+                        String playerDivXPath = ScrapingConstants.PLAYER_DIV_XPATH_PREFIX + player.getHtmlIdentifier()
+                                + ScrapingConstants.PLAYER_DIV_XPATH_SUFFIX;
+                        String playerVoteXPath = playerDivXPath + ScrapingConstants.PLAYER_VOTE_BTN_XPATH;
+
+                        WebDriverWait wait = new WebDriverWait(browser.driver, 10);
+
+                        //preformRandomSleep(1000);
+
+                        //Simulate Mouse Hover
+                        System.out.println("Trying mouse hover for " + playerDivXPath);
+                        WebElement playerDiv = wait.until(d -> d.findElement(By.xpath(playerDivXPath)));
+
+//                        jse.executeScript("arguments[0].scrollIntoView(true);", playerDiv);
+//                        Thread.sleep(2500);
+
+                        Actions actions = new Actions(browser.driver);
+                        actions.moveToElement(playerDiv).perform();
+
+                        preformRandomSleep(1000);
+
+                        //Click The Vote Button
+                        System.out.println("Trying Player Vote: " + playerVoteXPath);
+                        WebElement voteBtn = wait.until(d -> d.findElement(By.xpath(playerVoteXPath)));
+                        voteBtn.click();
+                        break;
+                    } catch (ElementNotSelectableException | ElementNotInteractableException |  TimeoutException e) {
+                        log.warn("Unable to select player or vote button for: " + player.getName()
+                                + " | Attempt " + (++attempts));
+
+                        int value = Integer.parseInt(scroll);
+                        value += 500;
+                        scroll = Integer.toString(value);
+                    }
+                }
             }
         }
     }
@@ -225,6 +276,18 @@ public class SubmitBallot implements Runnable{
         }
 
         return ppMap;
+    }
+
+    private void preformRandomSleep() throws InterruptedException{
+        Random random = new Random();
+        Thread.sleep(random.nextInt(1500));
+    }
+
+    private int preformRandomSleep(int minimum) throws InterruptedException{
+        Random random = new Random();
+        int randomSleep = random.nextInt(1500);
+        Thread.sleep(randomSleep + minimum);
+        return randomSleep + minimum;
     }
 
     //END OF BALLOT SELECTION

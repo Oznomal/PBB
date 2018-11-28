@@ -114,7 +114,7 @@ public class UpdatePlayerData implements Runnable {
         for (int i = 1; i <= 4; i++) {
             String statId = "stat" + i;
             String type = statParent.findFirst(ScrapingConstants.STAT_PREFIX + statId
-                    + ScrapingConstants.STAT_SUFFIX).getTextContent().trim();
+                    + ScrapingConstants.CLOSE_ANCHOR).getTextContent().trim();
 
             if (!type.isEmpty()) {
                 StatType statType = statTypeService.findStatTypeByName(type);
@@ -168,7 +168,7 @@ public class UpdatePlayerData implements Runnable {
             Element statsParent = playerParent.getFirst(ScrapingConstants.PLAYER_STATS_LIST);
             for (String statId : statTypeMap.keySet()) {
                 String value = statsParent.getFirst(ScrapingConstants.STAT_PREFIX + statId
-                        + ScrapingConstants.STAT_SUFFIX).getTextContent().trim();
+                        + ScrapingConstants.CLOSE_ANCHOR).getTextContent().trim();
 
                 Stat stat = new Stat();
                 stat.setType(statTypeMap.get(statId));
