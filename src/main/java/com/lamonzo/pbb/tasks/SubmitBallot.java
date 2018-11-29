@@ -6,14 +6,12 @@ import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.util.BrowserUtil;
-import jdk.jfr.Timespan;
-import jdk.jshell.tool.JavaShellToolBuilder;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -43,14 +41,13 @@ public class SubmitBallot implements Runnable{
     @Override
     public void run() {
         Browser browser = BrowserUtil.getBrowser();
-
-        //TODO: Determine if we are going to directly go to the probowl ballot link or be redirected from google
         try {
             visitBallotPage(browser);
-            makeBallotSelections(browser);
+            submitBallot(browser);
         }
         catch(JauntiumException | InterruptedException ex){
-            log.warn("Error navigating to ballot page: " + ex.getMessage());
+            log.warn("Error visiting page and submitting ballot " + ex.getMessage());
+            //TODO RETURN FALSE HERE
         }
     }
 
@@ -166,64 +163,77 @@ public class SubmitBallot implements Runnable{
      * Selects random players for ballot
      * @param browser an instance of the Chrome browser
      */
-    private void makeBallotSelections(Browser browser) throws NotFound, InterruptedException {
+    private void submitBallot(Browser browser) throws NotFound, InterruptedException {
         Map<Position, List<Player>> finalBallotMap = buildFinalBallot();
         JavascriptExecutor jse = (JavascriptExecutor) browser.driver;
+        WebDriverWait wait = new WebDriverWait(browser.driver, 10);
 
-        //browser.driver.manage().window().maximize();
         for(Position pos : finalBallotMap.keySet()){
             jse.executeScript("window.scrollTo(0, 0)");
             Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
-            tab.click();
 
-            preformRandomSleep(500);
+            preformRandomSleep();
+            tab.click();
+            preformRandomSleep();
 
             for(Player player : finalBallotMap.get(pos)){
-                int attempts = 0;
+                //Configure XPath Strings
+                String playerDivXPath = ScrapingConstants.PLAYER_DIV_XPATH_PREFIX + player.getHtmlIdentifier()
+                        + ScrapingConstants.PLAYER_DIV_XPATH_SUFFIX;
+                String playerVoteXPath = playerDivXPath + ScrapingConstants.PLAYER_VOTE_BTN_XPATH;
+
+                int attempt = 0;
                 String scroll = "0";
 
-                while(attempts < 10) {
+                while(attempt < 10) {
                     try {
+                        //Scroll to a place on the page based on the attempt
                         jse.executeScript("window.scrollTo(0, " + scroll + ")");
 
-
-                        //Configure XPath Strings
-                        String playerDivXPath = ScrapingConstants.PLAYER_DIV_XPATH_PREFIX + player.getHtmlIdentifier()
-                                + ScrapingConstants.PLAYER_DIV_XPATH_SUFFIX;
-                        String playerVoteXPath = playerDivXPath + ScrapingConstants.PLAYER_VOTE_BTN_XPATH;
-
-                        WebDriverWait wait = new WebDriverWait(browser.driver, 10);
-
-                        //preformRandomSleep(1000);
-
                         //Simulate Mouse Hover
-                        System.out.println("Trying mouse hover for " + playerDivXPath);
                         WebElement playerDiv = wait.until(d -> d.findElement(By.xpath(playerDivXPath)));
 
-//                        jse.executeScript("arguments[0].scrollIntoView(true);", playerDiv);
-//                        Thread.sleep(2500);
+                        //This solution does not find the elements properly, so instead we us the while
+                        //loop in this method and just increase by 500px if the element can't be found
+                        //jse.executeScript("arguments[0].scrollIntoView(true);", playerDiv);
+                        //Thread.sleep(2500);
 
                         Actions actions = new Actions(browser.driver);
                         actions.moveToElement(playerDiv).perform();
 
-                        preformRandomSleep(1000);
+                        preformRandomSleep();
 
-                        //Click The Vote Button
-                        System.out.println("Trying Player Vote: " + playerVoteXPath);
+                        //Click The Vote Button and if no exceptions, break from the loop for next player
                         WebElement voteBtn = wait.until(d -> d.findElement(By.xpath(playerVoteXPath)));
                         voteBtn.click();
                         break;
                     } catch (ElementNotSelectableException | ElementNotInteractableException |  TimeoutException e) {
-                        log.warn("Unable to select player or vote button for: " + player.getName()
-                                + " | Attempt " + (++attempts));
+                        if(++attempt < 10) {
+                            log.warn("Unable to select player or vote button for: " + player.getName()
+                                    + " | Attempt " + attempt);
 
-                        int value = Integer.parseInt(scroll);
-                        value += 500;
-                        scroll = Integer.toString(value);
+                            int value = Integer.parseInt(scroll);
+                            value += 500;
+                            scroll = Integer.toString(value);
+                        }
+                        else
+                            log.error("Exceeded attempts to find " + player.getName() + " | "
+                                    + player.getPosition().getPositionName() + " | Moving to next player");
                     }
                 }
             }
         }
+
+        //Submit ballot for final position
+        Element submitButton = browser.doc.findFirst(ScrapingConstants.SUBMIT_BUTTON);
+        submitButton.click();
+
+        //Wait until the next page has loaded and then check the location
+        wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
+        if(browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL))
+            log.info("Success");
+        else
+            log.info("Fail");
     }
 
     //Builds the final ballot by taking the players that the user selected and mixing in a random number
@@ -280,14 +290,7 @@ public class SubmitBallot implements Runnable{
 
     private void preformRandomSleep() throws InterruptedException{
         Random random = new Random();
-        Thread.sleep(random.nextInt(1500));
-    }
-
-    private int preformRandomSleep(int minimum) throws InterruptedException{
-        Random random = new Random();
-        int randomSleep = random.nextInt(1500);
-        Thread.sleep(randomSleep + minimum);
-        return randomSleep + minimum;
+        Thread.sleep(random.nextInt(500) + 200);
     }
 
     //END OF BALLOT SELECTION

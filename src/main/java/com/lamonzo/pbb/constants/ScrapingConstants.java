@@ -14,6 +14,7 @@ public final class ScrapingConstants {
     public static final String PRO_BOWL_VOTING_URL = "http://www.nfl.com/probowl/ballot";
     public static final String GOOGLE_URL = "https://google.com";
     public static final String NFL_URL = "http://nfl.com";
+    public static final String VOTING_THANK_YOU_PAGE_URL = "http://www.nfl.com/probowl/ballot/thank-you";
 
     //== GOOGLE SEARCH ==
     //SEARCH STRINGS
@@ -95,11 +96,11 @@ public final class ScrapingConstants {
     public static final String CLOSE_ANCHOR = ">";
 
     //SUBMITTING THE BALLOT
-    public static final String PLAYER_SELECTOR_DIV_PREFIX = "<li id=";
-    public static final String VOTE_BUTTON = "<a class=btn-vote>";
     public static final String PLAYER_DIV_XPATH_PREFIX = "//li[@id='";
     public static final String PLAYER_DIV_XPATH_SUFFIX = "']";
     public static final String PLAYER_VOTE_BTN_XPATH = "//a[@class='btn-vote']";
+    public static final String SUBMIT_BUTTON = "<button id=ballot-submit>";
+    public static final String VOTE_AGAIN_BTN_XPATH = "//a[@id='pb-btn-vote-again']";
 
 
     //================================================================================================================//
