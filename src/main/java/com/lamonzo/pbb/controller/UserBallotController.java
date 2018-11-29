@@ -12,16 +12,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.task.TaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @Controller
+@Slf4j
 public class UserBallotController implements Initializable {
 
     //== FIELDS ==
@@ -29,7 +34,7 @@ public class UserBallotController implements Initializable {
 
     @Autowired
     @Qualifier(SpringConstants.SINGLE_TASK_EXECUTOR)
-    private TaskExecutor taskExecutor;
+    private ThreadPoolTaskExecutor taskExecutor;
 
     @FXML
     private JFXListView<Player> userBallotListView;
@@ -61,7 +66,19 @@ public class UserBallotController implements Initializable {
     //== PRIVATE METHODS ==
     public void handleSubmitButtonClick(){
         if(!dataModel.getBallotList().isEmpty()) {
-            taskExecutor.execute(getSubmitBallot());
+            Future<Boolean> future = taskExecutor.submit(getSubmitBallot());
+
+            try {
+                if(future.get()){
+                    log.info("Success Submitting Ballot, Here we increment");
+                }else{
+                    log.warn("There was an error submitting the ballot, Here we do nothing");
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         }
     }
 

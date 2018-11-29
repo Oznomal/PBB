@@ -10,6 +10,7 @@
 <?import java.net.URL?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lamonzo.pbb.controller.UserBallotController"
@@ -47,7 +48,9 @@
             Submit Ballot
         </JFXButton>
         <Region HBox.hgrow="ALWAYS"/>
-        <JFXSlider blockIncrement="1.0" cache="true" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickMarks="true" showTickLabels="true" snapToTicks="true" value="2.0"></JFXSlider>
+        <!--<JFXSlider blockIncrement="1.0" cache="true" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickMarks="true" showTickLabels="true" snapToTicks="true" value="2.0"></JFXSlider>-->
+        <JFXComboBox></JFXComboBox>
+
         <VBox.margin>
             <Insets left="$leftMargin"/>
         </VBox.margin>

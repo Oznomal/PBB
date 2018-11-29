@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.concurrent.Callable;
 
 /**
  * Thread Safe class to handle generating a new browser and submitting a pro bowl ballot
@@ -23,7 +24,7 @@ import java.util.*;
 @Slf4j
 @Component
 @Scope("prototype")
-public class SubmitBallot implements Runnable{
+public class SubmitBallot implements Callable<Boolean> {
 
     //================================================================================================================//
     //== FIELDS ==
@@ -39,15 +40,15 @@ public class SubmitBallot implements Runnable{
     //================================================================================================================//
     //== PUBLIC METHODS
     @Override
-    public void run() {
+    public Boolean call() {
         Browser browser = BrowserUtil.getBrowser();
         try {
             visitBallotPage(browser);
-            submitBallot(browser);
+            return submitBallot(browser);
         }
         catch(JauntiumException | InterruptedException ex){
             log.warn("Error visiting page and submitting ballot " + ex.getMessage());
-            //TODO RETURN FALSE HERE
+            return false;
         }
     }
 
@@ -163,7 +164,7 @@ public class SubmitBallot implements Runnable{
      * Selects random players for ballot
      * @param browser an instance of the Chrome browser
      */
-    private void submitBallot(Browser browser) throws NotFound, InterruptedException {
+    private boolean submitBallot(Browser browser) throws NotFound, InterruptedException {
         Map<Position, List<Player>> finalBallotMap = buildFinalBallot();
         JavascriptExecutor jse = (JavascriptExecutor) browser.driver;
         WebDriverWait wait = new WebDriverWait(browser.driver, 10);
@@ -230,10 +231,7 @@ public class SubmitBallot implements Runnable{
 
         //Wait until the next page has loaded and then check the location
         wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
-        if(browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL))
-            log.info("Success");
-        else
-            log.info("Fail");
+        return browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL);
     }
 
     //Builds the final ballot by taking the players that the user selected and mixing in a random number
