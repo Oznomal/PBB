@@ -11,6 +11,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.collections.FXCollections?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lamonzo.pbb.controller.UserBallotController"
@@ -43,13 +44,33 @@
     </JFXListView>
 
     <HBox prefHeight="50" minHeight="50" maxHeight="50" alignment="CENTER_LEFT">
-        <JFXButton fx:id="submitButton" styleClass="submit-btn">
-
-            Submit Ballot
-        </JFXButton>
         <Region HBox.hgrow="ALWAYS"/>
+
+
         <!--<JFXSlider blockIncrement="1.0" cache="true" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickMarks="true" showTickLabels="true" snapToTicks="true" value="2.0"></JFXSlider>-->
-        <JFXComboBox></JFXComboBox>
+        <JFXButton fx:id="submitButton" styleClass="submit-btn">
+            Submit Ballot
+            <!--<HBox.margin>-->
+                <!--<Insets right="25"/>-->
+            <!--</HBox.margin>-->
+        </JFXButton>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+
+        <JFXComboBox fx:id="countSelector" promptText="Select Count">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="10" />
+                    <String fx:value="100" />
+                    <String fx:value="500" />
+                    <String fx:value="1000" />
+                    <String fx:value="UNLIMITED" />
+                </FXCollections>
+            </items>
+        </JFXComboBox>
+
+        <Region HBox.hgrow="ALWAYS"/>
 
         <VBox.margin>
             <Insets left="$leftMargin"/>

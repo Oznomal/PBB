@@ -6,8 +6,8 @@ import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.util.BrowserUtil;
+import javafx.concurrent.Task;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
-import java.util.concurrent.Callable;
 
 /**
  * Thread Safe class to handle generating a new browser and submitting a pro bowl ballot
@@ -24,7 +23,7 @@ import java.util.concurrent.Callable;
 @Slf4j
 @Component
 @Scope("prototype")
-public class SubmitBallot implements Callable<Boolean> {
+public class SubmitBallot extends Task<Boolean> {
 
     //================================================================================================================//
     //== FIELDS ==
@@ -44,6 +43,7 @@ public class SubmitBallot implements Callable<Boolean> {
         Browser browser = BrowserUtil.getBrowser();
         try {
             visitBallotPage(browser);
+            System.out.println("Window Size: " + browser.driver.manage().window().getSize());
             return submitBallot(browser);
         }
         catch(JauntiumException | InterruptedException ex){
@@ -167,7 +167,7 @@ public class SubmitBallot implements Callable<Boolean> {
     private boolean submitBallot(Browser browser) throws NotFound, InterruptedException {
         Map<Position, List<Player>> finalBallotMap = buildFinalBallot();
         JavascriptExecutor jse = (JavascriptExecutor) browser.driver;
-        WebDriverWait wait = new WebDriverWait(browser.driver, 10);
+        WebDriverWait wait = new WebDriverWait(browser.driver, 3);
 
         for(Position pos : finalBallotMap.keySet()){
             jse.executeScript("window.scrollTo(0, 0)");
@@ -229,9 +229,12 @@ public class SubmitBallot implements Callable<Boolean> {
         Element submitButton = browser.doc.findFirst(ScrapingConstants.SUBMIT_BUTTON);
         submitButton.click();
 
-        //Wait until the next page has loaded and then check the location
+        //Wait until the next page has loaded and then check the location / Close the Window
         wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
-        return browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL);
+        boolean success = browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL);
+        browser.close();
+
+        return success;
     }
 
     //Builds the final ballot by taking the players that the user selected and mixing in a random number
