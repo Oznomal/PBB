@@ -5,11 +5,13 @@ import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -41,6 +43,9 @@ public class DataModel {
     private Map<String, ObservableList<PlayerTreeObject>> playerTreeObjectData;
     private Map<String, List<Player>> playerData;
     private Map<String, Position> positionMap;
+
+    @Getter
+    private SimpleIntegerProperty successCount = new SimpleIntegerProperty(0);
 
 
 

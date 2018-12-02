@@ -8,8 +8,10 @@ import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.tasks.SubmitBallotService;
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +36,9 @@ public class UserBallotController implements Initializable {
     private JFXButton submitButton;
 
     @FXML
+    private Label ballotCountLabel;
+
+    @FXML
     @Getter
     private JFXComboBox<String> countSelector;
 
@@ -56,6 +61,8 @@ public class UserBallotController implements Initializable {
                 .or(Bindings.isEmpty(userBallotListView.getItems()))
                 .or(submitBallotService.runningProperty()));
         submitButton.setOnAction(event -> handleSubmitButtonClick());
+
+        ballotCountLabel.textProperty().bind(dataModel.getSuccessCount().asString());
     }
 
     //== PRIVATE METHODS ==

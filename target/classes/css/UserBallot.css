@@ -5,11 +5,24 @@
     src: url("../fonts/Primetime.ttf");
 }
 
+@font-face {
+    font-family: 'DS-Digital';
+    src: url("../fonts/DS-DIGIB.TTF");
+}
+
 /**********************************************************************************************************************/
 /*LABELS*/
 .position-label{
     -fx-font-family: Primetime;
     -fx-text-fill: #555;
+}
+
+.ballot-count-label{
+    -fx-font-family: DS-Digital;
+    -fx-font-size: 28px;
+    -fx-text-fill: #CE0316;
+    -fx-padding: 5 10 5 10;
+    -fx-background-color: black;
 }
 
 /**********************************************************************************************************************/

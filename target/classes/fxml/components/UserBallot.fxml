@@ -16,7 +16,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lamonzo.pbb.controller.UserBallotController"
       prefWidth="400" maxWidth="400"
-      prefHeight="750" maxHeight="750">
+      prefHeight="800" maxHeight="800">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -75,6 +75,14 @@
         <VBox.margin>
             <Insets left="$leftMargin"/>
         </VBox.margin>
+    </HBox>
+
+    <HBox prefHeight="50.0" maxHeight="50.0" minHeight="50.0" alignment="CENTER_LEFT">
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="ballotCountLabel" styleClass="ballot-count-label">
+            000000
+        </Label>
+        <Region HBox.hgrow="ALWAYS"/>
     </HBox>
 
     <stylesheets>

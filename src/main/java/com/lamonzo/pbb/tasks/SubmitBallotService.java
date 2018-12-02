@@ -29,9 +29,7 @@ public class SubmitBallotService extends Service<Void> {
     @Qualifier(SpringConstants.MULTI_TASK_EXECUTOR)
     private ThreadPoolTaskExecutor taskExecutor;
 
-    private int votesToDo;
     private int successCount;
-    private boolean unlimited;
 
     //== CONSTRUCTORS ==
     @Autowired
@@ -70,7 +68,7 @@ public class SubmitBallotService extends Service<Void> {
             private void scheduleTask(final boolean unlimited){
                 SubmitBallot task = getSubmitBallot();
                 task.setOnSucceeded(event -> {
-                    successCount++;
+                    dataModel.getSuccessCount().set(++successCount);
                     log.info("Successfully Completed Task | Total Count: " + successCount);
                     if(unlimited)
                         scheduleTask(unlimited);

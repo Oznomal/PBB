@@ -43,7 +43,6 @@ public class SubmitBallot extends Task<Boolean> {
         Browser browser = BrowserUtil.getBrowser();
         try {
             visitBallotPage(browser);
-            System.out.println("Window Size: " + browser.driver.manage().window().getSize());
             return submitBallot(browser);
         }
         catch(JauntiumException | InterruptedException ex){
@@ -172,6 +171,12 @@ public class SubmitBallot extends Task<Boolean> {
         for(Position pos : finalBallotMap.keySet()){
             jse.executeScript("window.scrollTo(0, 0)");
             Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
+
+//            System.out.println("Page Height for " + pos.getPositionName() + ": " +
+//                    jse.executeScript("document.body.scrollHeight"));
+
+            browser.driver.manage().window().maximize();
+            System.out.println(pos.getPositionName() + ": " + browser.driver.manage().window().getSize());
 
             preformRandomSleep();
             tab.click();
