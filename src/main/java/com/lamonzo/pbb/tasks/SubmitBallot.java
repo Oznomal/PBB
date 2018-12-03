@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.concurrent.Callable;
 
 /**
  * Thread Safe class to handle generating a new browser and submitting a pro bowl ballot
@@ -237,7 +238,7 @@ public class SubmitBallot extends Task<Boolean> {
         //Wait until the next page has loaded and then check the location / Close the Window
         wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
         boolean success = browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL);
-        browser.close();
+        browser.quit();
 
         return success;
     }

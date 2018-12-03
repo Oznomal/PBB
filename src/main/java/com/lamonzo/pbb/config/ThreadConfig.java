@@ -19,6 +19,7 @@ public class ThreadConfig {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(1);
         executor.setMaxPoolSize(1);
+        executor.setDaemon(true);
         executor.setThreadNamePrefix("Single_Thread_");
         executor.initialize();
 
@@ -30,6 +31,7 @@ public class ThreadConfig {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(8);
         executor.setMaxPoolSize(8);
+        executor.setDaemon(true);
         executor.setThreadNamePrefix("Multi_Thread_");
         executor.initialize();
 

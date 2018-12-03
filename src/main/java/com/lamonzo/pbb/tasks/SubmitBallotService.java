@@ -14,6 +14,10 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 @Component
 @Slf4j
 public class SubmitBallotService extends Service<Void> {
@@ -43,40 +47,44 @@ public class SubmitBallotService extends Service<Void> {
         return new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                if(!dataModel.getBallotList().isEmpty()) {
-                    final JFXComboBox<String> countSelector = userBallotController.getCountSelector();
-                    final boolean unlimited;
-                    final int votesToDo;
-
-                    if(countSelector.getValue().equalsIgnoreCase("Unlimited")) {
-                        unlimited = true;
-                        votesToDo = taskExecutor.getMaxPoolSize();
-                    }
-                    else {
-                        unlimited = false;
-                        votesToDo = Integer.parseInt(countSelector.getValue());
-                    }
-
-                    for(int i = 0; i < votesToDo; i++){
-                        scheduleTask(unlimited);
-                    }
-                }
+//                if(!dataModel.getBallotList().isEmpty()) {
+//                    final JFXComboBox<String> countSelector = userBallotController.getCountSelector();
+//                    final boolean unlimited;
+//                    final int votesToDo;
+//
+//                    if(countSelector.getValue().equalsIgnoreCase("Unlimited")) {
+//                        unlimited = true;
+//                        votesToDo = taskExecutor.getMaxPoolSize();
+//                    }
+//                    else {
+//                        unlimited = false;
+//                        votesToDo = Integer.parseInt(countSelector.getValue());
+//                    }
+//
+//                    for(int i = 0; i < votesToDo; i++){
+//                        scheduleTask(unlimited);
+//                    }
+//                }
 
                 return null;
             }
 
-            private void scheduleTask(final boolean unlimited){
-                SubmitBallot task = getSubmitBallot();
-                task.setOnSucceeded(event -> {
-                    dataModel.getSuccessCount().set(++successCount);
-                    log.info("Successfully Completed Task | Total Count: " + successCount);
-                    if(unlimited)
-                        scheduleTask(unlimited);
-                });
-
-                task.setOnFailed(event -> scheduleTask(unlimited));
-                taskExecutor.submit(task);
-            }
+//            private void scheduleTask(final boolean unlimited){
+//                SubmitBallot task = getSubmitBallot();
+//                task.setOnSucceeded(event -> {
+//                    dataModel.getSuccessCount().set(++successCount);
+//                    log.info("Successfully Completed Task | Total Count: " + successCount);
+//
+//                    if(unlimited) {
+//                        scheduleTask(unlimited);
+//                    }
+//                });
+//
+//                task.setOnFailed(event -> {
+//                    scheduleTask(unlimited);
+//                });
+//                taskExecutor.submit(task);
+//            }
         };
     }
 

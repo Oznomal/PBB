@@ -102,6 +102,7 @@ public abstract class BaseTabController implements Initializable {
         selectColumn.setPrefWidth(200);
 
         //SETUP POSITION FILTER
+        positionFilter.setPromptText("Search ... ");
         positionFilter.textProperty().addListener((o, oldVal, newVal) -> {
             playerTableView.setPredicate(pto ->
                     pto.getValue().getName().get().toLowerCase().contains(newVal.toLowerCase()) ||
