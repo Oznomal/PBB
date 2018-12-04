@@ -63,6 +63,7 @@ public class UserBallotCell extends ListCell<Player> {
 
         //ADD STYLES
         playerPosition.getStyleClass().add("position-label");
+        playerName.getStyleClass().add("player-name-label");
     }
 
     //== PUBLIC METHODS ==

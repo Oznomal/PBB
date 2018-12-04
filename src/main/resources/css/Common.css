@@ -1,4 +1,26 @@
 /**********************************************************************************************************************/
+/*COLOR PALETTE*/
+{
+    -pbb-main-background-color: #151515;
+    -pbb-alt-background-color: #212121;
+
+    -pbb-main-text-color: #F2F2F2;
+    -pbb-alt-text-color: #767676;
+
+    -pbb-main-accent-color: #3C6E71;
+    -pbb-alt-accent-color: #284B63;
+    -pbb-alt-accent-tint-color: #3B5B71;
+
+    -pbb-scroll-thumb-color: #0F0F0F;
+}
+
+/**********************************************************************************************************************/
+/*BACKGROUND*/
+.border-pane {
+    -fx-background-color: -pbb-main-background-color;
+}
+
+/**********************************************************************************************************************/
 /*FONTS*/
 @font-face {
     font-family: 'Muli SemiBold';
@@ -10,7 +32,6 @@
 .section-heading{
     -fx-font-family: "Muli SemiBold";
     -fx-font-size: 24px;
-
-
+    -fx-text-fill: -pbb-alt-text-color;
 }
 

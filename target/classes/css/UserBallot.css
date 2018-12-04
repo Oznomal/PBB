@@ -11,10 +11,68 @@
 }
 
 /**********************************************************************************************************************/
+/*LIST VIEW*/
+
+/*Background of the list view and the cell*/
+.jfx-list-view, .list-cell{
+    -fx-background-color: -pbb-alt-background-color;
+}
+
+/*JFX list view entire outline*/
+.jfx-list-view{
+    -fx-border-color: -pbb-main-accent-color;
+}
+
+/*Cell color when hovered*/
+.list-cell:hover:filled{
+    -fx-background-color: -pbb-alt-accent-tint-color;
+}
+
+/*Cell color when focused*/
+.list-cell:focused{
+    -fx-background-color: -pbb-alt-accent-color;
+}
+
+/*Adds border to the bottom of cells*/
+.list-cell:filled{
+    -fx-border-color: transparent transparent -pbb-main-accent-color transparent;
+}
+
+/*Color of text inside of focused cells*/
+.list-cell:filled:focused .label{
+    -fx-text-fill: -pbb-main-text-color;
+}
+
+
+/*List View Scrolling*/
+.scroll-bar .track-background{
+    -fx-background-color: -pbb-alt-background-color;
+}
+
+.scroll-bar .thumb{
+    -fx-background-color: -pbb-scroll-thumb-color;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button{
+    -fx-background-color: -pbb-alt-background-color;
+}
+
+.scroll-bar .increment-button:hover .increment-arrow,
+.scroll-bar .decrement-button:hover .decrement-arrow {
+    -fx-background-color: -pbb-main-accent-color;
+    -fx-effect: dropshadow(two-pass-box , -oz-black-accent-color, 1, 0.0 , 0, 1.4);
+}
+
+
+
+/**********************************************************************************************************************/
 /*LABELS*/
+.position-label, .player-name-label{
+    -fx-text-fill: -pbb-alt-text-color;
+}
+
 .position-label{
     -fx-font-family: Primetime;
-    -fx-text-fill: #555;
 }
 
 .ballot-count-label{
