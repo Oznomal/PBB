@@ -8,10 +8,14 @@
     -pbb-alt-text-color: #767676;
 
     -pbb-main-accent-color: #3C6E71;
+    -pbb-main-accent-tint-color: #628B8D;
     -pbb-alt-accent-color: #284B63;
     -pbb-alt-accent-tint-color: #3B5B71;
 
     -pbb-scroll-thumb-color: #0F0F0F;
+
+    -pbb-row-selected-color: #BA6B3A;
+    -pbb-row-hover-color: #744324;
 }
 
 /**********************************************************************************************************************/
@@ -21,17 +25,45 @@
 }
 
 /**********************************************************************************************************************/
-/*FONTS*/
+/*HEADINGS*/
 @font-face {
     font-family: 'Muli SemiBold';
     src: url("../fonts/Muli-SemiBold.ttf");
 }
 
-/**********************************************************************************************************************/
-/*HEADINGS*/
 .section-heading{
     -fx-font-family: "Muli SemiBold";
     -fx-font-size: 24px;
     -fx-text-fill: -pbb-alt-text-color;
+}
+
+/**********************************************************************************************************************/
+/*SCROLLING*/
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: -pbb-alt-background-color;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: -pbb-scroll-thumb-color;
+    -fx-background-insets: 2;
+    -fx-background-radius: 3;
+}
+
+.scroll-bar:vertical > .thumb, .scroll-bar:horizontal > .thumb {
+    -fx-background-color: -pbb-scroll-thumb-color;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button{
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-color: transparent;
+    -fx-padding: 3px;
+}
+
+.scroll-bar > .increment-button:hover > .increment-arrow,
+.scroll-bar > .decrement-button:hover > .decrement-arrow {
+    -fx-background-color: -pbb-scroll-thumb-color, -pbb-scroll-thumb-color;
+    -fx-effect: dropshadow(two-pass-box , -pbb-scroll-thumb-color, 1, 0.0 , 0, 1.4);
 }
 

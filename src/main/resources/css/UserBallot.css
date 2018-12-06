@@ -23,14 +23,16 @@
     -fx-border-color: -pbb-main-accent-color;
 }
 
-/*Cell color when hovered*/
-.list-cell:hover:filled{
-    -fx-background-color: -pbb-alt-accent-tint-color;
+/*Cell color when selected but not focused or when hovered but not selected*/
+.jfx-list-view .list-cell:filled:selected,
+.jfx-list-view .list-cell:filled:hover{
+    -fx-background-color: -pbb-row-hover-color;
 }
 
-/*Cell color when focused*/
-.list-cell:focused{
-    -fx-background-color: -pbb-alt-accent-color;
+/*Cell color when focused and selected or when hovered and selected*/
+.jfx-list-view:focused .list-cell:filled:selected,
+.jfx-list-view .list-cell:filled:selected:hover{
+    -fx-background-color: -pbb-row-selected-color;
 }
 
 /*Adds border to the bottom of cells*/
@@ -39,30 +41,9 @@
 }
 
 /*Color of text inside of focused cells*/
-.list-cell:filled:focused .label{
-    -fx-text-fill: -pbb-main-text-color;
+.jfx-list-view:focused .list-cell:filled:selected .label{
+    -fx-text-fill: black;
 }
-
-
-/*LIST VIEW SCROLLING*/
-.scroll-bar .track-background{
-    -fx-background-color: -pbb-alt-background-color;
-}
-
-.scroll-bar .thumb{
-    -fx-background-color: -pbb-scroll-thumb-color;
-}
-
-.scroll-bar .increment-button, .scroll-bar .decrement-button{
-    -fx-background-color: -pbb-alt-background-color;
-}
-
-.scroll-bar .increment-button:hover .increment-arrow,
-.scroll-bar .decrement-button:hover .decrement-arrow {
-    -fx-background-color: -pbb-main-accent-color;
-    /*-fx-effect: dropshadow(two-pass-box , -oz-black-accent-color, 1, 0.0 , 0, 1.4);*/
-}
-
 
 /**********************************************************************************************************************/
 /*LABELS*/
@@ -80,16 +61,23 @@
     -fx-text-fill: #CE0316;
     -fx-padding: 5 10 5 10;
     -fx-background-color: black;
+    -fx-background-radius: 2;
 }
 
 /**********************************************************************************************************************/
-/*BUTTONS*/
-.submit-btn{
-    -fx-background-color: #D3D3D3;
-    -fx-background-radius: 0;
-    -fx-padding: 8 8;
+/*JFX BUTTON*/
+.jfx-button {
+    -jfx-button-type: FLAT;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-background-color: -pbb-alt-background-color;
+    -fx-border-color: transparent;
+    -fx-text-fill: -pbb-main-accent-color;
+    -fx-font-size: 14px;
 }
 
-.submit-btn:hover{
-    -fx-background-color: #939393;
+.jfx-button:hover{
+    -fx-background-color: -pbb-scroll-thumb-color;
+    -fx-border-color: -pbb-main-accent-color;
+    -fx-text-fill: -pbb-main-accent-color;
 }

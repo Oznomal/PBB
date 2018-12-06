@@ -3,15 +3,15 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import java.net.URL?>
-<StackPane xmlns:fx="http://javafx.com/fxml"
-           xmlns="http://javafx.com/javafx/8.0.111"
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
            fx:controller="com.lamonzo.pbb.controller.MainController"
            fx:id="mainContainerStackPane">
 
     <!-- ______________________________________________________________________________ -->
     <!-- INCLUDE ANY DIALOG PANES THAT WILL NEED TO BE DISPLAYED AS A MODAL BELOW HERE  -->
     <!-- ______________________________________________________________________________ -->
-    <!--<fx:include source="components/" />-->
+    <fx:include source="../components/dialogs/SettingsModal.fxml" />
 
     <BorderPane id="main-container-border-pane" styleClass="border-pane">
 

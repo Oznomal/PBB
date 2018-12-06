@@ -6,7 +6,7 @@
 .header-label{
     -fx-font-family: "Freshman";
     -fx-font-size: 80px;
-    -fx-text-fill: -pbb-main-text-color;
+    -fx-text-fill: #555;
 }
 
 .separator .line{

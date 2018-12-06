@@ -16,7 +16,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lamonzo.pbb.controller.UserBallotController"
       prefWidth="400" maxWidth="400"
-      prefHeight="800" maxHeight="800">
+      prefHeight="775" maxHeight="775">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -44,46 +44,48 @@
     </JFXListView>
 
     <HBox prefHeight="50" minHeight="50" maxHeight="50" alignment="CENTER_LEFT">
-        <Region HBox.hgrow="ALWAYS"/>
-
-
-        <!--<JFXSlider blockIncrement="1.0" cache="true" majorTickUnit="1.0" max="4.0" min="1.0" minorTickCount="1" showTickMarks="true" showTickLabels="true" snapToTicks="true" value="2.0"></JFXSlider>-->
         <JFXButton fx:id="submitButton" styleClass="submit-btn">
             Submit Ballot
-            <!--<HBox.margin>-->
-                <!--<Insets right="25"/>-->
-            <!--</HBox.margin>-->
+            <HBox.margin>
+                <Insets right="10"/>
+            </HBox.margin>
+        </JFXButton>
+
+        <JFXButton fx:id="settingsButton" styleClass="submit-btn" onAction="#handleSettingsButtonClick">
+            Settings
         </JFXButton>
 
         <Region HBox.hgrow="ALWAYS"/>
 
 
-        <JFXComboBox fx:id="countSelector" promptText="Select Count">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="10" />
-                    <String fx:value="100" />
-                    <String fx:value="500" />
-                    <String fx:value="1000" />
-                    <String fx:value="UNLIMITED" />
-                </FXCollections>
-            </items>
-        </JFXComboBox>
+        <!--<JFXComboBox fx:id="countSelector" promptText="Select Count">-->
+            <!--<items>-->
+                <!--<FXCollections fx:factory="observableArrayList">-->
+                    <!--<String fx:value="10" />-->
+                    <!--<String fx:value="100" />-->
+                    <!--<String fx:value="500" />-->
+                    <!--<String fx:value="1000" />-->
+                    <!--<String fx:value="UNLIMITED" />-->
+                <!--</FXCollections>-->
+            <!--</items>-->
+        <!--</JFXComboBox>-->
 
-        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="ballotCountLabel" styleClass="ballot-count-label">
+            000000
+        </Label>
 
         <VBox.margin>
             <Insets left="$leftMargin"/>
         </VBox.margin>
     </HBox>
 
-    <HBox prefHeight="50.0" maxHeight="50.0" minHeight="50.0" alignment="CENTER_LEFT">
-        <Region HBox.hgrow="ALWAYS"/>
-        <Label fx:id="ballotCountLabel" styleClass="ballot-count-label">
-            000000
-        </Label>
-        <Region HBox.hgrow="ALWAYS"/>
-    </HBox>
+    <!--<HBox prefHeight="50.0" maxHeight="50.0" minHeight="50.0" alignment="CENTER_LEFT">-->
+        <!--<Region HBox.hgrow="ALWAYS"/>-->
+        <!--<Label fx:id="ballotCountLabel" styleClass="ballot-count-label">-->
+            <!--000000-->
+        <!--</Label>-->
+        <!--<Region HBox.hgrow="ALWAYS"/>-->
+    <!--</HBox>-->
 
     <stylesheets>
         <URL value="@../../css/UserBallot.css"/>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXDialog?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<JFXDialog xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.lamonzo.pbb.controller.dialog.SettingsController"
+           fx:id="settingsModal">
+
+    <JFXDialogLayout fx:id="dialogLayout" spacing="20">
+        <heading>
+            <VBox spacing="10">
+                <HBox prefWidth="450" alignment="CENTER_LEFT">
+                    <ImageView>
+                        <image>
+                            <Image url="@../../../img/icons/Settings_Icon_Main_48.png" />
+                        </image>
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </ImageView>
+
+                    <Label styleClass="dialog-header-label">
+                        BOT SETTINGS
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </Label>
+                </HBox>
+
+                <Separator />
+            </VBox>
+        </heading>
+
+        <body>
+            <VBox spacing="20">
+                <HBox>
+                    <VBox>
+                        <Label styleClass="setting-name-label">Parallel Processing</Label>
+                        <Label styleClass="setting-desc-label">
+                            The number of windows simultaneously submitting ballots.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <JFXSlider fx:id="threadSlider"
+                               majorTickUnit="1"
+                               minorTickCount="0"
+                               showTickLabels="true"
+                               showTickMarks="true"
+                               snapToTicks="true"
+                               snapToPixel="true"
+                               maxWidth="200">
+                        <HBox.margin>
+                            <Insets top="10"/>
+                        </HBox.margin>
+                    </JFXSlider>
+                </HBox>
+
+                <HBox>
+                    <VBox>
+                        <Label styleClass="setting-name-label">Voting Goals</Label>
+                        <Label styleClass="setting-desc-label">
+                            The total number of ballots the bot should submit.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <JFXSlider fx:id="voteGoalSlider"
+                               min="1"
+                               max="5"
+                               majorTickUnit="1"
+                               minorTickCount="0"
+                               showTickLabels="true"
+                               showTickMarks="true"
+                               snapToTicks="true"
+                               snapToPixel="false"
+                               maxWidth="200">
+                        <HBox.margin>
+                            <Insets top="10"/>
+                        </HBox.margin>
+                    </JFXSlider>
+                </HBox>
+
+                <HBox>
+                    <VBox>
+                        <Label styleClass="setting-name-label">Auto-Fill Extras</Label>
+                        <Label styleClass="setting-desc-label">
+                            Randomly select players from the remaining positions.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <HBox prefWidth="140" maxWidth="140" minWidth="140">
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <JFXToggleButton fx:id="autoFillToggle"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <VBox>
+                        <Label styleClass="setting-name-label">Show Voting</Label>
+                        <Label styleClass="setting-desc-label">
+                            Open Chrome browsers to show the voting process.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <HBox prefWidth="140" maxWidth="140" minWidth="140">
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <JFXToggleButton fx:id="showVotingToggle"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <VBox>
+                        <Label styleClass="setting-name-label">Rotate Proxies</Label>
+                        <Label styleClass="setting-desc-label">
+                            Change your IP address with every ballot submission.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <HBox prefWidth="140" maxWidth="140" minWidth="140">
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <JFXToggleButton fx:id="rotateProxiesToggle"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <VBox>
+                        <Label styleClass="setting-name-label">Update Player Data</Label>
+                        <Label styleClass="setting-desc-label">
+                            Update the player data with the latest stat info.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <HBox prefWidth="140" maxWidth="140" minWidth="140">
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <JFXButton fx:id="updatePlayerDataButton" text="Update Player Data">
+                            <HBox.margin>
+                                <Insets top="15"/>
+                            </HBox.margin>
+                        </JFXButton>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+        </body>
+
+        <actions>
+            <JFXButton fx:id="cancelButton" text="Cancel" onAction="#handleCancelButtonClick"/>
+            <JFXButton fx:id="saveButton" text="Save" onAction="#handleSaveButtonClick"/>
+        </actions>
+    </JFXDialogLayout>
+
+    <stylesheets>
+        <URL value="@../../../css/SettingsModal.css"/>
+    </stylesheets>
+</JFXDialog>

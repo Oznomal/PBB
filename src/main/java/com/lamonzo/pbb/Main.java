@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import org.scenicview.ScenicView;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -34,11 +36,20 @@ public class Main extends Application {
 
     //== PUBLIC METHODS ==
     //APPLICATION ENTRY POINT
+    public static void main(final String [] args){
+        Application.launch(args);
+    }
+
     @Override
     public void init() throws Exception {
-        SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
-        context = builder.run(getParameters().getRaw().toArray(new String[0]));
+//        SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
+//        context = builder.run(getParameters().getRaw().toArray(new String[0]));
+//
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/containers/MainContainer.fxml"));
+//        loader.setControllerFactory(context::getBean);
+//        rootNode = loader.load();
 
+        context = SpringApplication.run(Main.class);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/containers/MainContainer.fxml"));
         loader.setControllerFactory(context::getBean);
         rootNode = loader.load();

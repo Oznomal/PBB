@@ -1,0 +1,109 @@
+/**********************************************************************************************************************/
+/*COLOR PALETTE*/
+{
+    -pbb-main-background-color: #151515;
+    -pbb-alt-background-color: #212121;
+
+    -pbb-main-text-color: #F2F2F2;
+    -pbb-alt-text-color: #767676;
+
+    -pbb-main-accent-color: #3C6E71;
+    -pbb-main-accent-tint-color: #628B8D;
+    -pbb-alt-accent-color: #284B63;
+    -pbb-alt-accent-tint-color: #3B5B71;
+
+    -pbb-scroll-thumb-color: #0F0F0F;
+}
+
+/**********************************************************************************************************************/
+/*FONTS*/
+@font-face {
+    font-family: 'Muli SemiBold';
+    src: url("../fonts/Muli-SemiBold.ttf");
+}
+
+
+/**********************************************************************************************************************/
+/*MODAL SETTINGS*/
+.jfx-dialog-overlay-pane .jfx-dialog-layout{
+    -fx-background-color: -pbb-main-background-color;
+}
+
+.jfx-dialog-overlay-pane{
+    -fx-background-color: rgba(0.0, 0.0, 0.0, 0.75);
+}
+
+/**********************************************************************************************************************/
+/*HEADINGS*/
+.dialog-header-label{
+    -fx-font-family: "Muli SemiBold";
+    -fx-font-size: 24px;
+    -fx-text-fill: -pbb-alt-text-color;
+}
+
+.setting-name-label{
+    -fx-font-family: "Muli SemiBold";
+    -fx-font-size: 18px;
+}
+
+.setting-desc-label{
+    -fx-font-family: "Muli SemiBold";
+    -fx-font-size: 10px;
+}
+
+
+/**********************************************************************************************************************/
+/*JFX SLIDER*/
+/* Styling the slider track */
+.jfx-slider > .track {
+    -fx-background-color: -pbb-alt-text-color;
+}
+
+/* Styling the slider thumb */
+.jfx-slider > .thumb {
+    -fx-background-color: -pbb-main-accent-color;
+}
+
+/* Styling the filled track */
+.jfx-slider > .colored-track {
+    -fx-background-color: -pbb-main-accent-color;
+}
+
+/* Styling the animated thumb */
+.jfx-slider > .animated-thumb {
+    -fx-background-color: -pbb-main-accent-color;
+}
+
+/* Styling the slider value text inside animated thumb */
+.jfx-slider .slider-value {
+    -fx-fill: -pbb-main-text-color;
+    -fx-stroke: -pbb-main-text-color;
+}
+
+/**********************************************************************************************************************/
+/*JFX TOGGLE BUTTON*/
+.jfx-toggle-button {
+    -jfx-toggle-color: -pbb-main-accent-color;
+    -jfx-untoggle-color: -pbb-main-text-color;
+    -jfx-toggle-line-color: -pbb-main-accent-tint-color;
+    -jfx-untoggle-line-color: -pbb-alt-text-color;
+    -jfx-size: 10.0;
+    -jfx-disable-visual-focus: false;
+}
+
+/**********************************************************************************************************************/
+/*JFX BUTTON*/
+.jfx-button {
+    -jfx-button-type: FLAT;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-background-color: -pbb-alt-background-color;
+    -fx-border-color: transparent;
+    -fx-text-fill: -pbb-main-accent-color;
+}
+
+.jfx-button:hover{
+    -fx-background-color: -pbb-scroll-thumb-color;
+    -fx-border-color: -pbb-main-accent-color;
+    -fx-text-fill: -pbb-main-accent-color;
+}

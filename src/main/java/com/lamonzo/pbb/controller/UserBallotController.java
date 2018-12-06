@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
 import com.lamonzo.pbb.cell.UserBallotCell;
 import com.lamonzo.pbb.constants.SpringConstants;
+import com.lamonzo.pbb.controller.dialog.SettingsController;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.tasks.SubmitBallot;
@@ -35,14 +36,23 @@ public class UserBallotController implements Initializable {
     private final ThreadPoolTaskExecutor taskExecutor;
 
     @Autowired
+    private MainController mainController;
+
+    @Autowired
     @Lazy
     private UserBallotController userBallotController;
+
+    @Autowired
+    private SettingsController settingsController;
 
     @FXML
     private JFXListView<Player> userBallotListView;
 
     @FXML
     private JFXButton submitButton;
+
+    @FXML
+    private JFXButton settingsButton;
 
     @FXML
     private Label ballotCountLabel;
@@ -70,8 +80,7 @@ public class UserBallotController implements Initializable {
         userBallotListView.setCellFactory(column -> getUserBallotCell());
 
         //Makes submit only clickable when count is selected and at least 1 player is added
-        submitButton.disableProperty().bind(countSelector.valueProperty().isNull()
-                .or(Bindings.isEmpty(userBallotListView.getItems()))
+        submitButton.disableProperty().bind((Bindings.isEmpty(userBallotListView.getItems()))
                 .or(submitBallotService.runningProperty()));
         submitButton.setOnAction(event -> handleSubmitButtonClick());
 
@@ -80,22 +89,27 @@ public class UserBallotController implements Initializable {
     }
 
     //== PRIVATE METHODS ==
+    public void handleSettingsButtonClick(){
+        settingsController.getSettingsModal().setDialogContainer(mainController.getMainContainerStackPane());
+        settingsController.getSettingsModal().show();
+    }
+
     public void handleSubmitButtonClick(){
         //submitBallotService.start();
 
         if(!dataModel.getBallotList().isEmpty()) {
-            final JFXComboBox<String> countSelector = userBallotController.getCountSelector();
-            final boolean unlimited;
-            final int votesToDo;
+            //final JFXComboBox<String> countSelector = userBallotController.getCountSelector();
+            final boolean unlimited = true;
+            final int votesToDo = taskExecutor.getMaxPoolSize();
 
-            if(countSelector.getValue().equalsIgnoreCase("Unlimited")) {
-                unlimited = true;
-                votesToDo = taskExecutor.getMaxPoolSize();
-            }
-            else {
-                unlimited = false;
-                votesToDo = Integer.parseInt(countSelector.getValue());
-            }
+//            if(countSelector.getValue().equalsIgnoreCase("Unlimited")) {
+//                unlimited = true;
+//                votesToDo = taskExecutor.getMaxPoolSize();
+//            }
+//            else {
+//                unlimited = false;
+//                votesToDo = Integer.parseInt(countSelector.getValue());
+//            }
 
             for(int i = 0; i < votesToDo; i++){
                 scheduleTask(unlimited);
