@@ -29,6 +29,7 @@ public final class ScrapingConstants {
     //== NFL WEBSITE MAIN PAGE ==
     //PAGE ELEMENTS
     public static final String NFL_FEATURED_VOTE_LINK ="<a href=http://www.nfl.com/probowlvote>";
+    public static final String NFL_MODAL_CLOSE_BUTTON = "<a class=bp-modal-takeover-close>";
 
 
     // == BALLOT NAVIGATION

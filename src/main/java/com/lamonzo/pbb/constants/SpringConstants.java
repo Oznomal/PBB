@@ -4,7 +4,7 @@ public final class SpringConstants {
 
     //== FIELDS ==
     public static final String SINGLE_TASK_EXECUTOR = "singleCoreTaskExecutor";
-    public static final String MULTI_TASK_EXECUTOR = "multiCoreTaskExecutor";
+    public static final String VARIABLE_TASK_EXECUTOR = "variableCoreTaskExecutor";
 
     //== CONSTRUCTORS ==
     private SpringConstants(){}

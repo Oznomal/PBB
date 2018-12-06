@@ -6,7 +6,6 @@ import com.lamonzo.pbb.model.DataModel;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Toggle;
 import javafx.util.StringConverter;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +24,12 @@ public class SettingsController implements Initializable {
     private final DataModel dataModel;
     private final String ON = "ON";
     private final String OFF = "OFF";
+
+    private final String TEN = "10";
+    private final String ONE_HUNDRED = "100";
+    private final String FIVE_HUNDRED = "500";
+    private final String ONE_THOUSAND = "1000";
+    private final String UNLIMITED = "\u221e";
 
     @FXML
     private JFXDialog settingsModal;
@@ -53,7 +58,7 @@ public class SettingsController implements Initializable {
     //== CONSTRUCTORS ==
     @Autowired
     public SettingsController(DataModel dataModel,
-            @Qualifier(SpringConstants.MULTI_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor){
+            @Qualifier(SpringConstants.VARIABLE_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor){
         this.taskExecutor = taskExecutor;
         this.dataModel = dataModel;
     }
@@ -70,15 +75,15 @@ public class SettingsController implements Initializable {
                 Bindings.createStringBinding(() -> {
                         double value = voteGoalSlider.getValue();
                         if(value < 1.50)
-                            return("10");
+                            return(TEN);
                         else if(value < 2.50)
-                            return ("100");
+                            return (ONE_HUNDRED);
                         else if(value < 3.50)
-                            return "500";
+                            return FIVE_HUNDRED;
                         else if(value < 4.50)
-                            return "1000";
+                            return ONE_THOUSAND;
                         else
-                            return "\u221e";
+                            return UNLIMITED;
 
                 }, voteGoalSlider.valueProperty())
         );
@@ -86,26 +91,26 @@ public class SettingsController implements Initializable {
         voteGoalSlider.setLabelFormatter(new StringConverter<Double>() {
             @Override
             public String toString(Double n) {
-                if (n < 1.5) return "10";
-                if (n < 2.5) return "100";
-                if (n < 3.5) return "500";
-                if (n < 4.5) return "1000";
+                if (n < 1.5) return TEN;
+                if (n < 2.5) return ONE_HUNDRED;
+                if (n < 3.5) return FIVE_HUNDRED;
+                if (n < 4.5) return ONE_THOUSAND;
 
-                return "\u221e";
+                return UNLIMITED;
             }
 
             @Override
             public Double fromString(String s) {
                 switch (s) {
-                    case "10":
+                    case TEN:
                         return 1d;
-                    case "100":
+                    case ONE_HUNDRED:
                         return 2d;
-                    case "500":
+                    case FIVE_HUNDRED:
                         return 3d;
-                    case "1000":
+                    case ONE_THOUSAND:
                         return 4d;
-                    case "\u221e":
+                    case UNLIMITED:
                         return 5d;
 
                     default:

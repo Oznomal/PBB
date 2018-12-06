@@ -43,6 +43,9 @@ public class UpdatePlayerData implements Runnable {
     @Autowired
     private PlayerService playerService;
 
+    @Autowired
+    private BrowserUtil browserUtil;
+
     private String positionTabHtmlLink;
 
     //== CONSTRUCTOR ==
@@ -55,11 +58,16 @@ public class UpdatePlayerData implements Runnable {
     //== PUBLIC METHODS ==
     @Override
     public void run() {
-        Browser browser = BrowserUtil.getBrowser();
+        Browser browser = browserUtil.getBrowser();
 
         try {
             //visit the Pro-Bowl page
             browser.visit(ScrapingConstants.PRO_BOWL_VOTING_URL);
+
+            //Closes Modal if Present
+            Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
+            if(modalCloseButton != null)
+                modalCloseButton.click();
 
             //Click on the position tab
             Element tab = browser.doc.findFirst(positionTabHtmlLink);

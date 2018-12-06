@@ -3,26 +3,40 @@ package com.lamonzo.pbb.util;
 import com.jauntium.Browser;
 import com.lamonzo.pbb.constants.ProxyConstants;
 import com.lamonzo.pbb.constants.UserAgentConstants;
+import com.lamonzo.pbb.model.DataModel;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Random;
 
 @Slf4j
+@Component
 public class BrowserUtil {
 
+    //================================================================================================================//
+    //== FIELDS ==
     private static final String CHROME_DRIVER_PATH = "E:/Programming/WebDrivers/Chrome/chromedriver.exe";
     private static final String CHROME_DRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";
     private static final String CHROME_HEADLESS_OPTION = "--headless";
     private static final String CHROME_WINDOW_SIZE_OPTION = "window-size=2000,4500";
 
-    /**
-     * Generates a browser with a random User Agent
-     * @return
-     */
-    public static Browser getBrowser(){
+    private final DataModel dataModel;
+
+    //================================================================================================================//
+    //== CONSTRUCTORS ==
+    @Autowired
+    public BrowserUtil(DataModel dataModel){
+        this.dataModel = dataModel;
+    }
+
+    //================================================================================================================//
+    //== PUBLIC METHODS ==
+    //Generates a browser with a random user agent
+    public Browser getBrowser(){
 
         List<String> userAgentList;
         Random random = new Random();
@@ -42,11 +56,17 @@ public class BrowserUtil {
         ChromeOptions options = new ChromeOptions();
         String agent = userAgentList.get(random.nextInt(userAgentList.size()));
         options.addArguments(UserAgentConstants.CHROME_USER_AGENT_OPTION_PREFIX + agent);
-        options.addArguments(CHROME_HEADLESS_OPTION);
-        options.addArguments(CHROME_WINDOW_SIZE_OPTION);
 
-        //TODO: Uncomment this line to begin using the proxy service, but avoid using to avoid charges
-        //options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);
+        //Add headless mode if selected
+        if(!dataModel.getShowBrowser().get()) {
+            options.addArguments(CHROME_HEADLESS_OPTION);
+            options.addArguments(CHROME_WINDOW_SIZE_OPTION);
+        }
+
+        //Rotate proxies if selected
+        if(dataModel.getRotateProxies().get()){
+            options.addArguments(ProxyConstants.CHROME_PROXY_OPTION_PREFIX + ProxyConstants.PROXY_PORT_URL);
+        }
 
         //Create and return the browser
         Browser browser = new Browser(new ChromeDriver(options));

@@ -1,6 +1,5 @@
 package com.lamonzo.pbb.tasks;
 
-import com.jfoenix.controls.JFXComboBox;
 import com.lamonzo.pbb.constants.SpringConstants;
 import com.lamonzo.pbb.controller.UserBallotController;
 import com.lamonzo.pbb.model.DataModel;
@@ -14,10 +13,6 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 @Component
 @Slf4j
 public class SubmitBallotService extends Service<Void> {
@@ -30,7 +25,7 @@ public class SubmitBallotService extends Service<Void> {
     private UserBallotController userBallotController;
 
     @Autowired
-    @Qualifier(SpringConstants.MULTI_TASK_EXECUTOR)
+    @Qualifier(SpringConstants.VARIABLE_TASK_EXECUTOR)
     private ThreadPoolTaskExecutor taskExecutor;
 
     private int successCount;

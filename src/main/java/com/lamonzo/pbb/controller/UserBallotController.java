@@ -67,7 +67,7 @@ public class UserBallotController implements Initializable {
     //== CONSTRUCTOR ==
     @Autowired
     public UserBallotController(DataModel dataModel, SubmitBallotService submitBallotService,
-                                @Qualifier(SpringConstants.MULTI_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor){
+                                @Qualifier(SpringConstants.VARIABLE_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor){
         this.dataModel = dataModel;
         this.submitBallotService = submitBallotService;
         this.taskExecutor = taskExecutor;
@@ -95,22 +95,30 @@ public class UserBallotController implements Initializable {
     }
 
     public void handleSubmitButtonClick(){
-        //submitBallotService.start();
-
         if(!dataModel.getBallotList().isEmpty()) {
-            //final JFXComboBox<String> countSelector = userBallotController.getCountSelector();
-            final boolean unlimited = true;
-            final int votesToDo = taskExecutor.getMaxPoolSize();
+            final boolean unlimited;
+            final int votesToDo;
 
-//            if(countSelector.getValue().equalsIgnoreCase("Unlimited")) {
-//                unlimited = true;
-//                votesToDo = taskExecutor.getMaxPoolSize();
-//            }
-//            else {
-//                unlimited = false;
-//                votesToDo = Integer.parseInt(countSelector.getValue());
-//            }
+            //Determine the number of votes to do based on user settings
+            double value = dataModel.getVotingGoals().get();
+            String voteSliderString = settingsController.getVoteGoalSlider().getLabelFormatter().toString(value).trim();
 
+            if(voteSliderString.equalsIgnoreCase(settingsController.getUNLIMITED())){
+                System.out.println("Set to Unlimited Lets GO");
+                unlimited = true;
+                votesToDo = dataModel.getNumberOfBrowsers().get();
+            }
+            else{
+                System.out.println("Set to " + voteSliderString);
+                unlimited = false;
+                votesToDo = Integer.parseInt(voteSliderString);
+            }
+
+            //Setup executor and number of parallel threads based on user settings
+            taskExecutor.setCorePoolSize(dataModel.getNumberOfBrowsers().get());
+            taskExecutor.setMaxPoolSize(dataModel.getNumberOfBrowsers().get());
+
+            //Submit Tasks
             for(int i = 0; i < votesToDo; i++){
                 scheduleTask(unlimited);
             }

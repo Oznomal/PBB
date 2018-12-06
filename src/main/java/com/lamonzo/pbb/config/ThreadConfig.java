@@ -26,13 +26,11 @@ public class ThreadConfig {
         return executor;
     }
 
-    @Bean(name = SpringConstants.MULTI_TASK_EXECUTOR)
+    @Bean(name = SpringConstants.VARIABLE_TASK_EXECUTOR)
     public ThreadPoolTaskExecutor multiThreadPoolTaskExecutor(){
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(8);
-        executor.setMaxPoolSize(8);
         executor.setDaemon(true);
-        executor.setThreadNamePrefix("Multi_Thread_");
+        executor.setThreadNamePrefix("Variable_Thread_");
         executor.initialize();
 
         return executor;

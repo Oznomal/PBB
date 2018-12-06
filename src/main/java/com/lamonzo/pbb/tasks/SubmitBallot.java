@@ -29,19 +29,21 @@ public class SubmitBallot extends Task<Boolean> {
     //================================================================================================================//
     //== FIELDS ==
     private final DataModel dataModel;
+    private final BrowserUtil browserUtil;
 
     //================================================================================================================//
     //== CONSTRUCTORS ==
     @Autowired
-    public SubmitBallot(DataModel dataModel){
+    public SubmitBallot(DataModel dataModel, BrowserUtil browserUtil){
         this.dataModel = dataModel;
+        this.browserUtil = browserUtil;
     }
 
     //================================================================================================================//
     //== PUBLIC METHODS
     @Override
     public Boolean call() {
-        Browser browser = BrowserUtil.getBrowser();
+        Browser browser = browserUtil.getBrowser();
         try {
             visitBallotPage(browser);
             return submitBallot(browser);
@@ -98,6 +100,11 @@ public class SubmitBallot extends Task<Boolean> {
             default:
                 followDirectLink(browser);
         }
+
+        //Closes Modal if Present
+        Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
+        if(modalCloseButton != null)
+            modalCloseButton.click();
     }
 
     //Navigate to ballot directly
@@ -180,9 +187,6 @@ public class SubmitBallot extends Task<Boolean> {
             jse.executeScript("window.scrollTo(0, 0)");
             Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
 
-//            System.out.println("Page Height for " + pos.getPositionName() + ": " +
-//                    jse.executeScript("document.body.scrollHeight"));
-
             browser.driver.manage().window().maximize();
             System.out.println(pos.getPositionName() + ": " + browser.driver.manage().window().getSize());
 
@@ -264,43 +268,45 @@ public class SubmitBallot extends Task<Boolean> {
             }
         }
 
-        return ppMap;
+        //1B. Only return the map with the selected players if Auto-Fill is off
+        if(!dataModel.getIsAutoFill().get())
+            return ppMap;
 
-//        //2. Get the remaining positions
-//        List<Position> remainingPositions = dataModel.getAllPositions();
-//        for(Position pos : ppMap.keySet())
-//            remainingPositions.remove(pos);
-//
-//        //3. Determine how many extra random positions we are going to vote for
-//        Random random = new Random();
-//        int extraVotes = random.nextInt(remainingPositions.size() + 1);
-//
-//        //4. Determine how many times we will vote for each random position
-//        Map<Position, Integer> extraVotesPosMap = new HashMap<>();
-//        for(int i = 0; i < extraVotes; i++){
-//            int index = random.nextInt(remainingPositions.size());
-//
-//            Position pos = remainingPositions.get(index);
-//            int posVotes = random.nextInt(pos.getMaxVotes()) + 1;
-//
-//            extraVotesPosMap.put(pos, posVotes);
-//
-//            remainingPositions.remove(index);
-//        }
-//
-//        //5. Add random players from the random positions that we are going to vote for to the ppMap
-//        for(Position pos : extraVotesPosMap.keySet()){
-//            List<Player> players = new ArrayList<>(dataModel.getPlayersByPosition(pos.getPositionName()));
-//            List<Player> toAdd = new ArrayList<>();
-//            for(int i = 0; i < extraVotesPosMap.get(pos); i++){
-//                int index = random.nextInt(players.size());
-//                toAdd.add(players.get(index));
-//                players.remove(index);
-//            }
-//            ppMap.put(pos, toAdd);
-//        }
-//
-//        return ppMap;
+        //2. Get the remaining positions
+        List<Position> remainingPositions = dataModel.getAllPositions();
+        for(Position pos : ppMap.keySet())
+            remainingPositions.remove(pos);
+
+        //3. Determine how many extra random positions we are going to vote for
+        Random random = new Random();
+        int extraVotes = random.nextInt(remainingPositions.size() + 1);
+
+        //4. Determine how many times we will vote for each random position
+        Map<Position, Integer> extraVotesPosMap = new HashMap<>();
+        for(int i = 0; i < extraVotes; i++){
+            int index = random.nextInt(remainingPositions.size());
+
+            Position pos = remainingPositions.get(index);
+            int posVotes = random.nextInt(pos.getMaxVotes()) + 1;
+
+            extraVotesPosMap.put(pos, posVotes);
+
+            remainingPositions.remove(index);
+        }
+
+        //5. Add random players from the random positions that we are going to vote for to the ppMap
+        for(Position pos : extraVotesPosMap.keySet()){
+            List<Player> players = new ArrayList<>(dataModel.getPlayersByPosition(pos.getPositionName()));
+            List<Player> toAdd = new ArrayList<>();
+            for(int i = 0; i < extraVotesPosMap.get(pos); i++){
+                int index = random.nextInt(players.size());
+                toAdd.add(players.get(index));
+                players.remove(index);
+            }
+            ppMap.put(pos, toAdd);
+        }
+
+        return ppMap;
     }
 
     private void preformRandomSleep() throws InterruptedException{
