@@ -24,7 +24,7 @@
     -fx-background-color: transparent;
 }
 
-.jfx-tab-pane .jfx-rippler{
+.jfx-tab-pane .tab-header-area .jfx-rippler{
     -jfx-rippler-fill: -pbb-row-selected-color;
 }
 

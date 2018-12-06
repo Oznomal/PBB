@@ -19,7 +19,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import org.springframework.core.task.TaskExecutor;
 
-import org.scenicview.ScenicView;
+//import org.scenicview.ScenicView;
 
 
 import java.util.Iterator;
@@ -63,7 +63,7 @@ public class Main extends Application {
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
         primaryStage.show();
-        ScenicView.show(rootNode);
+        //ScenicView.show(rootNode);
     }
 
     @Override

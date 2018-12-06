@@ -3,12 +3,16 @@ package com.lamonzo.pbb.model;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.domain.Position;
+import com.lamonzo.pbb.domain.Settings;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
+import com.lamonzo.pbb.service.SettingsService;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.net.URL;
 import java.util.*;
 
 /**
@@ -25,7 +30,7 @@ import java.util.*;
  * will still be used to communicate directly with the repos.
  */
 @Component
-public class DataModel {
+public class DataModel implements Initializable {
 
     //== FIELDS ==
     @Autowired
@@ -33,6 +38,9 @@ public class DataModel {
 
     @Autowired
     private PlayerService playerService;
+
+    @Autowired
+    private SettingsService settingsService;
 
     @Getter
     private Map<String, SimpleStringProperty> positionVoteMap;
@@ -47,14 +55,50 @@ public class DataModel {
     @Getter
     private SimpleIntegerProperty successCount = new SimpleIntegerProperty(0);
 
+    private Settings settings;
 
+    @Getter
+    private SimpleIntegerProperty votingGoals = new SimpleIntegerProperty();
+
+    @Getter
+    private SimpleIntegerProperty numberOfBrowsers = new SimpleIntegerProperty();
+
+    @Getter
+    private SimpleBooleanProperty isAutoFill = new SimpleBooleanProperty();
+
+    @Getter
+    private SimpleBooleanProperty showBrowser = new SimpleBooleanProperty();
+
+    @Getter
+    private SimpleBooleanProperty rotateProxies = new SimpleBooleanProperty();
 
     //== PUBLIC METHODS ==
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
     @PostConstruct
     private void fetchData(){
         //TODO: Add an if check here to make sure that the Data is in the DB, if not then we must scrape site
 
-        System.out.println("Fetch Data is Called");
+        //GET USER SETTINGS FROM THE DB OR CREATE DEFAULT SETTINGS IF NONE EXIST
+        settings = settingsService.getSettings();
+        if(settings == null){
+            System.out.println("Settings is Null, Adding them");
+            settings = new Settings();
+            settings.setNumberOfBrowsers(Runtime.getRuntime().availableProcessors() / 2);
+            settings.setVotingGoals(1);
+            settings.setShowBrowser(false);
+            settings.setAutoFill(true);
+            settings.setRotateProxies(false);
+            settingsService.saveSettings(settings);
+        }
+
+        createObservableSettings();
+
+
+        //GET PLAYER DATA FROM THE DATABASE AND CACHE IT
         playerTreeObjectData = new HashMap<>();
         positionVoteMap = new HashMap<>();
         positionMap = new HashMap<>();
@@ -94,5 +138,28 @@ public class DataModel {
     //offer better performance for the multiple O(1) removals vs the few O(n) retrievals
     public List<Position> getAllPositions(){
         return new LinkedList<>(positionMap.values());
+    }
+
+
+    //In order to ensure that the settings object only has one instance (1 row in table),
+    //I am forcing all settings transactions to go through the data model and choosing
+    //not to expose the actual Settings Object, this will make sure that the data model is
+    //always up to date with the settings and eliminate the need to constantly go back
+    //and forth to the DB
+    public void createObservableSettings(){
+        votingGoals.set(settings.getVotingGoals());
+        numberOfBrowsers.set(settings.getNumberOfBrowsers());
+        isAutoFill.set(settings.isAutoFill());
+        showBrowser.set(settings.isShowBrowser());
+        rotateProxies.set(settings.isRotateProxies());
+    }
+
+    public void updateSettings(){
+        settings.setNumberOfBrowsers(numberOfBrowsers.get());
+        settings.setVotingGoals(votingGoals.get());
+        settings.setShowBrowser(showBrowser.get());
+        settings.setAutoFill(isAutoFill.get());
+        settings.setRotateProxies(rotateProxies.get());
+        settingsService.saveSettings(settings);
     }
 }

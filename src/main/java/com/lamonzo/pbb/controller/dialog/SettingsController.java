@@ -2,6 +2,7 @@ package com.lamonzo.pbb.controller.dialog;
 
 import com.jfoenix.controls.*;
 import com.lamonzo.pbb.constants.SpringConstants;
+import com.lamonzo.pbb.model.DataModel;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,6 +22,7 @@ import java.util.ResourceBundle;
 public class SettingsController implements Initializable {
 
     private final ThreadPoolTaskExecutor taskExecutor;
+    private final DataModel dataModel;
     private final String ON = "ON";
     private final String OFF = "OFF";
 
@@ -50,9 +52,10 @@ public class SettingsController implements Initializable {
 
     //== CONSTRUCTORS ==
     @Autowired
-    public SettingsController(
+    public SettingsController(DataModel dataModel,
             @Qualifier(SpringConstants.MULTI_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor){
         this.taskExecutor = taskExecutor;
+        this.dataModel = dataModel;
     }
 
     @Override
@@ -60,7 +63,7 @@ public class SettingsController implements Initializable {
 
         //Number of Threads Slider
         threadSlider.setMin(1);
-        threadSlider.setMax(taskExecutor.getMaxPoolSize());
+        threadSlider.setMax(Runtime.getRuntime().availableProcessors());
 
         //Number of Votes Slider
         voteGoalSlider.setValueFactory(event ->
@@ -122,15 +125,24 @@ public class SettingsController implements Initializable {
         //Rotate Proxies Toggle Button
         rotateProxiesToggle.textProperty()
                 .bind(Bindings.when(rotateProxiesToggle.selectedProperty()).then(ON).otherwise(OFF));
+
+
+        //Binding Values to DataModel
+        threadSlider.valueProperty().bindBidirectional(dataModel.getNumberOfBrowsers());
+        voteGoalSlider.valueProperty().bindBidirectional(dataModel.getVotingGoals());
+        autoFillToggle.selectedProperty().bindBidirectional(dataModel.getIsAutoFill());
+        showVotingToggle.selectedProperty().bindBidirectional(dataModel.getShowBrowser());
+        rotateProxiesToggle.selectedProperty().bindBidirectional(dataModel.getRotateProxies());
     }
 
     //PUBLIC METHODS
     public void handleCancelButtonClick(){
-        System.out.println("Cancel was pressed");
         settingsModal.close();
+        dataModel.createObservableSettings();
     }
 
     public void handleSaveButtonClick(){
-        System.out.println("Save was pressed");
+        settingsModal.close();
+        dataModel.updateSettings();
     }
 }
