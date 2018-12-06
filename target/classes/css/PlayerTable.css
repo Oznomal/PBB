@@ -24,6 +24,10 @@
     -fx-background-color: transparent;
 }
 
+.jfx-tab-pane .jfx-rippler{
+    -jfx-rippler-fill: -pbb-row-selected-color;
+}
+
 
 /**********************************************************************************************************************/
 /*TREE TABLE VIEW*/

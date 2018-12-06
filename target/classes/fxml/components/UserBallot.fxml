@@ -12,6 +12,8 @@
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.lamonzo.pbb.controller.UserBallotController"
@@ -38,6 +40,18 @@
     <!-- LIST VIEW -->
     <JFXListView fx:id="userBallotListView" VBox.vgrow="ALWAYS">
         <!-- SPACING THE LIST VIEW FROM THE SIDE OF THE APPLICATION -->
+
+        <placeholder>
+            <VBox alignment="CENTER" spacing="15">
+                <ImageView>
+                    <image>
+                        <Image url="@../../img/logos/Ballot_100.png" />
+                    </image>
+                </ImageView>
+                <Label styleClass="placeholder-label" text="Select Players to Begin"/>
+            </VBox>
+        </placeholder>
+
         <VBox.margin>
             <Insets left="$leftMargin"/>
         </VBox.margin>
