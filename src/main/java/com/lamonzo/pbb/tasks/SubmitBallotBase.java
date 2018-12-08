@@ -29,8 +29,11 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
     private static final int DEFAULT_MAX_SLEEP = 1000;
 
     //== PROTECTED FIELDS ==
+    protected static final int DEFAULT_MAX_ATTEMPTS = 5;
     protected static final int WEB_DRIVER_WAIT_TIME = 8;
     protected static final int SELECT_PLAYER_MAX_ATTEMPTS = 10;
+
+    protected static final String JS_SCROLL_TO_TOP = "window.scrollTo(0, 0)";
 
     @Autowired
     protected DataModel dataModel;
@@ -96,9 +99,12 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
             Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
             if(modalCloseButton != null) {
                 modalCloseButton.click();
-                //preformRandomSleep();
-                WebDriverWait wait = new WebDriverWait(browser.driver, 5);
-                wait.until(d -> d.findElement(By.xpath(ScrapingConstants.CENTER_TAB_XPATH)));
+
+                //Lightning Mode Skips preformSleep() so we need to ensure that the elements are available after close
+                if(dataModel.getLightningMode().get()) {
+                    WebDriverWait wait = new WebDriverWait(browser.driver, 5);
+                    wait.until(d -> d.findElement(By.xpath(ScrapingConstants.CENTER_TAB_XPATH)));
+                }
             }
         }catch(Exception e){
             //If there is an exception here then it most likely means that the modal is no longer
@@ -243,12 +249,9 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
     }
 
     protected void preformRandomSleep(int min, int max) throws InterruptedException{
-        Random random = new Random();
-
         if(!dataModel.getLightningMode().get()){
+            Random random = new Random();
             Thread.sleep(min + random.nextInt(max - min));
-        }else{
-            Thread.sleep(DEFAULT_MIN_SLEEP + random.nextInt(DEFAULT_MIN_SLEEP));
         }
     }
     //END OF PRIVATE HELPER METHODS SECTION

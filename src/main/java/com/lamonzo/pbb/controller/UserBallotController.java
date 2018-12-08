@@ -1,7 +1,6 @@
 package com.lamonzo.pbb.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXListView;
 import com.lamonzo.pbb.cell.UserBallotCell;
 import com.lamonzo.pbb.constants.SpringConstants;
@@ -16,12 +15,10 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 
@@ -41,10 +38,6 @@ public class UserBallotController implements Initializable {
     private MainController mainController;
 
     @Autowired
-    @Lazy
-    private UserBallotController userBallotController;
-
-    @Autowired
     private SettingsController settingsController;
 
     @FXML
@@ -54,16 +47,7 @@ public class UserBallotController implements Initializable {
     private JFXButton submitButton;
 
     @FXML
-    private JFXButton settingsButton;
-
-    @FXML
     private Label ballotCountLabel;
-
-    @FXML
-    @Getter
-    private JFXComboBox<String> countSelector;
-
-    private int successCount;
 
 
     //== CONSTRUCTOR ==
@@ -99,35 +83,22 @@ public class UserBallotController implements Initializable {
     public void handleSubmitButtonClick(){
         if(!dataModel.getBallotList().isEmpty()) {
 
-            final boolean unlimited;
-            final int votesToDo;
-
-            //Determine the number of votes to do based on user settings
-            double value = dataModel.getVotingGoals().get();
-            String voteSliderString = settingsController.getVoteGoalSlider().getLabelFormatter().toString(value).trim();
-
-            if (voteSliderString.equalsIgnoreCase(settingsController.getUNLIMITED())) {
-                System.out.println("Set to Unlimited Lets GO");
-                unlimited = true;
-                votesToDo = dataModel.getNumberOfBrowsers().get();
-            } else {
-                System.out.println("Set to " + voteSliderString);
-                unlimited = false;
-                votesToDo = Integer.parseInt(voteSliderString);
-            }
+            //Reset the counter
+            dataModel.getSuccessCount().set(0);
 
             //Setup executor and number of parallel threads based on user settings
+            log.info("Here: " + dataModel.getNumberOfBrowsers());
             taskExecutor.setCorePoolSize(dataModel.getNumberOfBrowsers().get());
             taskExecutor.setMaxPoolSize(dataModel.getNumberOfBrowsers().get());
 
             //Submit Tasks
             for (int i = 0; i < dataModel.getNumberOfBrowsers().get(); i++) {
-                scheduleTask(unlimited);
+                scheduleTask();
             }
         }
     }
 
-    private void scheduleTask(final boolean unlimited){
+    private void scheduleTask(){
         Task<Boolean> task;
 
         if(dataModel.getLightningMode().get())
@@ -135,21 +106,13 @@ public class UserBallotController implements Initializable {
         else
             task = getSubmitBallot();
 
-
-        //SubmitBallot task = getSubmitBallot();
         task.setOnSucceeded(event -> {
-            //dataModel.getSuccessCount().set(++successCount);
-            log.info("Successfully Completed Task | Total Count: " + successCount);
-
-//            if(unlimited) {
-//                scheduleTask(unlimited);
-//            }
+            log.info("Successfully Completed Task: TOTAL: " + dataModel.getSuccessCount().get());
+            //taskExecutor.shutdown();
         });
 
-        task.setOnFailed(event -> {
-            log.info("Task Failed");
-            //scheduleTask(unlimited);
-        });
+        task.setOnFailed(event -> log.info("Task Failed"));
+
         taskExecutor.submit(task);
     }
 

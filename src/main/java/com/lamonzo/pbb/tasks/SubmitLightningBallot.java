@@ -23,10 +23,6 @@ import java.util.Map;
 public class SubmitLightningBallot extends SubmitBallotBase{
 
     //================================================================================================================//
-    //== FIELDS ==
-    private static final int DEFAULT_MAX_ATTEMPTS = 5;
-
-    //================================================================================================================//
     //== PUBLIC METHODS ==
     @Override
     public Boolean call(){
@@ -94,7 +90,7 @@ public class SubmitLightningBallot extends SubmitBallotBase{
                     finalBallotMap = buildFinalBallot();
 
                 for(Position pos : finalBallotMap.keySet()){
-                    jse.executeScript("window.scrollTo(0, 0)");
+                    jse.executeScript(JS_SCROLL_TO_TOP);
 
                     Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
                     tab.click();
@@ -147,13 +143,12 @@ public class SubmitLightningBallot extends SubmitBallotBase{
                 submitButton.click();
 
                 //CLICK THE VOTE AGAIN BUTTON & INCREMENT COUNT TO RESTART THE PROCESS
-                WebElement voteAgainButton = wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
+                wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
 
                 if(browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL))
                     dataModel.incrementSuccessCount();
 
                 visitBallotPage(browser, false);
-                //voteAgainButton.click();
                 attempts = 0;
             }
             catch(Exception ex){
