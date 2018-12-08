@@ -102,9 +102,13 @@ public class SubmitBallot extends Task<Boolean> {
         }
 
         //Closes Modal if Present
-        Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
-        if(modalCloseButton != null)
-            modalCloseButton.click();
+        try {
+            Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
+            if (modalCloseButton != null)
+                modalCloseButton.click();
+        }catch(Exception e){
+            log.info("Modal Close Exception Caught (Continuing): " + e.getMessage());
+        }
     }
 
     //Navigate to ballot directly

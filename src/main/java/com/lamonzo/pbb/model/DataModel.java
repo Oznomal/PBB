@@ -7,15 +7,14 @@ import com.lamonzo.pbb.domain.Settings;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
 import com.lamonzo.pbb.service.SettingsService;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -72,6 +71,9 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleBooleanProperty rotateProxies = new SimpleBooleanProperty();
 
+    @Getter
+    private SimpleBooleanProperty lightningMode = new SimpleBooleanProperty();
+
     //== PUBLIC METHODS ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -89,6 +91,7 @@ public class DataModel implements Initializable {
             settings = new Settings();
             settings.setNumberOfBrowsers(Runtime.getRuntime().availableProcessors() / 2);
             settings.setVotingGoals(1);
+            settings.setLightningMode(false);
             settings.setShowBrowser(false);
             settings.setAutoFill(true);
             settings.setRotateProxies(false);
@@ -149,6 +152,7 @@ public class DataModel implements Initializable {
     public void createObservableSettings(){
         votingGoals.set(settings.getVotingGoals());
         numberOfBrowsers.set(settings.getNumberOfBrowsers());
+        lightningMode.set(settings.isLightningMode());
         isAutoFill.set(settings.isAutoFill());
         showBrowser.set(settings.isShowBrowser());
         rotateProxies.set(settings.isRotateProxies());
@@ -157,9 +161,17 @@ public class DataModel implements Initializable {
     public void updateSettings(){
         settings.setNumberOfBrowsers(numberOfBrowsers.get());
         settings.setVotingGoals(votingGoals.get());
+        settings.setLightningMode(lightningMode.get());
         settings.setShowBrowser(showBrowser.get());
         settings.setAutoFill(isAutoFill.get());
         settings.setRotateProxies(rotateProxies.get());
         settingsService.saveSettings(settings);
+    }
+
+    //Thread safe way to update the counter which is used by multiple threads
+    public synchronized int incrementSuccessCount(){
+        int newValue = successCount.get() + 1;
+        Platform.runLater(() -> successCount.set(newValue));
+        return newValue;
     }
 }

@@ -44,6 +44,9 @@ public class SettingsController implements Initializable {
     private JFXSlider voteGoalSlider;
 
     @FXML
+    private JFXToggleButton lightningModeToggle;
+
+    @FXML
     private JFXToggleButton autoFillToggle;
 
     @FXML
@@ -119,6 +122,10 @@ public class SettingsController implements Initializable {
             }
         });
 
+        //Lightning Mode Toggle Button
+        lightningModeToggle.textProperty()
+                .bind(Bindings.when(lightningModeToggle.selectedProperty()).then(ON).otherwise(OFF));
+
         //Auto-Fill Toggle Button
         autoFillToggle.textProperty()
                 .bind(Bindings.when(autoFillToggle.selectedProperty()).then(ON).otherwise(OFF));
@@ -135,9 +142,11 @@ public class SettingsController implements Initializable {
         //Binding Values to DataModel
         threadSlider.valueProperty().bindBidirectional(dataModel.getNumberOfBrowsers());
         voteGoalSlider.valueProperty().bindBidirectional(dataModel.getVotingGoals());
+        lightningModeToggle.selectedProperty().bindBidirectional(dataModel.getLightningMode());
         autoFillToggle.selectedProperty().bindBidirectional(dataModel.getIsAutoFill());
         showVotingToggle.selectedProperty().bindBidirectional(dataModel.getShowBrowser());
         rotateProxiesToggle.selectedProperty().bindBidirectional(dataModel.getRotateProxies());
+
     }
 
     //PUBLIC METHODS

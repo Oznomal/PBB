@@ -97,6 +97,21 @@
 
                 <HBox>
                     <VBox>
+                        <Label styleClass="setting-name-label">Lightning Mode</Label>
+                        <Label styleClass="setting-desc-label">
+                            Increases performance by turning off anti-detection measures.
+                        </Label>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <HBox prefWidth="140" maxWidth="140" minWidth="140">
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <JFXToggleButton fx:id="lightningModeToggle"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </HBox>
+
+                <HBox>
+                    <VBox>
                         <Label styleClass="setting-name-label">Auto-Fill Extras</Label>
                         <Label styleClass="setting-desc-label">
                             Randomly select players from the remaining positions.

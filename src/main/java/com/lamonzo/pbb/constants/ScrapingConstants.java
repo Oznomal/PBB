@@ -42,6 +42,7 @@ public final class ScrapingConstants {
     public static final String TACKLE_TAB_LINK = "<a title=Tackles>";
     public static final String GUARD_TAB_LINK = "<a title=Guards>";
     public static final String CENTER_TAB_LINK = "<a title=Centers>";
+    public static final String CENTER_TAB_XPATH = "//a[@id='yui_3_10_3_1_1544269403116_446']";
 
     //DEFENSE
     public static final String DEFENSIVE_END_TAB_LINK = "<a title=Defensive\\sEnds>";

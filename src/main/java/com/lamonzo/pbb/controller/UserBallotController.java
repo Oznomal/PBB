@@ -10,7 +10,9 @@ import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.tasks.SubmitBallot;
 import com.lamonzo.pbb.tasks.SubmitBallotService;
+import com.lamonzo.pbb.tasks.SubmitLightningBallot;
 import javafx.beans.binding.Bindings;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -96,6 +98,7 @@ public class UserBallotController implements Initializable {
 
     public void handleSubmitButtonClick(){
         if(!dataModel.getBallotList().isEmpty()) {
+
             final boolean unlimited;
             final int votesToDo;
 
@@ -103,12 +106,11 @@ public class UserBallotController implements Initializable {
             double value = dataModel.getVotingGoals().get();
             String voteSliderString = settingsController.getVoteGoalSlider().getLabelFormatter().toString(value).trim();
 
-            if(voteSliderString.equalsIgnoreCase(settingsController.getUNLIMITED())){
+            if (voteSliderString.equalsIgnoreCase(settingsController.getUNLIMITED())) {
                 System.out.println("Set to Unlimited Lets GO");
                 unlimited = true;
                 votesToDo = dataModel.getNumberOfBrowsers().get();
-            }
-            else{
+            } else {
                 System.out.println("Set to " + voteSliderString);
                 unlimited = false;
                 votesToDo = Integer.parseInt(voteSliderString);
@@ -119,25 +121,34 @@ public class UserBallotController implements Initializable {
             taskExecutor.setMaxPoolSize(dataModel.getNumberOfBrowsers().get());
 
             //Submit Tasks
-            for(int i = 0; i < votesToDo; i++){
+            for (int i = 0; i < dataModel.getNumberOfBrowsers().get(); i++) {
                 scheduleTask(unlimited);
             }
         }
     }
 
     private void scheduleTask(final boolean unlimited){
-        SubmitBallot task = getSubmitBallot();
+        Task<Boolean> task;
+
+        if(dataModel.getLightningMode().get())
+            task = getSubmitLightningBallot();
+        else
+            task = getSubmitBallot();
+
+
+        //SubmitBallot task = getSubmitBallot();
         task.setOnSucceeded(event -> {
-            dataModel.getSuccessCount().set(++successCount);
+            //dataModel.getSuccessCount().set(++successCount);
             log.info("Successfully Completed Task | Total Count: " + successCount);
 
-            if(unlimited) {
-                scheduleTask(unlimited);
-            }
+//            if(unlimited) {
+//                scheduleTask(unlimited);
+//            }
         });
 
         task.setOnFailed(event -> {
-            scheduleTask(unlimited);
+            log.info("Task Failed");
+            //scheduleTask(unlimited);
         });
         taskExecutor.submit(task);
     }
@@ -153,4 +164,7 @@ public class UserBallotController implements Initializable {
     SubmitBallot getSubmitBallot(){
         return null;
     }
+
+    @Lookup
+    SubmitLightningBallot getSubmitLightningBallot(){ return null; }
 }

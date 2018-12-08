@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class Settings {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,6 +39,11 @@ public class Settings {
     @Column(nullable = false)
     private boolean rotateProxies;
 
+    @NotNull
+    @Column(nullable = false)
+    private boolean lightningMode;
+
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     public Settings(){}
 }
