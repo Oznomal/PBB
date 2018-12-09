@@ -1,9 +1,6 @@
 package com.lamonzo.pbb.tasks;
 
-import com.jauntium.Browser;
-import com.jauntium.Element;
-import com.jauntium.Form;
-import com.jauntium.JauntiumException;
+import com.jauntium.*;
 import com.lamonzo.pbb.constants.ScrapingConstants;
 import com.lamonzo.pbb.controller.dialog.SettingsController;
 import com.lamonzo.pbb.domain.Player;
@@ -13,12 +10,21 @@ import com.lamonzo.pbb.util.BrowserUtil;
 import javafx.concurrent.Task;
 import lombok.extern.slf4j.Slf4j;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
 
+/**
+ * A base abstract class for submitting ballots that contains common
+ * functionality shared amongst the concrete implementations.
+ *
+ * All BallotSubmission classes assume that the class will
+ * function as a single thread, so class level non-static variables
+ * are permitted.
+ */
 @Slf4j
 public abstract class SubmitBallotBase extends Task<Boolean> {
 
@@ -44,10 +50,29 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
     @Autowired
     protected SettingsController settingsController;
 
+    protected String voteSliderString;
+    protected boolean unlimited;
+
+    protected Browser browser = null;
+    protected Map<Position, List<Player>> finalBallotMap = null;
+    protected int attempts = 0;
 
     //================================================================================================================//
     //== ABSTRACT METHODS ==
     protected abstract void submitBallot() throws JauntiumException;
+
+    //================================================================================================================//
+    //== PUBLIC METHODS ==
+    @Override
+    protected Boolean call() throws Exception {
+        try {
+            submitBallot();
+            return true;
+        }catch(JauntiumException e){
+            log.error("Something went wrong, Shutting Down Thread |  " + e.getMessage() );
+            return false;
+        }
+    }
 
     //================================================================================================================//
     //== PROTECTED METHODS ==
@@ -64,7 +89,7 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
      * and defend against bots.
      *
      * @param browser an instance of the Chrome browser
-     * @param redirectsAllowed if false the page will always goi directly to the browser, if true then
+     * @param redirectsAllowed if false the page will always go directly to the browser, if true then
      *                         the page may possibly redirect to the ballot page based on the options above
      */
     protected void visitBallotPage(Browser browser, boolean redirectsAllowed)
@@ -111,6 +136,118 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
             //there and in that case we want to ignore the exception and continue ...
             log.trace("Error clicking ballot page modal, continuing: " + e.getMessage());
         }
+    }
+
+    /**
+     * Preforms some processing prior to submitting the ballots to determine
+     * how many ballots the bot should attempt to submit and whether or not
+     * the bot will be using Auto-Fill
+     */
+    protected void preSubmissionProcessing(){
+        //If auto-fill is turned off then we only need to build the map the first time
+        //and we skip building it once we get to submitBallotsByPosition()
+        if(!dataModel.getIsAutoFill().get())
+            finalBallotMap = buildFinalBallot();
+
+        //Determine the voting goals based off of the label on the vote slider
+        //This is a funny approach since the slider provides integer values for
+        //each stop, but that would require me to couple those values (1-5) to
+        //their actual values (10 - Unlimited), this approach allows me to modify
+        //the values of the slider without having to change this code as long as
+        //"Unlimited" is kept as the last value.
+        double votingGoalsValue = dataModel.getVotingGoals().get();
+        voteSliderString = settingsController.getVoteGoalSlider().getLabelFormatter()
+                .toString(votingGoalsValue).trim();
+        unlimited = voteSliderString.equalsIgnoreCase(settingsController.getUNLIMITED());
+    }
+
+    /**
+     * Submits ballots for all of the selected players by going to
+     * each individual tab on the ballot page and selecting players.
+     *
+     * Note: The Pro Bowl Ballot is designed to submit the players you selected
+     *       each time you select on a different position, so when the submit
+     *       ballot button is clicked at the end it is really only submitting
+     *       the ballot for the last position that was selected, since the others
+     *       were submitted through the process of clicking other tabs.
+     *
+     * @throws InterruptedException
+     * @throws NotFound
+     */
+    protected void submitBallotsByPosition() throws InterruptedException, NotFound {
+        JavascriptExecutor jse = (JavascriptExecutor) browser.driver;
+        WebDriverWait wait = new WebDriverWait(browser.driver, WEB_DRIVER_WAIT_TIME);
+
+        //If auto-fill is turned on we want to submit random extra votes with each submission
+        if(dataModel.getIsAutoFill().get())
+            finalBallotMap = buildFinalBallot();
+
+        for(Position pos : finalBallotMap.keySet()) {
+            jse.executeScript(JS_SCROLL_TO_TOP);
+
+            Element tab = browser.doc.findFirst(pos.getTabHtmlLink());
+            preformRandomSleep(500, 1000); //Lightning mode will skip any preformSleep() calls
+            tab.click();
+            preformRandomSleep();
+
+            log.info("Processing Position Tab: " + pos.getPositionName());
+
+            for(Player player : finalBallotMap.get(pos)) {
+                //Setup XPath Strings
+                String playerDivXPath = ScrapingConstants.PLAYER_DIV_XPATH_PREFIX + player.getHtmlIdentifier()
+                        + ScrapingConstants.PLAYER_DIV_XPATH_SUFFIX;
+                String playerVoteXPath = playerDivXPath + ScrapingConstants.PLAYER_VOTE_BTN_XPATH;
+
+                int selectPlayerAttempt = 0;
+                String scroll = "0";
+
+                //Selenium can only find elements that are visible within the view port so if a player cannot
+                //be found it most likely means he is further down the page and we should scroll down and retry
+                while(selectPlayerAttempt < SELECT_PLAYER_MAX_ATTEMPTS) {
+                    try{
+                        jse.executeScript("window.scrollTo(0, " + scroll + ")");
+
+                        //Simulates preforming a mouse hover to get the overlay to appear
+                        WebElement playerDiv = wait.until(d -> d.findElement(By.xpath(playerDivXPath)));
+                        Actions actions = new Actions(browser.driver);
+                        actions.moveToElement(playerDiv).perform();
+
+                        preformRandomSleep();
+
+                        //Click the vote button that appears after hovering
+                        WebElement voteBtn = wait.until(d -> d.findElement(By.xpath(playerVoteXPath)));
+                        voteBtn.click();
+                        break;
+                    }
+                    catch(ElementNotSelectableException | ElementNotInteractableException | TimeoutException e){
+                        //Update the scroll position if the maximum number of attempts haven't been exceeded
+                        if(++selectPlayerAttempt <= SELECT_PLAYER_MAX_ATTEMPTS){
+                            log.warn("Unable to select player or vote button for: "
+                                    + player.getName()+ " | Attempt " + selectPlayerAttempt);
+
+                            int scrollPosition = Integer.parseInt(scroll)
+                                    + (browser.driver.manage().window().getSize().getHeight());
+                            scroll = Integer.toString(scrollPosition);
+                        }
+                        else {
+                            log.error("Exceeded attempts to find " + player.getName() + " | "
+                                    + player.getPosition().getPositionName() + " | Moving to next player");
+                            //TODO: Implement way to provide feedback if player was part of true ballot
+                        }
+                    }
+                }
+            }
+        }
+
+        //Submit the ballot for the final position
+        Element submitButton = browser.doc.findFirst(ScrapingConstants.SUBMIT_BUTTON);
+        submitButton.click();
+
+        //Wait until the vote again button has appeared then check the URL to determine if
+        //we reached the success page and then increment the counter (thread-safe) if so
+        wait.until(d -> d.findElement(By.xpath(ScrapingConstants.VOTE_AGAIN_BTN_XPATH)));
+        if(browser.getLocation().equalsIgnoreCase(ScrapingConstants.VOTING_THANK_YOU_PAGE_URL))
+            dataModel.incrementSuccessCount();
     }
 
 
@@ -177,6 +314,17 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
         return ppMap;
     }
 
+    protected void preformRandomSleep() throws InterruptedException{
+        preformRandomSleep(DEFAULT_MIN_SLEEP, DEFAULT_MAX_SLEEP);
+    }
+
+    protected void preformRandomSleep(int min, int max) throws InterruptedException{
+        if(!dataModel.getLightningMode().get()){
+            Random random = new Random();
+            Thread.sleep(min + random.nextInt(max - min));
+        }
+    }
+
     //================================================================================================================//
     //== PRIVATE METHODS ==
 
@@ -240,20 +388,5 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
     }
 
     //END OF NAVIGATING TO THE BALLOT PAGE SECTION
-    //***************************************************************************************************************//
-
-    //***************************************************************************************************************//
-    //PRIVATE HELPER METHODS SECTION
-    protected void preformRandomSleep() throws InterruptedException{
-        preformRandomSleep(DEFAULT_MIN_SLEEP, DEFAULT_MAX_SLEEP);
-    }
-
-    protected void preformRandomSleep(int min, int max) throws InterruptedException{
-        if(!dataModel.getLightningMode().get()){
-            Random random = new Random();
-            Thread.sleep(min + random.nextInt(max - min));
-        }
-    }
-    //END OF PRIVATE HELPER METHODS SECTION
     //***************************************************************************************************************//
 }
