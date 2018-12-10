@@ -11,6 +11,7 @@ public class GuardTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.G);
+        positionName = PositionConstants.G;
+        buildTreeTable();
     }
 }

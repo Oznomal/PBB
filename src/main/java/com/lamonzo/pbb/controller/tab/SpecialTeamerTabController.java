@@ -11,6 +11,7 @@ public class SpecialTeamerTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.ST);
+        positionName = PositionConstants.ST;
+        buildTreeTable();
     }
 }

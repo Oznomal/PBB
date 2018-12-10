@@ -11,6 +11,7 @@ public class StrongSafetyTabController extends BaseTabController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.SS);
+        positionName = PositionConstants.SS;
+        buildTreeTable();
     }
 }

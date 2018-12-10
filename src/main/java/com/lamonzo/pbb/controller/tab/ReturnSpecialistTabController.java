@@ -11,6 +11,7 @@ public class ReturnSpecialistTabController extends BaseTabController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.RS);
+        positionName = PositionConstants.RS;
+        buildTreeTable();
     }
 }

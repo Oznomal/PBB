@@ -11,6 +11,7 @@ public class WideReceiverTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.WR);
+        positionName = PositionConstants.WR;
+        buildTreeTable();
     }
 }

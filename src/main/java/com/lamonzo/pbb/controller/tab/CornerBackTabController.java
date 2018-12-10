@@ -11,6 +11,7 @@ public class CornerBackTabController extends BaseTabController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.CB);
+        positionName = PositionConstants.CB;
+        buildTreeTable();
     }
 }

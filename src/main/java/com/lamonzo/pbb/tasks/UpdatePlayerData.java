@@ -12,7 +12,10 @@ import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
 import com.lamonzo.pbb.service.StatTypeService;
 import com.lamonzo.pbb.util.BrowserUtil;
+import javafx.concurrent.Task;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -31,7 +34,7 @@ import java.util.Map;
 @Slf4j
 @Component
 @Scope("prototype")
-public class UpdatePlayerData implements Runnable {
+public class UpdatePlayerData extends Task<Boolean> {
 
     //== FIELDS ==
     @Autowired
@@ -46,18 +49,20 @@ public class UpdatePlayerData implements Runnable {
     @Autowired
     private BrowserUtil browserUtil;
 
-    private String positionTabHtmlLink;
+    private List<String> tabsList;
 
     //== CONSTRUCTOR ==
     public UpdatePlayerData(){}
 
-    public UpdatePlayerData(String positionTabHtmlLink){
-        this.positionTabHtmlLink = positionTabHtmlLink;
+    public UpdatePlayerData(List<String> tabsList){
+        this.tabsList = tabsList;
     }
 
     //== PUBLIC METHODS ==
     @Override
-    public void run() {
+    public Boolean call() {
+        //TODO: Empty out ballot selections and remove selected players from anywhere on the list
+
         Browser browser = browserUtil.getBrowser();
 
         try {
@@ -65,31 +70,51 @@ public class UpdatePlayerData implements Runnable {
             browser.visit(ScrapingConstants.PRO_BOWL_VOTING_URL);
 
             //Closes Modal if Present
-            Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
-            if(modalCloseButton != null)
-                modalCloseButton.click();
+            try{
+                Element modalCloseButton = browser.doc.findFirst(ScrapingConstants.NFL_MODAL_CLOSE_BUTTON);
+                if(modalCloseButton != null) {
+                    modalCloseButton.click();
+                    WebDriverWait wait = new WebDriverWait(browser.driver, 2);
+                    wait.until(d -> d.findElement(By.xpath(ScrapingConstants.CENTER_TAB_XPATH)));
+                }
+            }catch(Exception e){
+                //If there is an exception here then it most likely means that the modal is no longer
+                //there and in that case we want to ignore the exception and continue ...
+                log.trace("Error clicking ballot page modal, continuing: " + e.getMessage());
+            }
 
-            //Click on the position tab
-            Element tab = browser.doc.findFirst(positionTabHtmlLink);
-            tab.click();
+            for(String tabHtml : tabsList){
+                //Click on the position tab
+                Element tab = browser.doc.findFirst(tabHtml);
+                tab.click();
 
-            //Gather the position information (position name, max votes, and applicable stat types)
-            Position position = collectPositionData(browser);
-            Map<String, StatType> statMap = collectPositionStatTypes(browser);
+                //Gather the position information (position name, max votes, and applicable stat types)
+                Position position;
+                Long size  = positionService.getCount();
+                if(size == 0)
+                    position = collectPositionData(browser, tabHtml);
+                else
+                    position = positionService.findByPositionTabHtml(tabHtml);
 
-            //Gather the player information
-            collectPlayerData(browser, position, statMap);
-        }catch(NotFound e){
-            //TODO: Handle Exception or use Callable if I want to handle exception in the calling class
-            log.warn("Something went wrong " + e.getMessage() );
-        }finally {
-            browser.close();
+
+                Map<String, StatType> statMap = collectPositionStatTypes(browser);
+
+                //Gather the player information
+                collectPlayerData(browser, position, statMap);
+            }
+
+            browser.quit();
+            return true;
+        }catch(Exception e){
+            log.warn("Something went wrong " + e.getMessage());
+            browser.quit();
+            return false;
         }
     }
 
     //== PRIVATE METHODS ==
     //Collects the position data (position title and max votes for that position)
-    private Position collectPositionData(Browser browser) throws NotFound{
+    private Position collectPositionData(Browser browser, String positionTabHtmlLink) throws NotFound{
 
         List<Element> positionInfoList = browser.doc.findFirst(ScrapingConstants.POSITION_INFO_LIST).getChildElements();
 

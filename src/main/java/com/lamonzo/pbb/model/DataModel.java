@@ -1,5 +1,6 @@
 package com.lamonzo.pbb.model;
 
+import com.lamonzo.pbb.controller.tab.BaseTabController;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.domain.Position;
@@ -7,6 +8,7 @@ import com.lamonzo.pbb.domain.Settings;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
 import com.lamonzo.pbb.service.SettingsService;
+import com.lamonzo.pbb.util.ControllerUtil;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -40,6 +42,9 @@ public class DataModel implements Initializable {
 
     @Autowired
     private SettingsService settingsService;
+
+    @Autowired
+    private ControllerUtil controllerUtil;
 
     @Getter
     private Map<String, SimpleStringProperty> positionVoteMap;
@@ -100,13 +105,26 @@ public class DataModel implements Initializable {
 
         createObservableSettings();
 
+        refreshTableData(false);
 
+    }
+
+    public void refreshTableData(boolean rebuildTableViews){
         //GET PLAYER DATA FROM THE DATABASE AND CACHE IT
+        Iterable<Position> positions;
+
+        //Only make the call to the DB for positions if we don't already have them
+        if(positionMap == null) {
+            positionMap = new HashMap<>();
+            positions = positionService.getAllPositions();
+        }
+        else
+            positions = positionMap.values();
+
         playerTreeObjectData = new HashMap<>();
         positionVoteMap = new HashMap<>();
-        positionMap = new HashMap<>();
         playerData = new HashMap<>();
-        for(Position position : positionService.getAllPositions()){
+        for(Position position : positions){
             ObservableList<PlayerTreeObject> ptoList = FXCollections.observableArrayList();
             List<Player> playerList = new ArrayList<>();
             for(Player player : playerService.getPlayersByPosition(position)){
@@ -119,6 +137,11 @@ public class DataModel implements Initializable {
             positionVoteMap.put(position.getPositionName(), new SimpleStringProperty("0"));
             positionMap.put(position.getPositionName(), position);
             playerData.put(position.getPositionName(), playerList);
+        }
+
+        if(rebuildTableViews){
+            for(BaseTabController controller : controllerUtil.getControllers())
+                controller.buildTreeTable();
         }
     }
 

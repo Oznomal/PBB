@@ -23,6 +23,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeTableCell;
 import javafx.scene.control.TreeTableColumn;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Lookup;
@@ -64,6 +65,9 @@ public abstract class BaseTabController implements Initializable {
 
     @FXML
     protected JFXTextField positionFilter;
+
+    @Getter
+    protected String positionName;
 
     protected int maxVotes;
 
@@ -111,9 +115,9 @@ public abstract class BaseTabController implements Initializable {
         });
     }
 
-    //== PROTECTED METHODS ==
-    protected void buildTreeTable(String position){
-        ObservableList<PlayerTreeObject> players = dataModel.getPlayerDataByPosition(position);
+    //== PUBLIC METHODS ==
+    public void buildTreeTable(){
+        ObservableList<PlayerTreeObject> players = dataModel.getPlayerDataByPosition(positionName);
         if(players != null && !players.isEmpty()) {
 
             final TreeItem<PlayerTreeObject> root = new RecursiveTreeItem<>(players, RecursiveTreeObject::getChildren);
@@ -134,11 +138,11 @@ public abstract class BaseTabController implements Initializable {
             playerTableView.setEditable(false);
 
             //SETUP THE VOTING COUNT INFORMATION
-            maxVotes = dataModel.getPositionByName(position).getMaxVotes();
+            maxVotes = dataModel.getPositionByName(positionName).getMaxVotes();
             maxVotesLabel.setText("OF " + maxVotes + " VOTES ");
-            voteCountLabel.textProperty().bind(dataModel.getPositionVoteMap().get(position));
+            voteCountLabel.textProperty().bind(dataModel.getPositionVoteMap().get(positionName));
         }else{
-            log.warn("Player List is Empty for: " + position);
+            log.warn("Player List is Empty for: " + positionName);
         }
     }
 

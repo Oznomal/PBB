@@ -11,6 +11,8 @@ public interface PlayerService {
      */
     void saveOrUpdatePlayer(Player player);
 
+    void deleteAllPlayers();
+
     /**
      * Gets all of the players from the DB
      * @return an iterable of players

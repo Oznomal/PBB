@@ -11,6 +11,7 @@ public class OutsideLinebackerTabController extends BaseTabController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.OLB);
+        positionName = PositionConstants.OLB;
+        buildTreeTable();
     }
 }

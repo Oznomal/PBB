@@ -46,7 +46,22 @@ public class PositionServiceImpl implements PositionService{
     }
 
     @Override
+    public Position findByPositionTabHtml(String positionTabHtml) {
+        return positionRepository.findPositionByTabHtmlLink(positionTabHtml);
+    }
+
+    @Override
     public Integer getMaxVotesByPositionName(String positionName) {
         return positionRepository.getMaxVotesByPositionName(positionName);
+    }
+
+    @Override
+    public Long getCount() {
+        return positionRepository.count();
+    }
+
+    @Override
+    public void deleteAll() {
+        positionRepository.deleteAll();
     }
 }

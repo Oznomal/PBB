@@ -27,9 +27,27 @@ public interface PositionService {
     Position findByPositionName(String positionName);
 
     /**
+     * Gets the position from the Tab HTML Link
+     * @param positionTabHtml
+     * @return the Position object
+     */
+    Position findByPositionTabHtml(String positionTabHtml);
+
+    /**
      * Gets the maximum amount of votes based on the position name
      * @param positionName the position name
      * @return the maximum votes for the position
      */
     Integer getMaxVotesByPositionName(String positionName);
+
+    /**
+     * Gets the total count of entities within the table
+     * @return the count
+     */
+    Long getCount();
+
+    /**
+     * Deletes all of the positions from the DB
+     */
+    void deleteAll();
 }

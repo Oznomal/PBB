@@ -11,6 +11,7 @@ public class FreeSafetyTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.FS);
+        positionName = PositionConstants.FS;
+        buildTreeTable();
     }
 }

@@ -12,6 +12,7 @@ public class QuarterBackTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.QB);
+        positionName = PositionConstants.QB;
+        buildTreeTable();
     }
 }

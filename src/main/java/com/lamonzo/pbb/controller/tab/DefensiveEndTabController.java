@@ -11,6 +11,7 @@ public class DefensiveEndTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.DE);
+        positionName = PositionConstants.DE;
+        buildTreeTable();
     }
 }

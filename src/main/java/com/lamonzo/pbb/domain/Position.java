@@ -29,7 +29,7 @@ public class Position {
     private int maxVotes;
 
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String tabHtmlLink;
 
     //== CONSTRUCTORS ==

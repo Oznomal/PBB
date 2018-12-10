@@ -11,6 +11,7 @@ public class FullBackTabController extends BaseTabController{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.FB);
+        positionName = PositionConstants.FB;
+        buildTreeTable();
     }
 }

@@ -165,7 +165,8 @@
                     <Region HBox.hgrow="ALWAYS"/>
                     <HBox prefWidth="140" maxWidth="140" minWidth="140">
                         <Region HBox.hgrow="ALWAYS"/>
-                        <JFXButton fx:id="updatePlayerDataButton" text="Update Player Data">
+                        <JFXButton fx:id="updatePlayerDataButton" text="Update Player Data"
+                                   onAction="#handleUpdatePlayerDataButtonClick">
                             <HBox.margin>
                                 <Insets top="15"/>
                             </HBox.margin>

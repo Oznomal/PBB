@@ -11,6 +11,7 @@ public class TightEndTabController extends BaseTabController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.TE);
+        positionName = PositionConstants.TE;
+        buildTreeTable();
     }
 }

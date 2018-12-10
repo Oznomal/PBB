@@ -17,6 +17,13 @@ public interface PositionRepository extends CrudRepository<Position, Long> {
     Position findByPositionName(String positionName);
 
     /**
+     * Gets the position from the Tab HTML Link
+     * @param tabHtmlLink
+     * @return the Position object
+     */
+    Position findPositionByTabHtmlLink(String tabHtmlLink);
+
+    /**
      * Gets the maximum amount of votes based on the position name
      * @param positionName the position name
      * @return the maximum votes for the position

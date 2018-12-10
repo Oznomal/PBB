@@ -11,6 +11,7 @@ public class PunterTabController extends BaseTabController {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        buildTreeTable(PositionConstants.P);
+        positionName = PositionConstants.P;
+        buildTreeTable();
     }
 }
