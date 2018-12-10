@@ -25,4 +25,10 @@ public interface PlayerService {
      * @return an iterable of players
      */
     Iterable<Player> getPlayersByPosition(Position position);
+
+    /**
+     * Returns the total number of players in the  DB
+     * @return the count of players in the DB
+     */
+    Long getPlayerCount();
 }

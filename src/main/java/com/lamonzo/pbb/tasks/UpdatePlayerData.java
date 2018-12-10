@@ -63,7 +63,7 @@ public class UpdatePlayerData extends Task<Boolean> {
     public Boolean call() {
         //TODO: Empty out ballot selections and remove selected players from anywhere on the list
 
-        Browser browser = browserUtil.getBrowser();
+        Browser browser = browserUtil.getHeadlessBrowser();
 
         try {
             //visit the Pro-Bowl page

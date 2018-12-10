@@ -8,6 +8,7 @@ import com.lamonzo.pbb.domain.Settings;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
 import com.lamonzo.pbb.service.SettingsService;
+import com.lamonzo.pbb.tasks.UpdatePlayerDataService;
 import com.lamonzo.pbb.util.ControllerUtil;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -45,6 +46,9 @@ public class DataModel implements Initializable {
 
     @Autowired
     private ControllerUtil controllerUtil;
+
+    @Autowired
+    private UpdatePlayerDataService updatePlayerDataService;
 
     @Getter
     private Map<String, SimpleStringProperty> positionVoteMap;
@@ -85,28 +89,34 @@ public class DataModel implements Initializable {
 
     }
 
+    //Gets the data form the DB if it exists or scrapes the data form the website
     @PostConstruct
     private void fetchData(){
-        //TODO: Add an if check here to make sure that the Data is in the DB, if not then we must scrape site
+        if(playerService.getPlayerCount() != 0) {
+            //GET USER SETTINGS FROM THE DB OR CREATE DEFAULT SETTINGS IF NONE EXIST
+            settings = settingsService.getSettings();
+            if (settings == null) {
+                System.out.println("Settings is Null, Adding them");
+                settings = new Settings();
+                settings.setNumberOfBrowsers(Runtime.getRuntime().availableProcessors() / 2);
+                settings.setVotingGoals(1);
+                settings.setLightningMode(false);
+                settings.setShowBrowser(false);
+                settings.setAutoFill(true);
+                settings.setRotateProxies(false);
+                settingsService.saveSettings(settings);
+            }
 
-        //GET USER SETTINGS FROM THE DB OR CREATE DEFAULT SETTINGS IF NONE EXIST
-        settings = settingsService.getSettings();
-        if(settings == null){
-            System.out.println("Settings is Null, Adding them");
-            settings = new Settings();
-            settings.setNumberOfBrowsers(Runtime.getRuntime().availableProcessors() / 2);
-            settings.setVotingGoals(1);
-            settings.setLightningMode(false);
-            settings.setShowBrowser(false);
-            settings.setAutoFill(true);
-            settings.setRotateProxies(false);
-            settingsService.saveSettings(settings);
+            createObservableSettings();
+            refreshTableData(false);
         }
-
-        createObservableSettings();
-
-        refreshTableData(false);
-
+        else{
+            positionMap = new HashMap<>();
+            playerTreeObjectData = new HashMap<>();
+            positionVoteMap = new HashMap<>();
+            playerData = new HashMap<>();
+            updatePlayerDataService.start();
+        }
     }
 
     public void refreshTableData(boolean rebuildTableViews){
@@ -114,7 +124,7 @@ public class DataModel implements Initializable {
         Iterable<Position> positions;
 
         //Only make the call to the DB for positions if we don't already have them
-        if(positionMap == null) {
+        if(positionMap == null || positionMap.isEmpty()) {
             positionMap = new HashMap<>();
             positions = positionService.getAllPositions();
         }

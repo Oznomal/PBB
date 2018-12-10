@@ -35,7 +35,7 @@ public class BrowserUtil {
 
     //================================================================================================================//
     //== PUBLIC METHODS ==
-    //Generates a browser with a random user agent
+    //Generates a browser based on the users settings with a random user agent
     public Browser getBrowser(){
 
         List<String> userAgentList;
@@ -71,6 +71,19 @@ public class BrowserUtil {
         //Create and return the browser
         Browser browser = new Browser(new ChromeDriver(options));
         log.info("New Browser Created | User Agent={}", agent);
+
+        return browser;
+    }
+
+    //Generates a standard headless browser regardless of the user settings
+    //useful for tasks other than submitting the ballots
+    public Browser getHeadlessBrowser(){
+        System.setProperty(CHROME_DRIVER_SYSTEM_PROPERTY, CHROME_DRIVER_PATH);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments(CHROME_HEADLESS_OPTION);
+        options.addArguments(CHROME_WINDOW_SIZE_OPTION);
+        Browser browser = new Browser(new ChromeDriver(options));
+        log.info("New Generic Headless Browser Created");
 
         return browser;
     }

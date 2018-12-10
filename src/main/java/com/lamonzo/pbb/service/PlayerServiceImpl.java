@@ -45,4 +45,9 @@ public class PlayerServiceImpl implements PlayerService{
     public Iterable<Player> getPlayersByPosition(Position position) {
         return playerRepository.findAllByPosition(position);
     }
+
+    @Override
+    public Long getPlayerCount() {
+        return playerRepository.count();
+    }
 }
