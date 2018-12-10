@@ -147,6 +147,9 @@ public class SettingsController implements Initializable {
         showVotingToggle.selectedProperty().bindBidirectional(dataModel.getShowBrowser());
         rotateProxiesToggle.selectedProperty().bindBidirectional(dataModel.getRotateProxies());
 
+        //Disabling the update button while the service is running
+        updatePlayerDataButton.disableProperty().bind(dataModel.getIsUpdatePlayerDataRunning());
+
     }
 
     //PUBLIC METHODS

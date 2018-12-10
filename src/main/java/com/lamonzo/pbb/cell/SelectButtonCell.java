@@ -4,8 +4,10 @@ import com.jfoenix.controls.JFXButton;
 import com.lamonzo.pbb.constants.CssConstants;
 import com.lamonzo.pbb.domain.PlayerTreeObject;
 import com.lamonzo.pbb.model.DataModel;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.TreeTableCell;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -34,11 +36,22 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
         if (empty) {
             setGraphic(null);
         }
-        else if(getTreeTableRow().getTreeItem() != null) {
+        else if(getTreeTableRow().getTreeItem() != null){
             PlayerTreeObject pto = getTreeTableRow().getTreeItem().getValue();
 
             //HANDLE BUTTON CLICKS
             selectBtn.setOnAction(event -> handleSelectPlayerButtonClick(pto));
+
+            //USERS CAN'T SELECT PLAYERS WHILE UPDATING PLAYER DATA
+//            selectBtn.disableProperty().bind(dataModel.getIsUpdatePlayerDataRunning());
+
+
+            SimpleStringProperty currentVoteCount = dataModel.getPositionVoteMap().get(pto.getPosition().get());
+            String mv = Integer.toString(pto.getPlayer().getPosition().getMaxVotes());
+            selectBtn.disableProperty().bind(Bindings.and(
+                    Bindings.greaterThanOrEqual(currentVoteCount, mv),
+                    Bindings.not(pto.getIsSelected()))
+                    .or(dataModel.getIsUpdatePlayerDataRunning()));
 
             //SET BUTTON TEXT
             selectBtn.setText(pto.getIsSelected().get() ? CssConstants.SELECTED_BTN_TEXT
@@ -71,6 +84,7 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
 
         updateCurrentVoteCount(pos, currVoteCount);
         pto.setIsSelected(newValue);
+        updateItem(true, false);
     }
 
     private int getCurrentVoteCount(String position){

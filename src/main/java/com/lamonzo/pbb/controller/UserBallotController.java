@@ -65,9 +65,9 @@ public class UserBallotController implements Initializable {
         userBallotListView.setItems(dataModel.getBallotList());
         userBallotListView.setCellFactory(column -> getUserBallotCell());
 
-        //Makes submit only clickable when count is selected and at least 1 player is added
+        //Makes submit only clickable when count at least 1 player is added and not updating players
         submitButton.disableProperty().bind((Bindings.isEmpty(userBallotListView.getItems()))
-                .or(submitBallotService.runningProperty()));
+                .or(dataModel.getIsUpdatePlayerDataRunning()));
         submitButton.setOnAction(event -> handleSubmitButtonClick());
 
         //Binds the counter and formats the number so it is always 6 long

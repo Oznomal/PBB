@@ -83,6 +83,9 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleBooleanProperty lightningMode = new SimpleBooleanProperty();
 
+    @Getter
+    private SimpleBooleanProperty isUpdatePlayerDataRunning = new SimpleBooleanProperty();
+
     //== PUBLIC METHODS ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -150,6 +153,9 @@ public class DataModel implements Initializable {
         }
 
         if(rebuildTableViews){
+            //Remove players from ballot list in case they no longer exist
+            ballotList.clear();
+
             for(BaseTabController controller : controllerUtil.getControllers())
                 controller.buildTreeTable();
         }

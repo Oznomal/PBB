@@ -26,6 +26,7 @@ public class UpdatePlayerDataService extends Service<Void> {
     private final PlayerService playerService;
 
     private int successCount;
+    private int finishCount;
 
     //== CONSTRUCTORS ==
     @Autowired
@@ -43,6 +44,10 @@ public class UpdatePlayerDataService extends Service<Void> {
         return new Task<Void>() {
             @Override
             protected Void call() throws Exception {
+
+                //User to bind these inner tasks to buttons
+                dataModel.getIsUpdatePlayerDataRunning().set(true);
+
                 //Going to force this process to run on half of the available processors, regardless
                 //of the users settings because it is time consuming ... but using all of the processors
                 //is known to throw timeout errors at times, which is fine when submitting ballots but not ok here
@@ -75,18 +80,32 @@ public class UpdatePlayerDataService extends Service<Void> {
 
                 //Process the lists to be updated
                 successCount = 0;
+                finishCount = threadResponsibilitiesList.size();
                 for (List<String> responsibilities : threadResponsibilitiesList) {
                     UpdatePlayerData task = getUpdatePlayerData(responsibilities);
-                    task.setOnSucceeded(event -> {
-                        log.info("Thread Completed | Count: " + (++successCount));
 
-                        if (successCount == threadResponsibilitiesList.size()) {
+                    task.setOnSucceeded(e -> {
+                        if(task.getValue()){
+                            log.info("Update Player Data Thread Completed | Count: " + (++successCount));
+                        }else{
+                            log.info("Update Player Data Thread Failed | Finish Count: " + (--finishCount));
+                        }
+
+                        if (successCount == finishCount) {
                             dataModel.refreshTableData(true);
+                            dataModel.getIsUpdatePlayerDataRunning().set(false);
+
                         }
                     });
 
-                    task.setOnFailed(event -> {
-                        log.error("Something went wrong with the task submission");
+
+                    task.setOnFailed(e -> {
+                        log.error("Something went wrong with the task submission | Finish Count: " +  --finishCount);
+
+                        if (successCount == finishCount) {
+                            dataModel.refreshTableData(true);
+                            dataModel.getIsUpdatePlayerDataRunning().set(false);
+                        }
                     });
 
                     taskExecutor.submit(task);
