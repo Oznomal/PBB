@@ -39,7 +39,7 @@
 
     <VBox>
         <Region VBox.vgrow="ALWAYS"/>
-        <JFXProgressBar fx:id="progressBar" maxWidth="100" minWidth="100"/>
+        <ProgressBar fx:id="progressBar" styleClass="bar" maxWidth="100" minWidth="100" />
         <Region VBox.vgrow="ALWAYS"/>
 
         <HBox.margin>

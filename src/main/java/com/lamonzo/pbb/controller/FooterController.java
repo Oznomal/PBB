@@ -6,6 +6,7 @@ import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ public class FooterController implements Initializable {
     private final DataModel dataModel;
 
     @FXML
-    private JFXProgressBar progressBar;
+    private ProgressBar progressBar;
 
     @FXML
     private Label updateLabel;

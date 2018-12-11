@@ -1,3 +1,16 @@
 .footer-text{
     -fx-font-size: 8px;
 }
+
+.progress-bar {
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 1;
+}
+
+.progress-bar > .bar{
+    -fx-background-color: linear-gradient(to bottom, derive(-pbb-main-accent-color, -7%), derive(-pbb-main-accent-color, 0%), derive(-pbb-main-accent-color, -3%), derive(-pbb-main-accent-color, -9%) );
+    -fx-background-insets: 1 1 2 1;
+    -fx-padding: 0.20em;
+}
