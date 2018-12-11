@@ -8,7 +8,6 @@ import com.lamonzo.pbb.controller.dialog.SettingsController;
 import com.lamonzo.pbb.domain.Player;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.tasks.SubmitBallot;
-import com.lamonzo.pbb.tasks.SubmitBallotBase;
 import com.lamonzo.pbb.tasks.SubmitLightningBallot;
 import javafx.beans.binding.Bindings;
 import javafx.concurrent.Task;

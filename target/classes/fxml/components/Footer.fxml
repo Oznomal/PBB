@@ -6,27 +6,46 @@
 <?import javafx.geometry.Insets?>
 <?import java.lang.Double?>
 <?import java.net.URL?>
+<?import com.jfoenix.controls.JFXProgressBar?>
 <HBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lamonzo.pbb.controller.FooterController"
+      alignment="TOP_CENTER">
 
     <fx:define>
         <Double fx:id="margin" fx:value="5.0"/>
-        <Double fx:id="rightMargin" fx:value="5.0"/>
+        <Double fx:id="rightMargin" fx:value="10.0"/>
     </fx:define>
 
     <Label styleClass="footer-text">
-        Designed and Developed by Oznomal
+        The Pro Bowl Bot Version 1.0 | Designed and Developed by Oznomal
         <HBox.margin>
             <Insets left="$margin" bottom="$margin"/>
         </HBox.margin>
     </Label>
     <Region HBox.hgrow="ALWAYS"/>
-    <Label styleClass="footer-text">
-        Pro Bowl Bot Version 1.0
+    <Label fx:id="cancelLabel" styleClass="progress-bar-label">
+        Cancelling Task:
         <HBox.margin>
-            <Insets right="$margin" bottom="$margin"/>
+            <Insets right="$rightMargin" bottom="$margin"/>
         </HBox.margin>
     </Label>
+    <Label fx:id="updateLabel" styleClass="progress-bar-label">
+        Updating Player Data:
+        <HBox.margin>
+            <Insets right="$rightMargin" bottom="$margin"/>
+        </HBox.margin>
+    </Label>
+
+    <VBox>
+        <Region VBox.vgrow="ALWAYS"/>
+        <JFXProgressBar fx:id="progressBar" maxWidth="100" minWidth="100"/>
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <HBox.margin>
+            <Insets bottom="$margin" right="$rightMargin"/>
+        </HBox.margin>
+    </VBox>
 
     <stylesheets>
         <URL value="@../../css/Footer.css"/>
