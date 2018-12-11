@@ -42,16 +42,16 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
             //HANDLE BUTTON CLICKS
             selectBtn.setOnAction(event -> handleSelectPlayerButtonClick(pto));
 
-            //USERS CAN'T SELECT PLAYERS WHILE UPDATING PLAYER DATA
-//            selectBtn.disableProperty().bind(dataModel.getIsUpdatePlayerDataRunning());
-
-
+            //DISABLE SELECT PLAYER BUTTONS UNDER 3 CONDITIONS
+            //1. THE MAX VOTE IS REACHED FOR POSITION (DISABLES ALL UNSELECTED PLAYERS BUTTONS)
+            //2. WHEN UPDATE PLAYER DATA IS RUNNING (DISABLES ALL BUTTONS)
+            //3. WHEN SUBMIT BALLOT IS RUNNING (DISABLES ALL BUTTONS)
             SimpleStringProperty currentVoteCount = dataModel.getPositionVoteMap().get(pto.getPosition().get());
             String mv = Integer.toString(pto.getPlayer().getPosition().getMaxVotes());
             selectBtn.disableProperty().bind(Bindings.and(
                     Bindings.greaterThanOrEqual(currentVoteCount, mv),
                     Bindings.not(pto.getIsSelected()))
-                    .or(dataModel.getIsUpdatePlayerDataRunning()));
+                    .or(dataModel.getIsUpdatePlayerDataRunning()).or(dataModel.getIsSubmitBallotRunning()));
 
             //SET BUTTON TEXT
             selectBtn.setText(pto.getIsSelected().get() ? CssConstants.SELECTED_BTN_TEXT

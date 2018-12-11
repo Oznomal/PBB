@@ -8,6 +8,7 @@ import com.lamonzo.pbb.domain.Position;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.util.BrowserUtil;
 import javafx.concurrent.Task;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import org.openqa.selenium.*;
@@ -40,6 +41,9 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
     protected static final int SELECT_PLAYER_MAX_ATTEMPTS = 10;
 
     protected static final String JS_SCROLL_TO_TOP = "window.scrollTo(0, 0)";
+
+//    @Setter
+//    protected static boolean finished = false;
 
     @Autowired
     protected DataModel dataModel;
@@ -192,51 +196,10 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
 
             log.info("Processing Position Tab: " + pos.getPositionName());
 
-            for(Player player : finalBallotMap.get(pos)) {
-                //Setup XPath Strings
-                String playerDivXPath = ScrapingConstants.PLAYER_DIV_XPATH_PREFIX + player.getHtmlIdentifier()
-                        + ScrapingConstants.PLAYER_DIV_XPATH_SUFFIX;
-                String playerVoteXPath = playerDivXPath + ScrapingConstants.PLAYER_VOTE_BTN_XPATH;
+            //Will only return false if the cancel button is clicked
+            if(!selectPlayers(pos, jse, wait))
+                return;
 
-                int selectPlayerAttempt = 0;
-                String scroll = "0";
-
-                //Selenium can only find elements that are visible within the view port so if a player cannot
-                //be found it most likely means he is further down the page and we should scroll down and retry
-                while(selectPlayerAttempt < SELECT_PLAYER_MAX_ATTEMPTS) {
-                    try{
-                        jse.executeScript("window.scrollTo(0, " + scroll + ")");
-
-                        //Simulates preforming a mouse hover to get the overlay to appear
-                        WebElement playerDiv = wait.until(d -> d.findElement(By.xpath(playerDivXPath)));
-                        Actions actions = new Actions(browser.driver);
-                        actions.moveToElement(playerDiv).perform();
-
-                        preformRandomSleep();
-
-                        //Click the vote button that appears after hovering
-                        WebElement voteBtn = wait.until(d -> d.findElement(By.xpath(playerVoteXPath)));
-                        voteBtn.click();
-                        break;
-                    }
-                    catch(ElementNotSelectableException | ElementNotInteractableException | TimeoutException e){
-                        //Update the scroll position if the maximum number of attempts haven't been exceeded
-                        if(++selectPlayerAttempt <= SELECT_PLAYER_MAX_ATTEMPTS){
-                            log.warn("Unable to select player or vote button for: "
-                                    + player.getName()+ " | Attempt " + selectPlayerAttempt);
-
-                            int scrollPosition = Integer.parseInt(scroll)
-                                    + (browser.driver.manage().window().getSize().getHeight());
-                            scroll = Integer.toString(scrollPosition);
-                        }
-                        else {
-                            log.error("Exceeded attempts to find " + player.getName() + " | "
-                                    + player.getPosition().getPositionName() + " | Moving to next player");
-                            //TODO: Implement way to provide feedback if player was part of true ballot
-                        }
-                    }
-                }
-            }
         }
 
         //Submit the ballot for the final position
@@ -388,5 +351,68 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
     }
 
     //END OF NAVIGATING TO THE BALLOT PAGE SECTION
+    //***************************************************************************************************************//
+
+    //***************************************************************************************************************//
+    //SELECTING PLAYERS ON THE BALLOT PAGE
+
+    private boolean selectPlayers(Position pos, JavascriptExecutor jse, WebDriverWait wait) throws InterruptedException{
+        for(Player player : finalBallotMap.get(pos)) {
+            //Setup XPath Strings
+            String playerDivXPath = ScrapingConstants.PLAYER_DIV_XPATH_PREFIX + player.getHtmlIdentifier()
+                    + ScrapingConstants.PLAYER_DIV_XPATH_SUFFIX;
+            String playerVoteXPath = playerDivXPath + ScrapingConstants.PLAYER_VOTE_BTN_XPATH;
+
+            int selectPlayerAttempt = 0;
+            String scroll = "0";
+
+            //Selenium can only find elements that are visible within the view port so if a player cannot
+            //be found it most likely means he is further down the page and we should scroll down and retry
+            while(selectPlayerAttempt < SELECT_PLAYER_MAX_ATTEMPTS) {
+
+                //Placing a breaker here to help terminate threads quickly when the cancel button
+                //is clicked because this is about the only place in the code that could be a bottleneck
+                if(dataModel.getCancellingTask().get())
+                    return false;
+
+                try{
+                    jse.executeScript("window.scrollTo(0, " + scroll + ")");
+
+                    //Simulates preforming a mouse hover to get the overlay to appear
+                    WebElement playerDiv = wait.until(d -> d.findElement(By.xpath(playerDivXPath)));
+                    Actions actions = new Actions(browser.driver);
+                    actions.moveToElement(playerDiv).perform();
+
+                    preformRandomSleep();
+
+                    //Click the vote button that appears after hovering
+                    WebElement voteBtn = wait.until(d -> d.findElement(By.xpath(playerVoteXPath)));
+                    voteBtn.click();
+                    break;
+                }
+                catch(ElementNotSelectableException | ElementNotInteractableException | TimeoutException e){
+
+
+                    //Update the scroll position if the maximum number of attempts haven't been exceeded
+                    if(++selectPlayerAttempt <= SELECT_PLAYER_MAX_ATTEMPTS){
+                        log.warn("Unable to select player or vote button for: "
+                                + player.getName()+ " | Attempt " + selectPlayerAttempt);
+
+                        int scrollPosition = Integer.parseInt(scroll)
+                                + (browser.driver.manage().window().getSize().getHeight());
+                        scroll = Integer.toString(scrollPosition);
+                    }
+                    else {
+                        log.error("Exceeded attempts to find " + player.getName() + " | "
+                                + player.getPosition().getPositionName() + " | Moving to next player");
+                        //TODO: Implement way to provide feedback if player was part of true ballot
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    //END OF SELECTING PLAYERS ON THE BALLOT PAGE
     //***************************************************************************************************************//
 }

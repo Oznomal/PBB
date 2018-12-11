@@ -31,6 +31,8 @@ public class ThreadConfig {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setDaemon(true);
         executor.setThreadNamePrefix("Variable_Thread_");
+        executor.setWaitForTasksToCompleteOnShutdown(true);
+        executor.setAwaitTerminationSeconds(60);
         executor.initialize();
 
         return executor;

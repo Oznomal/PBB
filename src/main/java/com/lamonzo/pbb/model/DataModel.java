@@ -86,6 +86,12 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleBooleanProperty isUpdatePlayerDataRunning = new SimpleBooleanProperty();
 
+    @Getter
+    private SimpleBooleanProperty isSubmitBallotRunning = new SimpleBooleanProperty();
+
+    @Getter
+    private SimpleBooleanProperty cancellingTask = new SimpleBooleanProperty();
+
     //== PUBLIC METHODS ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {

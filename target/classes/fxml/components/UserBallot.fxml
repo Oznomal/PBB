@@ -58,31 +58,26 @@
     </JFXListView>
 
     <HBox prefHeight="50" minHeight="50" maxHeight="50" alignment="CENTER_LEFT">
-        <JFXButton fx:id="submitButton" styleClass="submit-btn">
-            Submit Ballot
+        <JFXButton fx:id="submitButton" styleClass="submit-btn" minWidth="67.0" maxWidth="67.0">
+            Submit
             <HBox.margin>
                 <Insets right="10"/>
             </HBox.margin>
         </JFXButton>
 
-        <JFXButton fx:id="settingsButton" styleClass="submit-btn" onAction="#handleSettingsButtonClick">
+        <JFXButton fx:id="cancelButton" styleClass="cancel-btn" minWidth="67.0" maxWidth="67.0">
+            Cancel
+            <HBox.margin>
+                <Insets right="10"/>
+            </HBox.margin>
+        </JFXButton>
+
+        <JFXButton fx:id="settingsButton" styleClass="submit-btn">
             Settings
         </JFXButton>
 
         <Region HBox.hgrow="ALWAYS"/>
 
-
-        <!--<JFXComboBox fx:id="countSelector" promptText="Select Count">-->
-            <!--<items>-->
-                <!--<FXCollections fx:factory="observableArrayList">-->
-                    <!--<String fx:value="10" />-->
-                    <!--<String fx:value="100" />-->
-                    <!--<String fx:value="500" />-->
-                    <!--<String fx:value="1000" />-->
-                    <!--<String fx:value="UNLIMITED" />-->
-                <!--</FXCollections>-->
-            <!--</items>-->
-        <!--</JFXComboBox>-->
 
         <Label fx:id="ballotCountLabel" styleClass="ballot-count-label">
             000000
@@ -92,14 +87,6 @@
             <Insets left="$leftMargin"/>
         </VBox.margin>
     </HBox>
-
-    <!--<HBox prefHeight="50.0" maxHeight="50.0" minHeight="50.0" alignment="CENTER_LEFT">-->
-        <!--<Region HBox.hgrow="ALWAYS"/>-->
-        <!--<Label fx:id="ballotCountLabel" styleClass="ballot-count-label">-->
-            <!--000000-->
-        <!--</Label>-->
-        <!--<Region HBox.hgrow="ALWAYS"/>-->
-    <!--</HBox>-->
 
     <stylesheets>
         <URL value="@../../css/UserBallot.css"/>

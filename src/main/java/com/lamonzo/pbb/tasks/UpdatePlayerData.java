@@ -61,7 +61,6 @@ public class UpdatePlayerData extends Task<Boolean> {
     //== PUBLIC METHODS ==
     @Override
     public Boolean call() {
-        //TODO: Empty out ballot selections and remove selected players from anywhere on the list
 
         Browser browser = browserUtil.getHeadlessBrowser();
 

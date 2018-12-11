@@ -25,8 +25,9 @@ public class SubmitBallot extends SubmitBallotBase {
     protected void submitBallot() throws JauntiumException {
         preSubmissionProcessing();
 
-        //Process votes until stopped (unlimited) or until foals are reached
-        while(unlimited || dataModel.getSuccessCount().get() < Integer.parseInt(voteSliderString)){
+        //Process votes until stopped (unlimited) or until goals are reached
+        while(!dataModel.getCancellingTask().get()
+                && (unlimited || dataModel.getSuccessCount().get() < Integer.parseInt(voteSliderString))){
             try {
                 browser = browserUtil.getBrowser();
                 visitBallotPage(browser, true);

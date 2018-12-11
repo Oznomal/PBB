@@ -1,11 +1,9 @@
 package com.lamonzo.pbb.tasks;
 
-
 import com.jauntium.JauntiumException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
 
 /**
  * Single Thread Class used to submit multiple ballots
@@ -32,7 +30,8 @@ public class SubmitLightningBallot extends SubmitBallotBase{
         preSubmissionProcessing();
 
         //Process votes until stopped (unlimited) or until foals are reached
-        while(unlimited || dataModel.getSuccessCount().get() < Integer.parseInt(voteSliderString)){
+        while(!dataModel.getCancellingTask().get()
+                && (unlimited || dataModel.getSuccessCount().get() < Integer.parseInt(voteSliderString))){
             try{
                 if(failedInnerAttempt || firstAttempt) {
                     firstAttempt = false;
