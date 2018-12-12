@@ -37,6 +37,13 @@
         </HBox.margin>
     </Label>
 
+    <Label fx:id="buildingBallotLabel" styleClass="progress-bar-label">
+        Building Ballot:
+        <HBox.margin>
+            <Insets right="$rightMargin" bottom="$margin"/>
+        </HBox.margin>
+    </Label>
+
     <VBox>
         <Region VBox.vgrow="ALWAYS"/>
         <ProgressBar fx:id="progressBar" styleClass="bar" maxWidth="100" minWidth="100" />

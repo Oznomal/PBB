@@ -111,6 +111,9 @@ public class UserBallotController implements Initializable {
     private void handleSubmitButtonClick(){
         if(!dataModel.getBallotList().isEmpty()) {
 
+            //Progress Bar for to show before page loads all the way
+            dataModel.getIsInitialSubmitBallotLoading().set(true);
+
             //Disable Buttons
             dataModel.getIsSubmitBallotRunning().set(true);
 
@@ -159,6 +162,8 @@ public class UserBallotController implements Initializable {
     }
 
     private void handleCancelButtonClick(){
+        if(dataModel.getIsInitialSubmitBallotLoading().getValue())
+            dataModel.getIsInitialSubmitBallotLoading().setValue(false);
         dataModel.getCancellingTask().set(true);
     }
 

@@ -98,6 +98,9 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleDoubleProperty loadingProgress = new SimpleDoubleProperty(0);
 
+    @Getter
+    private SimpleBooleanProperty isInitialSubmitBallotLoading = new SimpleBooleanProperty();
+
     //== PUBLIC METHODS ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -192,6 +195,9 @@ public class DataModel implements Initializable {
 
     //Thread safe way to update the counter which is used by multiple threads
     public synchronized int incrementSuccessCount(){
+        if(isInitialSubmitBallotLoading.getValue())
+            isInitialSubmitBallotLoading.set(false);
+
         int newValue = successCount.get() + 1;
         Platform.runLater(() -> successCount.set(newValue));
         return newValue;
