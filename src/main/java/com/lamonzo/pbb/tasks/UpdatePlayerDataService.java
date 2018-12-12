@@ -112,10 +112,6 @@ public class UpdatePlayerDataService extends Service<Void> {
     private void updateDataModelVariables(){
         dataModel.refreshTableData(true);
         dataModel.getIsUpdatePlayerDataRunning().set(false);
-
-        //Only Runs on Startup
-        if(dataModel.getIsFetchDataRunning().get())
-            dataModel.getIsFetchDataRunning().set(false);
     }
 
     //== SPRING LOOKUPS ==

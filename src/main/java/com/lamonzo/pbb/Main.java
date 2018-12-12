@@ -1,14 +1,13 @@
 package com.lamonzo.pbb;
 
 
+import com.lamonzo.pbb.controller.SplashScreenController;
 import com.lamonzo.pbb.domain.Settings;
 import com.lamonzo.pbb.model.DataModel;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.SettingsService;
 import com.lamonzo.pbb.tasks.UpdatePlayerDataService;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +23,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.util.HashMap;
+import java.util.Random;
 
 //import org.scenicview.ScenicView;
 
@@ -45,6 +44,13 @@ public class Main extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
+    private FXMLLoader splashLoader = null;
+    private SplashScreenController splashController = null;
+
+    private double progress = 0.0;
+    private double maxProgress = 11.0;
+
+
     //== PUBLIC METHODS ==
     @Override
     public void init() throws Exception {
@@ -57,8 +63,11 @@ public class Main extends Application {
         updatePlayerDataService = context.getBean(UpdatePlayerDataService.class);
         dataModel = context.getBean(DataModel.class);
 
-        FXMLLoader splashLoader = new FXMLLoader(getClass().getResource("/fxml/splash/SplashScreen.fxml"));
+        splashLoader = new FXMLLoader(getClass().getResource("/fxml/splash/SplashScreen.fxml"));
         splashNode = splashLoader.load();
+
+        splashController = splashLoader.getController();
+        splashController.getSplashProgressBar().progressProperty().bind(dataModel.getLoadingProgress());
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/containers/MainContainer.fxml"));
         loader.setControllerFactory(context::getBean);
@@ -72,7 +81,13 @@ public class Main extends Application {
         Task task = new Task<Void>(){
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(5000);
+                Random random = new Random();
+                for(int i = 0; i < maxProgress+1; i++){
+                    Thread.sleep(random.nextInt(500));
+                        double value = progress++ / maxProgress;
+                        System.out.println(value);
+                        dataModel.getLoadingProgress().set(value);
+                }
                 return null;
             }
         };
@@ -119,20 +134,12 @@ public class Main extends Application {
     }
 
     private void fetchData(Stage initStage){
-        dataModel.getIsFetchDataRunning().set(true);
-        dataModel.getIsFetchDataRunning().addListener((observable, oldValue, newValue) -> {
-                if(oldValue == true && newValue == false){
-                    System.out.println("Showing Main Screen Now");
-                    initStage.hide();
-                    showMain();
-                }
-        });
+
 
         if(playerService.getPlayerCount() != 0) {
             //GET USER SETTINGS FROM THE DB OR CREATE DEFAULT SETTINGS IF NONE EXIST
             Settings settings = settingsService.getSettings();
             if (settings == null) {
-                System.out.println("Settings is Null, Adding them");
                 settings = new Settings();
                 settings.setNumberOfBrowsers(Runtime.getRuntime().availableProcessors() / 2);
                 settings.setVotingGoals(1);
@@ -146,11 +153,14 @@ public class Main extends Application {
             dataModel.setSettings(settings);
             dataModel.createObservableSettings();
             dataModel.refreshTableData(true);
-            dataModel.getIsFetchDataRunning().set(false);
         }
         else{
             updatePlayerDataService.start();
         }
+
+        dataModel.getLoadingProgress().set(1.0);
+        showMain();
+        initStage.hide();
     }
 
     @Override

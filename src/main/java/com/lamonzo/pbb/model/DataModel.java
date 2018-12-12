@@ -12,6 +12,7 @@ import com.lamonzo.pbb.tasks.UpdatePlayerDataService;
 import com.lamonzo.pbb.util.ControllerUtil;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -19,6 +20,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.aop.interceptor.SimpleTraceInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -94,7 +96,7 @@ public class DataModel implements Initializable {
     private SimpleBooleanProperty cancellingTask = new SimpleBooleanProperty();
 
     @Getter
-    private SimpleBooleanProperty isFetchDataRunning = new SimpleBooleanProperty();
+    private SimpleDoubleProperty loadingProgress = new SimpleDoubleProperty(0);
 
     //== PUBLIC METHODS ==
     @Override
