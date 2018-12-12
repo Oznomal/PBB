@@ -18,6 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -62,6 +63,7 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleIntegerProperty successCount = new SimpleIntegerProperty(0);
 
+    @Setter
     private Settings settings;
 
     @Getter
@@ -167,10 +169,6 @@ public class DataModel implements Initializable {
     //always up to date with the settings and eliminate the need to constantly go back
     //and forth to the DB
     public void createObservableSettings(){
-        createObservableSettings(settings);
-    }
-
-    public void createObservableSettings(Settings settings){
         votingGoals.set(settings.getVotingGoals());
         numberOfBrowsers.set(settings.getNumberOfBrowsers());
         lightningMode.set(settings.isLightningMode());
@@ -178,6 +176,7 @@ public class DataModel implements Initializable {
         showBrowser.set(settings.isShowBrowser());
         rotateProxies.set(settings.isRotateProxies());
     }
+
 
     public void updateSettings(){
         settings.setNumberOfBrowsers(numberOfBrowsers.get());

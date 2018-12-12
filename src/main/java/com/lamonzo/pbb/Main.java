@@ -10,9 +10,12 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +41,9 @@ public class Main extends Application {
     private ConfigurableApplicationContext context;
     private Parent rootNode;
     private Parent splashNode;
+
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     //== PUBLIC METHODS ==
     @Override
@@ -89,10 +95,26 @@ public class Main extends Application {
     }
 
     private void showMain(){
-        Stage primaryStage = new Stage(StageStyle.DECORATED);
-        primaryStage.setScene(new Scene(rootNode, 1500, 1000));
+        Stage primaryStage = new Stage(StageStyle.DECORATED.UNDECORATED);
         primaryStage.centerOnScreen();
         primaryStage.setResizable(false);
+
+        rootNode.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+        });
+        rootNode.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                primaryStage.setX(event.getScreenX() - xOffset);
+                primaryStage.setY(event.getScreenY() - yOffset);
+            }
+        });
+
+        primaryStage.setScene(new Scene(rootNode, 1500, 1000, Color.TRANSPARENT));
         primaryStage.show();
     }
 
@@ -121,7 +143,8 @@ public class Main extends Application {
                 settingsService.saveSettings(settings);
             }
 
-            dataModel.createObservableSettings(settings);
+            dataModel.setSettings(settings);
+            dataModel.createObservableSettings();
             dataModel.refreshTableData(true);
             dataModel.getIsFetchDataRunning().set(false);
         }
