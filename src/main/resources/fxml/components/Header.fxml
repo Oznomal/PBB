@@ -8,7 +8,24 @@
 <?import java.net.URL?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.control.Separator?>
-<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" prefWidth="400">
+<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<VBox xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" prefWidth="400"
+      fx:controller="com.lamonzo.pbb.controller.HeaderController">
+
+    <HBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <JFXButton fx:id="minButton" focusTraversable="false" styleClass="decorator-button">
+            <HBox.margin>
+                <Insets right="2.0"/>
+            </HBox.margin>
+        </JFXButton>
+        <JFXButton fx:id="closeButton" focusTraversable="false" styleClass="decorator-button">
+            <HBox.margin>
+                <Insets right="3.0"/>
+            </HBox.margin>
+        </JFXButton>
+    </HBox>
 
     <HBox>
         <ImageView>

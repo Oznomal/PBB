@@ -12,3 +12,11 @@
 .separator .line{
     -fx-border-color: -pbb-main-accent-color;
 }
+
+.decorator-button:hover ImageView{
+    -fx-effect: innershadow( gaussian , -pbb-main-text-color , 7 , 1 , 1 , 1 );
+}
+
+.jfx-rippler{
+    -jfx-rippler-fill: TRANSPARENT;
+}
