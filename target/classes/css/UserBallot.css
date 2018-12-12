@@ -29,9 +29,14 @@
     -fx-background-color: -pbb-row-hover-color;
 }
 
+.jfx-list-view .list-cell:filled:selected .label,
+.jfx-list-view .list-cell:filled:hover .label{
+    -fx-text-fill: -pbb-hover-text-color;
+}
+
 /*Cell color when focused and selected or when hovered and selected*/
 .jfx-list-view:focused .list-cell:filled:selected,
-.jfx-list-view .list-cell:filled:selected:hover{
+.jfx-list-view:focused .list-cell:filled:selected:hover{
     -fx-background-color: -pbb-row-selected-color;
 }
 
@@ -59,9 +64,9 @@
     -fx-font-family: DS-Digital;
     -fx-font-size: 28px;
     -fx-text-fill: #CE0316;
-    -fx-padding: 5 10 5 10;
-    -fx-background-color: black;
-    -fx-background-radius: 2;
+    /*-fx-padding: 5 10 5 10;*/
+    /*-fx-background-color: black;*/
+    /*-fx-background-radius: 2;*/
 }
 
 .placeholder-label{
@@ -84,4 +89,12 @@
     -fx-background-color: -pbb-scroll-thumb-color;
     -fx-border-color: -pbb-main-accent-color;
     -fx-text-fill: -pbb-main-accent-color;
+}
+
+/**********************************************************************************************************************/
+/*BALLOT COUNT*/
+.ballot-count-wrapper{
+    -fx-background-color: black;
+    -fx-background-radius: 2;
+    -fx-padding: 0 12;
 }

@@ -69,12 +69,12 @@
 .jfx-tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected {
     -fx-background-color: -pbb-row-hover-color;
     -fx-table-cell-border-color: -pbb-row-hover-color;
-    -fx-text-fill: -pbb-alt-text-color;
 }
 
 /*Tree Table Cell when Row is Selected and Table is Not Focused*/
-.jfx-tree-table-view .tree-table-row-cell:selected .tree-table-cell {
-    -fx-text-fill: -pbb-alt-text-color;
+.jfx-tree-table-view .tree-table-row-cell:selected .tree-table-cell,
+.tree-table-row-cell:filled:hover .tree-table-cell{
+    -fx-text-fill: -pbb-hover-text-color;
 }
 
 /*Header Columns Background Color*/

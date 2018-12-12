@@ -19,10 +19,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
 
+import org.scenicview.ScenicView;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.awt.*;
 import java.util.Random;
 
 //import org.scenicview.ScenicView;
@@ -52,6 +54,11 @@ public class Main extends Application {
 
 
     //== PUBLIC METHODS ==
+    public static void main(String [] Args){
+
+        Application.launch(Args);
+    }
+
     @Override
     public void init() throws Exception {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
@@ -76,6 +83,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage initStage) throws Exception {
+
         showSplash(initStage);
 
         Task task = new Task<Void>(){
@@ -83,9 +91,8 @@ public class Main extends Application {
             protected Void call() throws Exception {
                 Random random = new Random();
                 for(int i = 0; i < maxProgress+1; i++){
-                    Thread.sleep(random.nextInt(500));
+                    Thread.sleep(random.nextInt(250));
                         double value = progress++ / maxProgress;
-                        System.out.println(value);
                         dataModel.getLoadingProgress().set(value);
                 }
                 return null;
@@ -93,12 +100,8 @@ public class Main extends Application {
         };
 
         task.setOnSucceeded(e -> fetchData(initStage));
-        //fetchData(initStage);
         Thread t = new Thread(task);
         t.start();
-
-
-        //ScenicView.show(splashNode);
     }
 
     private void showSplash(Stage initStage){
@@ -131,6 +134,8 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(rootNode, 1500, 1000, Color.TRANSPARENT));
         primaryStage.show();
+        ScenicView.show(rootNode);
+
     }
 
     private void fetchData(Stage initStage){

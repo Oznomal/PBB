@@ -78,10 +78,14 @@
 
         <Region HBox.hgrow="ALWAYS"/>
 
-
-        <Label fx:id="ballotCountLabel" styleClass="ballot-count-label">
-            000000
-        </Label>
+        <HBox styleClass="ballot-count-wrapper" alignment="CENTER_LEFT" minHeight="38.0"
+              maxHeight="38.0" minWidth="110.0" maxWidth="110.0">
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="ballotCountLabel" styleClass="ballot-count-label">
+                000000
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
 
         <VBox.margin>
             <Insets left="$leftMargin"/>

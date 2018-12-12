@@ -1,19 +1,20 @@
 package com.lamonzo.pbb.controller;
 
 import com.jfoenix.controls.JFXButton;
+import com.lamonzo.pbb.constants.SpringConstants;
+import com.lamonzo.pbb.model.DataModel;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.core.task.TaskExecutor;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -22,27 +23,27 @@ import java.util.ResourceBundle;
 public class HeaderController implements Initializable {
 
     //== FIELDS ==
+    private final ThreadPoolTaskExecutor taskExecutor;
+    private final DataModel dataModel;
+
     @FXML
     private JFXButton minButton;
 
     @FXML
     private JFXButton closeButton;
 
+    //== CONSTRUCTORS ==
+    @Autowired
+    public HeaderController(@Qualifier(SpringConstants.VARIABLE_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor,
+                            DataModel dataModel){
+        this.taskExecutor = taskExecutor;
+        this.dataModel = dataModel;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        try {
-            Image minButtonImg = new Image(new FileInputStream("src\\main\\resources\\img\\icons\\Minimize_Icon1.png"));
-            Image closeButtonImg = new Image(new FileInputStream("src\\main\\resources\\img\\icons\\Close_Icon1.png"));
-            minButton.setGraphic(new ImageView(minButtonImg));
-            closeButton.setGraphic(new ImageView(closeButtonImg));
-
-            minButton.setOnAction(e -> handleMinimizeButtonClick(e));
-            closeButton.setOnAction(e -> handleCloseButtonClick(e));
-
-        }catch(FileNotFoundException e) {
-            log.error("Unable to find decorator tray image | " + e.getMessage());
-        }
+        minButton.setOnAction(e -> handleMinimizeButtonClick(e));
+        closeButton.setOnAction(e -> handleCloseButtonClick(e));
     }
 
     private void handleMinimizeButtonClick(Event event){
@@ -51,7 +52,12 @@ public class HeaderController implements Initializable {
     }
 
     private void handleCloseButtonClick(Event event){
+        dataModel.getCancellingTask().set(true); //Cancels never ending loop to allow threads to exit
+
         Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.close();
+
+        taskExecutor.shutdown();
+        System.exit(0);
     }
 }
