@@ -91,21 +91,15 @@ public class UpdatePlayerDataService extends Service<Void> {
                             log.info("Update Player Data Thread Failed | Finish Count: " + (--finishCount));
                         }
 
-                        if (successCount == finishCount) {
-                            dataModel.refreshTableData(true);
-                            dataModel.getIsUpdatePlayerDataRunning().set(false);
-
-                        }
+                        if (successCount == finishCount)
+                            updateDataModelVariables();
                     });
-
 
                     task.setOnFailed(e -> {
                         log.error("Something went wrong with the task submission | Finish Count: " +  --finishCount);
 
-                        if (successCount == finishCount) {
-                            dataModel.refreshTableData(true);
-                            dataModel.getIsUpdatePlayerDataRunning().set(false);
-                        }
+                        if (successCount == finishCount)
+                            updateDataModelVariables();
                     });
 
                     taskExecutor.submit(task);
@@ -113,6 +107,15 @@ public class UpdatePlayerDataService extends Service<Void> {
                 return null;
             }
         };
+    }
+
+    private void updateDataModelVariables(){
+        dataModel.refreshTableData(true);
+        dataModel.getIsUpdatePlayerDataRunning().set(false);
+
+        //Only Runs on Startup
+        if(dataModel.getIsFetchDataRunning().get())
+            dataModel.getIsFetchDataRunning().set(false);
     }
 
     //== SPRING LOOKUPS ==

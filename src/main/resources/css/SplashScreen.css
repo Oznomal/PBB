@@ -1,0 +1,39 @@
+/**********************************************************************************************************************/
+/*COLOR PALETTE*/
+{
+    -pbb-main-background-color: #151515;
+    -pbb-alt-background-color: #212121;
+
+    -pbb-main-text-color: #F2F2F2;
+    -pbb-alt-text-color: #767676;
+
+    -pbb-main-accent-color: #3C6E71;
+    -pbb-main-accent-tint-color: #628B8D;
+    -pbb-alt-accent-color: #284B63;
+    -pbb-alt-accent-tint-color: #3B5B71;
+
+    -pbb-scroll-thumb-color: #0F0F0F;
+
+    -pbb-row-selected-color: #BA6B3A;
+    -pbb-row-hover-color: #744324;
+}
+
+.splash-pane{
+    -fx-background-color: black;
+}
+
+@font-face {
+    font-family: 'Muli SemiBold';
+    src: url('../fonts/Muli-SemiBold.ttf');
+}
+
+.title-label{
+    -fx-font-family: "Muli SemiBold";
+    -fx-text-fill: -pbb-main-text-color;
+    -fx-font-size: 30;
+}
+
+.lines{
+    -fx-stroke: -pbb-main-accent-color;
+    -fx-stroke-width: 2.0;
+}

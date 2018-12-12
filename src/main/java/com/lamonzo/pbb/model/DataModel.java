@@ -21,7 +21,6 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.net.URL;
 import java.util.*;
 
@@ -51,14 +50,14 @@ public class DataModel implements Initializable {
     private UpdatePlayerDataService updatePlayerDataService;
 
     @Getter
-    private Map<String, SimpleStringProperty> positionVoteMap;
+    private Map<String, SimpleStringProperty> positionVoteMap = new HashMap<>();
 
     @Getter
     private ObservableList<Player> ballotList = FXCollections.observableArrayList();
 
-    private Map<String, ObservableList<PlayerTreeObject>> playerTreeObjectData;
-    private Map<String, List<Player>> playerData;
-    private Map<String, Position> positionMap;
+    private Map<String, ObservableList<PlayerTreeObject>> playerTreeObjectData = new HashMap<>();
+    private Map<String, List<Player>> playerData = new HashMap<>();
+    private Map<String, Position> positionMap = new HashMap<>();
 
     @Getter
     private SimpleIntegerProperty successCount = new SimpleIntegerProperty(0);
@@ -92,40 +91,13 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleBooleanProperty cancellingTask = new SimpleBooleanProperty();
 
+    @Getter
+    private SimpleBooleanProperty isFetchDataRunning = new SimpleBooleanProperty();
+
     //== PUBLIC METHODS ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-    }
-
-    //Gets the data form the DB if it exists or scrapes the data form the website
-    @PostConstruct
-    private void fetchData(){
-        if(playerService.getPlayerCount() != 0) {
-            //GET USER SETTINGS FROM THE DB OR CREATE DEFAULT SETTINGS IF NONE EXIST
-            settings = settingsService.getSettings();
-            if (settings == null) {
-                System.out.println("Settings is Null, Adding them");
-                settings = new Settings();
-                settings.setNumberOfBrowsers(Runtime.getRuntime().availableProcessors() / 2);
-                settings.setVotingGoals(1);
-                settings.setLightningMode(false);
-                settings.setShowBrowser(false);
-                settings.setAutoFill(true);
-                settings.setRotateProxies(false);
-                settingsService.saveSettings(settings);
-            }
-
-            createObservableSettings();
-            refreshTableData(false);
-        }
-        else{
-            positionMap = new HashMap<>();
-            playerTreeObjectData = new HashMap<>();
-            positionVoteMap = new HashMap<>();
-            playerData = new HashMap<>();
-            updatePlayerDataService.start();
-        }
     }
 
     public void refreshTableData(boolean rebuildTableViews){
@@ -195,6 +167,10 @@ public class DataModel implements Initializable {
     //always up to date with the settings and eliminate the need to constantly go back
     //and forth to the DB
     public void createObservableSettings(){
+        createObservableSettings(settings);
+    }
+
+    public void createObservableSettings(Settings settings){
         votingGoals.set(settings.getVotingGoals());
         numberOfBrowsers.set(settings.getNumberOfBrowsers());
         lightningMode.set(settings.isLightningMode());

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+
+    <children>
+        <Pane layoutX="14.0" layoutY="23.0" prefHeight="325.0" prefWidth="570.0" style="-fx-background-color: black;" styleClass="splash-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="425.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/PBB-Shield-012050.png" />
+               </image>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#363738" height="18.03" radius="6.785" width="11.11">
+                     <input>
+                        <Blend mode="MULTIPLY" />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+                <Line endX="462.0" layoutX="103.0" layoutY="296.0" startX="-100.0" stroke="#3c6e71" strokeWidth="3.0" styleClass="lines" />
+                <Line endX="190.0" layoutX="12.0" layoutY="164.0" rotate="-90.0" scaleX="1.1" startX="-101.0" stroke="#3c6e71" strokeLineCap="BUTT" strokeWidth="3.0" styleClass="lines" />
+                <Label layoutX="87.0" layoutY="21.0" lineSpacing="10.0" prefHeight="59.0" prefWidth="407.0" styleClass="title-label" text="THE PRO BOWL BOT" textFill="#575762" textOverrun="CLIP">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="30.0" />
+               </font>
+               <effect>
+                  <Glow level="0.4" />
+               </effect></Label>
+                <Label layoutX="87.0" layoutY="71.0" text="Version 1.0" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Medium Italic" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="470.0" layoutY="308.0" text="\@ 2018 The Pro Bowl Bot">
+                    <font>
+                        <Font name="Roboto Black" size="8.0" />
+                    </font>
+                </Label>
+            <Label layoutX="63.0" layoutY="304.0" text="Designed and Developed by Oznom">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <ProgressBar layoutX="70.0" layoutY="255.0" prefHeight="15.0" prefWidth="482.0" progress="0.36" />
+                <!--<JFXSpinner layoutX="363.0" layoutY="193.0" radius="20"/>-->
+            </children>
+        </Pane>
+    </children>
+
+    <!--<stylesheets>-->
+        <!--<URL value="@../../css/SplashScreen.css"/>-->
+    <!--</stylesheets>-->
+</AnchorPane>
