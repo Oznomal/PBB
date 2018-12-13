@@ -9,20 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/FooterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/FooterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar - Shortcut.lnk" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,7 +50,7 @@
     <session id="1621066394">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="20" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="1" />
@@ -67,9 +58,9 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="5" />
-          <entry key="project.open.time.8" value="4" />
-          <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.open.time.8" value="5" />
+          <entry key="project.open.time.9" value="6" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -77,20 +68,20 @@
           <entry key="css" value="9522" />
           <entry key="dummy" value="36" />
           <entry key="fxml" value="9167" />
-          <entry key="java" value="112834" />
+          <entry key="java" value="112998" />
           <entry key="txt" value="54" />
           <entry key="vmoptions" value="2" />
           <entry key="xml" value="571" />
-          <entry key="yml" value="567" />
+          <entry key="yml" value="577" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="9522" />
-          <entry key="JAVA" value="112834" />
+          <entry key="JAVA" value="112998" />
           <entry key="PLAIN_TEXT" value="92" />
           <entry key="XML" value="9738" />
-          <entry key="YAML" value="567" />
+          <entry key="YAML" value="577" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -99,7 +90,7 @@
           <entry key="css" value="46" />
           <entry key="fxml" value="184" />
           <entry key="iml" value="1" />
-          <entry key="java" value="396" />
+          <entry key="java" value="400" />
           <entry key="log" value="1" />
           <entry key="png" value="4" />
           <entry key="pom" value="1" />
@@ -114,7 +105,7 @@
           <entry key="CSS" value="46" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="396" />
+          <entry key="JAVA" value="400" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="195" />
           <entry key="YAML" value="28" />
@@ -145,42 +136,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="538">
+              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/ThreadPoolExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="1684" selection-start-line="1684" selection-end-line="1684" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="116" column="29" lean-forward="true" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+            <state relative-caret-position="357">
+              <caret line="59" column="16" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -188,27 +175,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="196" column="24" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+            <state relative-caret-position="204">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="1156">
               <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="200" column="5" lean-forward="true" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+            <state relative-caret-position="2873">
+              <caret line="200" column="5" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -286,6 +273,8 @@
       <find>Update Player Data Thread</find>
       <find>TASKeXECUTOR.SET</find>
       <find>HOVER</find>
+      <find>taskExecutor\.setCorePoolSize\(1\)\; \/\/Set both to 1 first to avoid errors\n            taskExecutor\.setMaxPoolSize\(1\)\;</find>
+      <find>taskExecutor.set</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -318,7 +307,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" />
         <option value="$PROJECT_DIR$/src/main/resources/css/Footer.css" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/containers/SplashScreen.fxml" />
@@ -326,7 +314,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/containers/MainContainer.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/css/SplashScreen.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/Header.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -336,7 +323,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/css/PlayerTable.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/UserBallot.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/FooterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" />
@@ -345,6 +331,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" />
       </list>
     </option>
   </component>
@@ -385,7 +374,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="273" />
-    <option name="y" value="37" />
+    <option name="y" value="36" />
     <option name="width" value="2715" />
     <option name="height" value="1944" />
   </component>
@@ -395,9 +384,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -628,13 +615,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544660235510" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544660384703" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -763,7 +752,9 @@
       <workItem from="1544651772041" duration="152000" />
       <workItem from="1544652571069" duration="5787000" />
       <workItem from="1544658505319" duration="85000" />
-      <workItem from="1544658741389" duration="1570000" />
+      <workItem from="1544658741389" duration="1661000" />
+      <workItem from="1544660536198" duration="27000" />
+      <workItem from="1544662441320" duration="587000" />
     </task>
     <task id="LOCAL-00001" summary="Wrapping things up Part 1">
       <created>1544656639079</created>
@@ -776,7 +767,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="609673000" />
+    <option name="totallyTimeSpent" value="610378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -791,7 +782,7 @@
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.19483101" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.19801193" />
       <window_info id="Structure" order="1" sideWeight="0.504329" side_tool="true" weight="0.38325283" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -800,7 +791,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50084746" side_tool="true" weight="0.28159645" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49887893" visible="true" weight="0.3174727" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49887893" visible="true" weight="0.3174727" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39466897" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -967,9 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1588">
           <caret line="150" column="96" lean-forward="true" selection-start-line="150" selection-start-column="96" selection-end-line="150" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -978,13 +966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1012,12 +993,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3145">
           <caret line="185" selection-start-line="185" selection-end-line="187" selection-end-column="18" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/css/SplashScreen.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1041,12 +1022,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1070,20 +1051,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/containers/MainContainer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Header.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1096,20 +1077,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1562" column="52" lean-forward="true" selection-start-line="1562" selection-start-column="52" selection-end-line="1562" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1141,10 +1108,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="159" column="12" selection-start-line="159" selection-start-column="12" selection-end-line="159" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2873">
+          <caret line="200" column="5" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1175,60 +1185,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="196" column="24" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
+        <state relative-caret-position="204">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="200" column="5" lean-forward="true" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="538">
+          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/ThreadPoolExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="275">
+          <caret line="1684" selection-start-line="1684" selection-end-line="1684" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="116" column="29" lean-forward="true" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="59" column="16" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
         </state>
       </provider>
     </entry>

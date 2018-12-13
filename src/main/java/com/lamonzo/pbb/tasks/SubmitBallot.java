@@ -35,7 +35,8 @@ public class SubmitBallot extends SubmitBallotBase {
                 submitBallotsByPosition();
 
                 //Quit the browser because a new instance will be used for the next request
-                browser.quit();
+                if(browser != null)
+                    browser.quit();
                 attempts = 0;
             }
             catch(Exception ex){

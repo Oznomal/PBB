@@ -121,6 +121,9 @@ public class UserBallotController implements Initializable {
             dataModel.getSuccessCount().set(0);
 
             //Setup executor and number of parallel threads based on user settings
+            taskExecutor.setCorePoolSize(1); //Set both to 1 first to avoid errors
+            taskExecutor.setMaxPoolSize(1);
+
             taskExecutor.setMaxPoolSize(dataModel.getNumberOfBrowsers().get());
             taskExecutor.setCorePoolSize(dataModel.getNumberOfBrowsers().get());
 

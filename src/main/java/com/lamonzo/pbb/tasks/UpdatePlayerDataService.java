@@ -55,6 +55,9 @@ public class UpdatePlayerDataService extends Service<Void> {
                 int maxThreads = Runtime.getRuntime().availableProcessors() / 2;
                 int poolCap = maxThreads < 4 ? maxThreads : 4;
 
+                taskExecutor.setCorePoolSize(1); //Set both to 1 first to avoid errors
+                taskExecutor.setMaxPoolSize(1);
+
                 taskExecutor.setMaxPoolSize(poolCap);
                 taskExecutor.setCorePoolSize(poolCap);
 
