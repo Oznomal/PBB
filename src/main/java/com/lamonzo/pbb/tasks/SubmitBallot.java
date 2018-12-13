@@ -42,7 +42,8 @@ public class SubmitBallot extends SubmitBallotBase {
             catch(Exception ex){
                 log.warn("Error visiting page and submitting ballot | " + ex.getMessage());
                 ex.printStackTrace();
-                browser.quit();
+                if(browser != null)
+                    browser.quit();
 
                 if(++attempts >= DEFAULT_MAX_ATTEMPTS)
                     throw new JauntiumException("Exceeded Max Amount of Successive Failures | " + ex.getMessage());

@@ -202,7 +202,6 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
             //Will only return false if the cancel button is clicked
             if(!selectPlayers(pos, jse, wait))
                 return;
-
         }
 
         //Submit the ballot for the final position

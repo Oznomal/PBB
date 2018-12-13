@@ -47,6 +47,12 @@ public class SubmitLightningBallot extends SubmitBallotBase{
 
                 submitBallotsByPosition();
 
+                if(dataModel.getCancellingTask().getValue()){
+                    if(browser != null)
+                        browser.quit();
+                    return;
+                }
+
                 //Revisit the ballot page to keep using the same browser window
                 visitBallotPage(browser, false);
                 attempts = 0;
@@ -62,5 +68,8 @@ public class SubmitLightningBallot extends SubmitBallotBase{
                 failedInnerAttempt = true;
             }
         }
+
+        if(browser != null)
+            browser.quit();
     }
 }
