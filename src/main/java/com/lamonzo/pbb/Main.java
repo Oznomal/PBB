@@ -19,15 +19,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
 
-import org.scenicview.ScenicView;
+//import org.scenicview.ScenicView;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.awt.*;
 import java.util.Random;
-
-//import org.scenicview.ScenicView;
 
 @SpringBootApplication
 @Slf4j
@@ -134,7 +131,7 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(rootNode, 1500, 1000, Color.TRANSPARENT));
         primaryStage.show();
-        ScenicView.show(rootNode);
+        //ScenicView.show(rootNode);
 
     }
 

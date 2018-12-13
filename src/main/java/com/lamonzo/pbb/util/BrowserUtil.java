@@ -22,7 +22,8 @@ public class BrowserUtil {
     private static final String CHROME_DRIVER_PATH = "E:/Programming/WebDrivers/Chrome/chromedriver.exe";
     private static final String CHROME_DRIVER_SYSTEM_PROPERTY = "webdriver.chrome.driver";
     private static final String CHROME_HEADLESS_OPTION = "--headless";
-    private static final String CHROME_WINDOW_SIZE_OPTION = "window-size=2000,4500";
+    private static final String CHROME_HEADLESS_WINDOW_SIZE_OPTION = "window-size=2000,4500";
+    private static final String CHROME_DISPLAYED_BROWSER_SIZE_OPTION = "window-size=992,1300";
 
     private final DataModel dataModel;
 
@@ -60,7 +61,9 @@ public class BrowserUtil {
         //Add headless mode if selected
         if(!dataModel.getShowBrowser().get()) {
             options.addArguments(CHROME_HEADLESS_OPTION);
-            options.addArguments(CHROME_WINDOW_SIZE_OPTION);
+            options.addArguments(CHROME_HEADLESS_WINDOW_SIZE_OPTION);
+        }else{
+            options.addArguments(CHROME_DISPLAYED_BROWSER_SIZE_OPTION);
         }
 
         //Rotate proxies if selected
@@ -81,7 +84,7 @@ public class BrowserUtil {
         System.setProperty(CHROME_DRIVER_SYSTEM_PROPERTY, CHROME_DRIVER_PATH);
         ChromeOptions options = new ChromeOptions();
         options.addArguments(CHROME_HEADLESS_OPTION);
-        options.addArguments(CHROME_WINDOW_SIZE_OPTION);
+        options.addArguments(CHROME_HEADLESS_WINDOW_SIZE_OPTION);
         Browser browser = new Browser(new ChromeDriver(options));
         log.info("New Generic Headless Browser Created");
 

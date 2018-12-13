@@ -131,7 +131,7 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
 
                 //Lightning Mode Skips preformSleep() so we need to ensure that the elements are available after close
                 if(dataModel.getLightningMode().get()) {
-                    WebDriverWait wait = new WebDriverWait(browser.driver, 5);
+                    WebDriverWait wait = new WebDriverWait(browser.driver, 2);
                     wait.until(d -> d.findElement(By.xpath(ScrapingConstants.CENTER_TAB_XPATH)));
                 }
             }
@@ -185,6 +185,9 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
         //If auto-fill is turned on we want to submit random extra votes with each submission
         if(dataModel.getIsAutoFill().get())
             finalBallotMap = buildFinalBallot();
+
+        if(dataModel.getIsInitialSubmitBallotLoading().getValue())
+            dataModel.getIsInitialSubmitBallotLoading().set(false);
 
         for(Position pos : finalBallotMap.keySet()) {
             jse.executeScript(JS_SCROLL_TO_TOP);
@@ -372,8 +375,10 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
 
                 //Placing a breaker here to help terminate threads quickly when the cancel button
                 //is clicked because this is about the only place in the code that could be a bottleneck
-                if(dataModel.getCancellingTask().get())
+                if(dataModel.getCancellingTask().get()) {
+                    browser.quit();
                     return false;
+                }
 
                 try{
                     jse.executeScript("window.scrollTo(0, " + scroll + ")");
@@ -390,7 +395,7 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
                     voteBtn.click();
                     break;
                 }
-                catch(ElementNotSelectableException | ElementNotInteractableException | TimeoutException e){
+                catch(WebDriverException e){
 
 
                     //Update the scroll position if the maximum number of attempts haven't been exceeded
