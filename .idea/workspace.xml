@@ -8,13 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -96,7 +90,7 @@
           <entry key="pom" value="1" />
           <entry key="vmoptions" value="2" />
           <entry key="xml" value="10" />
-          <entry key="yml" value="28" />
+          <entry key="yml" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -108,7 +102,7 @@
           <entry key="JAVA" value="400" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="195" />
-          <entry key="YAML" value="28" />
+          <entry key="YAML" value="29" />
         </counts>
       </usages-collector>
     </session>
@@ -136,6 +130,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -163,11 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="59" column="16" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -179,16 +182,6 @@
               <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -330,10 +323,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -754,7 +747,7 @@
       <workItem from="1544658505319" duration="85000" />
       <workItem from="1544658741389" duration="1661000" />
       <workItem from="1544660536198" duration="27000" />
-      <workItem from="1544662441320" duration="587000" />
+      <workItem from="1544662441320" duration="642000" />
     </task>
     <task id="LOCAL-00001" summary="Wrapping things up Part 1">
       <created>1544656639079</created>
@@ -767,7 +760,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="610378000" />
+    <option name="totallyTimeSpent" value="610433000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,7 +775,7 @@
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.19801193" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.19801193" />
       <window_info id="Structure" order="1" sideWeight="0.504329" side_tool="true" weight="0.38325283" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -791,14 +784,14 @@
       <window_info id="Favorites" order="6" sideWeight="0.50084746" side_tool="true" weight="0.28159645" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49887893" visible="true" weight="0.3174727" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49887893" weight="0.3174727" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39466897" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932073" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.30343214" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30343214" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5011211" side_tool="true" weight="0.6792777" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.35683578" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3299532" />
@@ -1108,13 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1216,7 +1202,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="59" column="16" lean-forward="true" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
         </state>
       </provider>
     </entry>
