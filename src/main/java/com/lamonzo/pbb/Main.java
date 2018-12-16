@@ -30,6 +30,7 @@ import java.util.Random;
 @Slf4j
 public class Main extends Application {
 
+    //================================================================================================================//
     //== FIELDS ==
     private PlayerService playerService = null;
     private SettingsService settingsService = null;
@@ -50,12 +51,14 @@ public class Main extends Application {
     private double maxProgress = 11.0;
 
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
     public static void main(String [] Args){
-
         Application.launch(Args);
     }
 
+    //================================================================================================================//
+    //== INIT ==
     @Override
     public void init() throws Exception {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(Main.class);
@@ -78,6 +81,8 @@ public class Main extends Application {
         rootNode = loader.load();
     }
 
+    //================================================================================================================//
+    //== PUBLIC METHODS ==
     @Override
     public void start(Stage initStage) throws Exception {
 
@@ -101,6 +106,13 @@ public class Main extends Application {
         t.start();
     }
 
+    @Override
+    public void stop() throws Exception {
+        context.close();
+    }
+
+    //================================================================================================================//
+    //== PRIVATE METHODS ==
     private void showSplash(Stage initStage){
         initStage.setScene(new Scene(splashNode, 570.0, 325.0));
         initStage.centerOnScreen();
@@ -136,8 +148,6 @@ public class Main extends Application {
     }
 
     private void fetchData(Stage initStage){
-
-
         if(playerService.getPlayerCount() != 0) {
             //GET USER SETTINGS FROM THE DB OR CREATE DEFAULT SETTINGS IF NONE EXIST
             Settings settings = settingsService.getSettings();
@@ -163,10 +173,5 @@ public class Main extends Application {
         dataModel.getLoadingProgress().set(1.0);
         showMain();
         initStage.hide();
-    }
-
-    @Override
-    public void stop() throws Exception {
-        context.close();
     }
 }

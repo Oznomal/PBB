@@ -9,92 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/CssConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/CssConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/PositionConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/PositionConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ProxyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ProxyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ScrapingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ScrapingConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/StatConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/StatConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/TeamConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/TeamConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/UserAgentConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/UserAgentConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/PlayerTreeObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/PlayerTreeObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ControllerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ControllerUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Alt_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Alt_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Alt_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Main_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Main_64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/SelectButtonCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/SelectButtonCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/UserBallotCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/UserBallotCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/CssConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/CssConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/PositionConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/PositionConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ProxyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ProxyConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ScrapingConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ScrapingConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/SpringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/SpringConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/StatConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/StatConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/TeamConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/TeamConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/UserAgentConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/UserAgentConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/FooterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/FooterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/HeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/HeaderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/SplashScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/SplashScreenController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/UserBallotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/UserBallotController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/PlayerTreeObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/PlayerTreeObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Stat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Stat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/StatType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/StatType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/model/DataModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/model/DataModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/SettingsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/SettingsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallotBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallotBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/BrowserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/BrowserUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/ControllerUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/ControllerUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/LogoUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/LogoUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/components/UserBallot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/components/UserBallot.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/components/dialogs/SettingsModal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/components/dialogs/SettingsModal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/splash/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/splash/SplashScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -149,7 +64,7 @@
           <entry key="css" value="9522" />
           <entry key="dummy" value="36" />
           <entry key="fxml" value="9167" />
-          <entry key="java" value="114377" />
+          <entry key="java" value="114467" />
           <entry key="txt" value="54" />
           <entry key="vmoptions" value="2" />
           <entry key="xml" value="571" />
@@ -159,7 +74,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="9522" />
-          <entry key="JAVA" value="114377" />
+          <entry key="JAVA" value="114467" />
           <entry key="PLAIN_TEXT" value="92" />
           <entry key="XML" value="9738" />
           <entry key="YAML" value="597" />
@@ -171,7 +86,7 @@
           <entry key="css" value="53" />
           <entry key="fxml" value="193" />
           <entry key="iml" value="1" />
-          <entry key="java" value="460" />
+          <entry key="java" value="461" />
           <entry key="log" value="1" />
           <entry key="png" value="5" />
           <entry key="pom" value="1" />
@@ -186,7 +101,7 @@
           <entry key="CSS" value="53" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="460" />
+          <entry key="JAVA" value="461" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="204" />
           <entry key="YAML" value="31" />
@@ -217,11 +132,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="103" column="55" lean-forward="true" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+              <folding>
+                <element signature="e#1903#1904#0" expanded="true" />
+                <element signature="e#1943#1944#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -284,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/css/PlayerTable.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/UserBallot.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/FooterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java" />
@@ -324,6 +251,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" />
       </list>
     </option>
   </component>
@@ -446,7 +374,7 @@
     <property name="DatabaseDriversLRU" value="h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544941209982" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544941316772" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -583,7 +511,7 @@
       <workItem from="1544668134257" duration="177000" />
       <workItem from="1544776646378" duration="310000" />
       <workItem from="1544810146723" duration="68000" />
-      <workItem from="1544939586759" duration="1665000" />
+      <workItem from="1544939586759" duration="1851000" />
     </task>
     <task id="LOCAL-00001" summary="Wrapping things up Part 1">
       <created>1544656639079</created>
@@ -596,7 +524,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="616500000" />
+    <option name="totallyTimeSpent" value="616686000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -620,14 +548,14 @@
       <window_info id="Favorites" order="6" sideWeight="0.50084746" side_tool="true" weight="0.28159645" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49887893" visible="true" weight="0.31669268" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49887893" weight="0.31669268" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39466897" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932073" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.33447978" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33385336" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5011211" side_tool="true" weight="0.6792777" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.35683578" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3299532" />
@@ -692,13 +620,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Wrapping things up Part 1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/FreeSafetyTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/FullBackTabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1028,6 +949,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="103" column="55" lean-forward="true" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+          <folding>
+            <element signature="e#1903#1904#0" expanded="true" />
+            <element signature="e#1943#1944#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
