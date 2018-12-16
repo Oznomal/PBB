@@ -8,15 +8,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class SettingsServiceImpl implements SettingsService{
 
+    //================================================================================================================//
     //== FIELDS ==
     private final SettingsRepository settingsRepository;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     @Autowired
     public SettingsServiceImpl(SettingsRepository settingsRepository){
         this.settingsRepository = settingsRepository;
     }
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
     @Override
     public void saveSettings(Settings settings) {

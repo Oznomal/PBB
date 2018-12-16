@@ -11,12 +11,14 @@ import java.util.Map;
 @Component
 public class LogoUtil {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final String LOGO_PREFIX = "/img/teams/";
     private final String LOGO_SUFFIX = "_70.png";
     private Map<String, Image> logoMap;
 
-    //== PUBLIC METHODS ==
+    //================================================================================================================//
+    //== POST CONSTRUCT ==
     @PostConstruct
     private void buildMap(){
         logoMap = new HashMap<>();
@@ -25,6 +27,8 @@ public class LogoUtil {
 
     }
 
+    //================================================================================================================//
+    //== PUBLIC METHODS ==
     public Image getTeamLogo(String teamAbbrv){
         return logoMap.get(teamAbbrv);
     }

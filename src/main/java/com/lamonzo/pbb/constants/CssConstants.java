@@ -11,6 +11,7 @@ package com.lamonzo.pbb.constants;
  */
 public final class CssConstants {
 
+    //================================================================================================================//
     //== FIELDS ==
 
     //CUSTOM CSS PSEUDO CLASSES
@@ -21,6 +22,7 @@ public final class CssConstants {
     public static final String UNSELECTED_BTN_TEXT = "Select Player";
     public static final String SELECTED_BTN_TEXT = "Remove Player";
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     private CssConstants(){}
 }

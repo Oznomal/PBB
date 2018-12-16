@@ -32,7 +32,7 @@ public final class ScrapingConstants {
     public static final String NFL_MODAL_CLOSE_BUTTON = "<a class=bp-modal-takeover-close>";
 
 
-    // == BALLOT NAVIGATION
+    // == BALLOT NAVIGATION ==
     //OFFENSE
     public static final String QUARTERBACK_TAB_LINK = "<a title=Quarterbacks>";
     public static final String RUNNING_BACK_TAB_LINK = "<a title=Running\\sBacks>";
@@ -83,11 +83,11 @@ public final class ScrapingConstants {
     ).collect(Collectors.toCollection(HashSet::new));
 
 
-    //== POSITION INFORMATION (LOCATED AT THE TOP OF EACH TAB)
+    //== POSITION INFORMATION (LOCATED AT THE TOP OF EACH TAB) ==
     public static final String POSITION_INFO_LIST = "<ul id=ballot-pos-nav-info-nfl>";
     public static final String POSITION_STAT_TYPES_LIST = "<ul id=ballot-sort-nav-nfc>";
 
-    //PLAYER TABLE
+    //PLAYER TABLE ==
     public static final String PLAYER_INFO_DIV = "<div class=name-pos>";
     public static final String PLAYER_NAME_ATTRIBUTE = "data-sort-name";
     public static final String PLAYER_TEAM_LOGO = "<img class=team>";
@@ -97,7 +97,7 @@ public final class ScrapingConstants {
     public static final String STAT_PREFIX = "<li class=";
     public static final String CLOSE_ANCHOR = ">";
 
-    //SUBMITTING THE BALLOT
+    //SUBMITTING THE BALLOT ==
     public static final String PLAYER_DIV_XPATH_PREFIX = "//li[@id='";
     public static final String PLAYER_DIV_XPATH_SUFFIX = "']";
     public static final String PLAYER_VOTE_BTN_XPATH = "//a[@class='btn-vote']";
@@ -106,7 +106,6 @@ public final class ScrapingConstants {
 
 
     //================================================================================================================//
-
     //== CONSTRUCTOR ==
     private ScrapingConstants(){}
 }

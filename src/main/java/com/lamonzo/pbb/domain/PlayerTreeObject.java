@@ -12,6 +12,7 @@ import lombok.Setter;
 @Setter
 public class PlayerTreeObject extends RecursiveTreeObject<PlayerTreeObject> {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final Player player;
     private final StringProperty name;
@@ -19,6 +20,7 @@ public class PlayerTreeObject extends RecursiveTreeObject<PlayerTreeObject> {
     private final StringProperty team;
     private BooleanProperty isSelected;
 
+    //================================================================================================================//
     //== CONSTRUCTOR ==
     public PlayerTreeObject(Player player){
         this.player = player;

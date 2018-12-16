@@ -17,10 +17,12 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final JFXButton selectBtn;
     private final DataModel dataModel;
 
+    //================================================================================================================//
     //== CONSTRUCTOR
     @Autowired
     public SelectButtonCell(DataModel dataModel){
@@ -28,6 +30,8 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
         this.selectBtn = new JFXButton(CssConstants.UNSELECTED_BTN_TEXT);
     }
 
+    //================================================================================================================//
+    //== PROTECTED METHODS
     @Override
     protected void updateItem(Boolean item, boolean empty) {
         super.updateItem(item, empty);
@@ -62,6 +66,7 @@ public class SelectButtonCell extends TreeTableCell<PlayerTreeObject, Boolean> {
         }
     }
 
+    //================================================================================================================//
     //== PRIVATE METHODS ==
     private void handleSelectPlayerButtonClick(PlayerTreeObject pto){
         String pos = pto.getPosition().get();

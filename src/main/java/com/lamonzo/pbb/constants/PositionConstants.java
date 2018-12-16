@@ -1,6 +1,8 @@
 package com.lamonzo.pbb.constants;
 
 public class PositionConstants {
+
+    //================================================================================================================//
     //== FIELDS ==
     public static final String QB = "Quarterback";
     public static final String RB = "Running Back";
@@ -22,7 +24,7 @@ public class PositionConstants {
     public static final String RS = "Return Specialist";
     public static final String ST = "Special Teamer";
 
-
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     private PositionConstants(){}
 }

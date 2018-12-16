@@ -32,9 +32,14 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
+/**
+ * Base class that contains shared functionality for all of the position tab controllers
+ */
 @Slf4j
 public abstract class BaseTabController implements Initializable {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Autowired
     protected DataModel dataModel;
@@ -71,8 +76,9 @@ public abstract class BaseTabController implements Initializable {
 
     protected int maxVotes;
 
-    //== PUBLIC METHODS ==
-    //Sets default fields that are shared amongst all tabs
+
+    //================================================================================================================//
+    //== INIT ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //SET CELL VALUE FACTORY
@@ -115,6 +121,7 @@ public abstract class BaseTabController implements Initializable {
         });
     }
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
     public void buildTreeTable(){
         ObservableList<PlayerTreeObject> players = dataModel.getPlayerDataByPosition(positionName);
@@ -146,7 +153,9 @@ public abstract class BaseTabController implements Initializable {
         }
     }
 
+    //================================================================================================================//
     //== PRIVATE METHODS ==
+
     //Adds a CSS Pseudo class to a String column and creates the cell factory
     private void setPseudoClassForStringColumn(JFXTreeTableColumn<PlayerTreeObject, String> column, String pseudoClass){
         column.setCellFactory(col -> {
@@ -226,6 +235,7 @@ public abstract class BaseTabController implements Initializable {
         }
     }
 
+    //================================================================================================================//
     //== SPRING PROTOTYPE LOOKUPS ==
     @Lookup
     SelectButtonCell getSelectButtonCell(){

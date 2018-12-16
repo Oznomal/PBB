@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "stat_type")
 public class StatType {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +23,7 @@ public class StatType {
     @Column(nullable = false, unique = true)
     private String statType;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     public StatType(){}
 }

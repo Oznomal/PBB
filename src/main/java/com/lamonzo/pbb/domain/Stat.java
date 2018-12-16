@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Stat {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +31,7 @@ public class Stat {
     @JoinColumn(name = "player_id", updatable = false, nullable = false)
     private Player player;
 
-
+    //================================================================================================================//
     //== CONSTRUCTOR ==
     public Stat (){}
 }

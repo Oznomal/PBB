@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 @Getter
 public class MainController {
 
+    //================================================================================================================//
+    //== FIELDS ==
     @FXML
     private StackPane mainContainerStackPane;
 }

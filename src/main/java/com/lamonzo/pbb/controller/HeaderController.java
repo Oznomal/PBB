@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 
@@ -22,6 +21,7 @@ import java.util.ResourceBundle;
 @Slf4j
 public class HeaderController implements Initializable {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final ThreadPoolTaskExecutor taskExecutor;
     private final DataModel dataModel;
@@ -32,6 +32,7 @@ public class HeaderController implements Initializable {
     @FXML
     private JFXButton closeButton;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     @Autowired
     public HeaderController(@Qualifier(SpringConstants.VARIABLE_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor,
@@ -40,12 +41,16 @@ public class HeaderController implements Initializable {
         this.dataModel = dataModel;
     }
 
+    //================================================================================================================//
+    //== INIT ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         minButton.setOnAction(e -> handleMinimizeButtonClick(e));
         closeButton.setOnAction(e -> handleCloseButtonClick(e));
     }
 
+    //================================================================================================================//
+    //== PRIVATE METHODS ==
     private void handleMinimizeButtonClick(Event event){
         Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.setIconified(true);

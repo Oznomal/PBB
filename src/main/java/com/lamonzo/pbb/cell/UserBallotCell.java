@@ -22,6 +22,7 @@ import javax.annotation.PostConstruct;
 @Scope("prototype")
 public class UserBallotCell extends ListCell<Player> {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final LogoUtil logoUtil;
     private HBox content;
@@ -31,7 +32,8 @@ public class UserBallotCell extends ListCell<Player> {
     private Region region;
     private ImageView teamLogo;
 
-    //== CONSTRUCTOR ==
+    //================================================================================================================//
+    //== CONSTRUCTORS ==
     @Autowired
     public UserBallotCell(LogoUtil logoUtil){
         this.logoUtil = logoUtil;
@@ -66,7 +68,8 @@ public class UserBallotCell extends ListCell<Player> {
         playerName.getStyleClass().add("player-name-label");
     }
 
-    //== PUBLIC METHODS ==
+    //================================================================================================================//
+    //== PROTECTED METHODS ==
     @Override
     protected void updateItem(Player item, boolean empty) {
         super.updateItem(item, empty);

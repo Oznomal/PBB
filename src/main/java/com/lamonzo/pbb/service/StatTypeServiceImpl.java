@@ -10,14 +10,17 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class StatTypeServiceImpl implements StatTypeService {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final StatTypeRepository statTypeRepository;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     public StatTypeServiceImpl(StatTypeRepository statTypeRepository){
         this.statTypeRepository = statTypeRepository;
     }
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
     @Override
     public StatType findStatTypeByName(String statName) {

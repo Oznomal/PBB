@@ -36,6 +36,7 @@ import java.util.Map;
 @Scope("prototype")
 public class UpdatePlayerData extends Task<Boolean> {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Autowired
     private StatTypeService statTypeService;
@@ -51,6 +52,7 @@ public class UpdatePlayerData extends Task<Boolean> {
 
     private List<String> tabsList;
 
+    //================================================================================================================//
     //== CONSTRUCTOR ==
     public UpdatePlayerData(){}
 
@@ -58,6 +60,7 @@ public class UpdatePlayerData extends Task<Boolean> {
         this.tabsList = tabsList;
     }
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
     @Override
     public Boolean call() {
@@ -111,6 +114,7 @@ public class UpdatePlayerData extends Task<Boolean> {
         }
     }
 
+    //================================================================================================================//
     //== PRIVATE METHODS ==
     //Collects the position data (position title and max votes for that position)
     private Position collectPositionData(Browser browser, String positionTabHtmlLink) throws NotFound{

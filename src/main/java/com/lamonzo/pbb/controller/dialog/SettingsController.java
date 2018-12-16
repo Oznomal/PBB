@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 @Slf4j
 public class SettingsController implements Initializable {
 
+    //================================================================================================================//
+    //== FIELDS ==
     private final DataModel dataModel;
     private final UpdatePlayerDataService updatePlayerDataService;
 
@@ -59,6 +61,7 @@ public class SettingsController implements Initializable {
     @FXML
     private JFXButton updatePlayerDataButton;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     @Autowired
     public SettingsController(DataModel dataModel, UpdatePlayerDataService updatePlayerDataService){
@@ -66,6 +69,8 @@ public class SettingsController implements Initializable {
         this.updatePlayerDataService = updatePlayerDataService;
     }
 
+    //================================================================================================================//
+    //== INIT ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -152,6 +157,7 @@ public class SettingsController implements Initializable {
 
     }
 
+    //================================================================================================================//
     //PUBLIC METHODS
     public void handleUpdatePlayerDataButtonClick(){
         updatePlayerDataService.start();

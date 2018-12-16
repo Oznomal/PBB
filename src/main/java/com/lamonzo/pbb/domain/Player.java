@@ -13,8 +13,8 @@ import java.util.List;
 @Entity
 public class Player {
 
+    //================================================================================================================//
     //== FIELDS ==
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
@@ -41,11 +41,12 @@ public class Player {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "player")
     private List<Stat> stats;
 
+    //================================================================================================================//
     //== CONSTRUCTOR ==
     public Player(){}
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

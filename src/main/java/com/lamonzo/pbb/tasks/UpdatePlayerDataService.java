@@ -20,6 +20,7 @@ import java.util.List;
 @Slf4j
 public class UpdatePlayerDataService extends Service<Void> {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final ThreadPoolTaskExecutor taskExecutor;
     private final DataModel dataModel;
@@ -28,6 +29,7 @@ public class UpdatePlayerDataService extends Service<Void> {
     private int successCount;
     private int finishCount;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     @Autowired
     public UpdatePlayerDataService(DataModel dataModel, PlayerService playerService,
@@ -37,8 +39,8 @@ public class UpdatePlayerDataService extends Service<Void> {
         this.playerService = playerService;
     }
 
-
-    //== PROTECTED FIELDS ==
+    //================================================================================================================//
+    //== PROTECTED METHODS ==
     @Override
     protected Task<Void> createTask() {
         return new Task<Void>() {
@@ -112,11 +114,14 @@ public class UpdatePlayerDataService extends Service<Void> {
         };
     }
 
+    //================================================================================================================//
+    //== PRIVATE METHODS ==
     private void updateDataModelVariables(){
         dataModel.refreshTableData(true);
         dataModel.getIsUpdatePlayerDataRunning().set(false);
     }
 
+    //================================================================================================================//
     //== SPRING LOOKUPS ==
     @Lookup
     UpdatePlayerData getUpdatePlayerData(List<String> responsibilities){

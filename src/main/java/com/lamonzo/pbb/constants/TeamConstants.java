@@ -5,6 +5,7 @@ import java.util.Map;
 
 public final class TeamConstants {
 
+    //================================================================================================================//
     //== FIELDS ==
     //ABBREVIATIONS
     public static final String ARI = "ARI";
@@ -110,6 +111,7 @@ public final class TeamConstants {
             Map.entry(WAS, REDSKINS)
     );
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     private TeamConstants(){}
 }

@@ -1,78 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" line="34" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" line="77" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" line="37" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" line="80" />
     <bookmark url="file://$PROJECT_DIR$/src/main/resources/css/Common.css" line="12" />
     <bookmark url="file://$PROJECT_DIR$/src/main/resources/css/Common.css" line="28" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7593436-349f-495e-9cb7-fda588a22560" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/CssConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/CssConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/PositionConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/PositionConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ProxyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ProxyConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ScrapingConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ScrapingConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/StatConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/StatConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/TeamConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/TeamConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/UserAgentConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/UserAgentConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/PlayerTreeObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/PlayerTreeObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ControllerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ControllerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Alt_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Alt_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Alt_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Main_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons/Settings_Icon_Main_64.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/SelectButtonCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/SelectButtonCell.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/UserBallotCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/cell/UserBallotCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/CssConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/CssConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/PositionConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/PositionConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ProxyConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ProxyConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ScrapingConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/ScrapingConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/SpringConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/SpringConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/StatConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/StatConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/TeamConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/TeamConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/UserAgentConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/constants/UserAgentConstants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/FooterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/FooterController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/HeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/HeaderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/SplashScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/SplashScreenController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/UserBallotController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/UserBallotController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/dialog/SettingsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/BaseTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/CenterTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/CenterTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/CornerBackTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/CornerBackTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/DefensiveEndTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/DefensiveEndTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/DefensiveTackleTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/DefensiveTackleTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/FreeSafetyTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/FreeSafetyTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/FullBackTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/FullBackTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/GuardTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/GuardTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/InsideLinebackerTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/InsideLinebackerTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/KickerTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/KickerTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/OutsideLinebackerTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/OutsideLinebackerTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/PunterTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/PunterTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/QuarterBackTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/QuarterBackTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/ReturnSpecialistTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/ReturnSpecialistTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/RunningBackTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/RunningBackTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/SpecialTeamerTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/SpecialTeamerTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/StrongSafetyTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/StrongSafetyTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/TackleTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/TackleTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/TightEndTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/TightEndTabController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/WideReceiverTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/controller/tab/WideReceiverTabController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/PlayerTreeObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/PlayerTreeObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Settings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Stat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/Stat.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/StatType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/domain/StatType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/model/DataModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/model/DataModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PlayerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PlayerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PositionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/PositionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/StatTypeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/repository/StatTypeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PlayerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/PositionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/SettingsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/SettingsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/SettingsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/SettingsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/service/StatTypeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallotBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitBallotBase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitLightningBallot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/SubmitLightningBallot.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/tasks/UpdatePlayerDataService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/BrowserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/BrowserUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/ControllerUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/ControllerUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/LogoUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lamonzo/pbb/util/LogoUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/components/UserBallot.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/components/UserBallot.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/components/dialogs/SettingsModal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/components/dialogs/SettingsModal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/splash/SplashScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/splash/SplashScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/probowlbot-1.0-SNAPSHOT.jar.original" afterDir="false" />
     </list>
@@ -110,17 +130,18 @@
     <session id="1621066394">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="5" />
-          <entry key="project.open.time.8" value="6" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.open.time.8" value="7" />
+          <entry key="project.open.time.9" value="8" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -128,47 +149,47 @@
           <entry key="css" value="9522" />
           <entry key="dummy" value="36" />
           <entry key="fxml" value="9167" />
-          <entry key="java" value="113155" />
+          <entry key="java" value="114377" />
           <entry key="txt" value="54" />
           <entry key="vmoptions" value="2" />
           <entry key="xml" value="571" />
-          <entry key="yml" value="587" />
+          <entry key="yml" value="597" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="9522" />
-          <entry key="JAVA" value="113155" />
+          <entry key="JAVA" value="114377" />
           <entry key="PLAIN_TEXT" value="92" />
           <entry key="XML" value="9738" />
-          <entry key="YAML" value="587" />
+          <entry key="YAML" value="597" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="16" />
-          <entry key="css" value="46" />
-          <entry key="fxml" value="184" />
+          <entry key="css" value="53" />
+          <entry key="fxml" value="193" />
           <entry key="iml" value="1" />
-          <entry key="java" value="404" />
+          <entry key="java" value="460" />
           <entry key="log" value="1" />
-          <entry key="png" value="4" />
+          <entry key="png" value="5" />
           <entry key="pom" value="1" />
           <entry key="vmoptions" value="2" />
           <entry key="xml" value="10" />
-          <entry key="yml" value="30" />
+          <entry key="yml" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="16" />
-          <entry key="CSS" value="46" />
+          <entry key="CSS" value="53" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="Image" value="4" />
-          <entry key="JAVA" value="404" />
+          <entry key="Image" value="5" />
+          <entry key="JAVA" value="460" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="XML" value="195" />
-          <entry key="YAML" value="30" />
+          <entry key="XML" value="204" />
+          <entry key="YAML" value="31" />
         </counts>
       </usages-collector>
     </session>
@@ -201,46 +222,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2913">
-              <caret line="207" column="15" lean-forward="true" selection-start-line="207" selection-start-column="15" selection-end-line="207" selection-end-column="15" />
-              <folding>
-                <element signature="e#12306#12307#0" expanded="true" />
-                <element signature="e#12374#12375#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -292,56 +273,56 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/DefensiveEndTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/DefensiveTackleTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/FreeSafetyTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/FullBackTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/GuardTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/InsideLinebackerTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/KickerTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/OutsideLinebackerTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/PunterTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/ReturnSpecialistTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/RunningBackTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/SpecialTeamerTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/StrongSafetyTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/TackleTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/TightEndTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/WideReceiverTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/QuarterBackTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/css/Footer.css" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/containers/SplashScreen.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/PbbPreloader.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/containers/MainContainer.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/css/SplashScreen.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/Header.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/components/Header.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/css/Common.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/PlayerTable.css" />
         <option value="$PROJECT_DIR$/src/main/resources/css/UserBallot.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/FooterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/CssConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/PositionConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ProxyConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/ScrapingConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/SpringConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/StatConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/TeamConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/UserAgentConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/PlayerTreeObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ControllerUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
       </list>
     </option>
@@ -382,9 +363,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="273" />
-    <option name="y" value="36" />
-    <option name="width" value="2715" />
+    <option name="x" value="211" />
+    <option name="y" value="-32" />
+    <option name="width" value="2913" />
     <option name="height" value="1944" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -394,6 +375,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -451,188 +433,20 @@
               <item name="PBB" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="cell" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="tab" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lamonzo" type="462c0819:PsiDirectoryNode" />
-              <item name="pbb" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="dialogs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-              <item name="splash" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PBB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PBB" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="icons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544667100869" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544941209982" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -764,7 +578,12 @@
       <workItem from="1544658741389" duration="1661000" />
       <workItem from="1544660536198" duration="27000" />
       <workItem from="1544662441320" duration="760000" />
-      <workItem from="1544664063568" duration="3071000" />
+      <workItem from="1544664063568" duration="3121000" />
+      <workItem from="1544667436524" duration="608000" />
+      <workItem from="1544668134257" duration="177000" />
+      <workItem from="1544776646378" duration="310000" />
+      <workItem from="1544810146723" duration="68000" />
+      <workItem from="1544939586759" duration="1665000" />
     </task>
     <task id="LOCAL-00001" summary="Wrapping things up Part 1">
       <created>1544656639079</created>
@@ -777,7 +596,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="613622000" />
+    <option name="totallyTimeSpent" value="616500000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,7 +611,7 @@
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.19840954" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.495671" visible="true" weight="0.20954274" />
       <window_info id="Structure" order="1" sideWeight="0.504329" side_tool="true" weight="0.38325283" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -801,14 +620,14 @@
       <window_info id="Favorites" order="6" sideWeight="0.50084746" side_tool="true" weight="0.28159645" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49887893" weight="0.3174727" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49887893" visible="true" weight="0.31669268" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39466897" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932073" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30343214" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.33447978" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5011211" side_tool="true" weight="0.6792777" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.35683578" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3299532" />
@@ -873,278 +692,31 @@
     <option name="LAST_COMMIT_MESSAGE" value="Wrapping things up Part 1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/RunningBackTabController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/FreeSafetyTabController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/SpecialTeamerTabController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/FullBackTabController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/StrongSafetyTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/TackleTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/TightEndTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/WideReceiverTabController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="85">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.1.2.RELEASE/spring-beans-5.1.2.RELEASE.jar!/org/springframework/beans/factory/annotation/InitDestroyAnnotationBeanPostProcessor.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/FooterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.graphics/javafx/concurrent/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="675" column="28" lean-forward="true" selection-start-line="675" selection-start-column="28" selection-end-line="675" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/constants/PositionConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/dialog/SettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1588">
-          <caret line="150" column="96" lean-forward="true" selection-start-line="150" selection-start-column="96" selection-end-line="150" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/Footer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/QuarterBackTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/PbbPreloader.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/containers/SplashScreen.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="185" selection-start-line="185" selection-end-line="187" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/SplashScreen.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/Header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/javafx.base/com/sun/javafx/event/EventHandlerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/UserBallotCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/containers/MainContainer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Header.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/cell/SelectButtonCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/tab/BaseTabController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="148" column="27" lean-forward="true" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/Common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/PlayerTable.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/UserBallot.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="25" column="91" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27302">
-          <caret line="1684" selection-start-line="1684" selection-end-line="1684" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2873">
-          <caret line="200" column="5" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+        <state relative-caret-position="289">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1153,76 +725,304 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/HeaderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="64" selection-start-line="45" selection-start-column="64" selection-end-line="45" selection-end-column="64" />
+        <state relative-caret-position="1105">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/config/ThreadConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/SplashScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/FooterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/controller/UserBallotController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+        <state relative-caret-position="2788">
+          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.jar!/org/openqa/selenium/WebDriver.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="1037">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/jauntium-api/jauntium/0.9/jauntium-0.9.jar!/com/jauntium/Browser.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/PlayerTreeObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        <state relative-caret-position="425">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/Stat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/domain/StatType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="120" selection-start-line="25" selection-start-column="120" selection-end-line="25" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/model/DataModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2873">
+          <caret line="175" column="4" selection-start-line="175" selection-start-column="4" selection-end-line="175" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/PlayerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/PositionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/SettingsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/StatRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/repository/StatTypeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PlayerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/PositionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="70" lean-forward="true" selection-start-line="69" selection-start-column="1" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/SettingsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/service/StatTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="272">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitBallotBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2913">
-          <caret line="207" column="15" lean-forward="true" selection-start-line="207" selection-start-column="15" selection-end-line="207" selection-end-column="15" />
-          <folding>
-            <element signature="e#12306#12307#0" expanded="true" />
-            <element signature="e#12374#12375#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-5226">
+          <caret line="42" column="77" selection-start-line="42" selection-start-column="77" selection-end-line="42" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/SubmitLightningBallot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="639">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-840">
+          <caret line="116" column="120" selection-start-line="116" selection-start-column="120" selection-end-line="116" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/tasks/UpdatePlayerDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="98" column="56" lean-forward="true" selection-start-line="98" selection-start-column="56" selection-end-line="98" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/BrowserUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/ControllerUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lamonzo/pbb/util/LogoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/Common.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/Footer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/Header.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/PlayerTable.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/SettingsModal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-704" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/SplashScreen.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/UserBallot.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Footer.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/Header.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155" />
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/PlayerTable.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138" />
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/UserBallot.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/containers/MainContainer.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/splash/SplashScreen.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/components/dialogs/SettingsModal.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-835">
+          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">

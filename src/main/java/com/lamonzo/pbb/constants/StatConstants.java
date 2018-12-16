@@ -4,6 +4,7 @@ import java.util.Map;
 
 public final class StatConstants {
 
+    //================================================================================================================//
     //== FIELDS ==
     //Abbreviations
     public static final String TCKL = "Tckl";
@@ -98,6 +99,7 @@ public final class StatConstants {
             Map.entry(FUM, false)
     );
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     private StatConstants(){}
 }

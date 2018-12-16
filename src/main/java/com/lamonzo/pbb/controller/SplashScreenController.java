@@ -7,6 +7,8 @@ import lombok.Getter;
 
 public class SplashScreenController {
 
+    //================================================================================================================//
+    //== FIELDS ==
     @FXML
     @Getter
     JFXProgressBar splashProgressBar;

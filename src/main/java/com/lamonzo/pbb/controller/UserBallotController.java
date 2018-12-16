@@ -28,6 +28,7 @@ import java.util.ResourceBundle;
 @Slf4j
 public class UserBallotController implements Initializable {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final DataModel dataModel;
     private final ThreadPoolTaskExecutor taskExecutor;
@@ -58,6 +59,7 @@ public class UserBallotController implements Initializable {
     private int finished;
 
 
+    //================================================================================================================//
     //== CONSTRUCTOR ==
     @Autowired
     public UserBallotController(@Qualifier(SpringConstants.VARIABLE_TASK_EXECUTOR) ThreadPoolTaskExecutor taskExecutor,
@@ -66,7 +68,8 @@ public class UserBallotController implements Initializable {
         this.taskExecutor = taskExecutor;
     }
 
-    //== PUBLIC METHODS ==
+    //================================================================================================================//
+    //== INIT ==
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userBallotListView.setItems(dataModel.getBallotList());
@@ -170,8 +173,8 @@ public class UserBallotController implements Initializable {
         dataModel.getCancellingTask().set(true);
     }
 
+    //================================================================================================================//
     //== SPRING LOOKUPS ==
-    //Gets a new instance of UserBallotCell which is prototype scoped, ignore the null, this works with spring magic!
     @Lookup
     UserBallotCell getUserBallotCell(){
         return null;

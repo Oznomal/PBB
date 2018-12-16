@@ -13,14 +13,17 @@ import java.util.List;
 @Slf4j
 public class PositionServiceImpl implements PositionService{
 
+    //================================================================================================================//
     //== FIELDS ==
     private final PositionRepository positionRepository;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     public PositionServiceImpl(PositionRepository positionRepository){
         this.positionRepository = positionRepository;
     }
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
     @PostConstruct
     private void positionInit(){

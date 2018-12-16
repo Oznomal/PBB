@@ -8,7 +8,6 @@ import com.lamonzo.pbb.domain.Settings;
 import com.lamonzo.pbb.service.PlayerService;
 import com.lamonzo.pbb.service.PositionService;
 import com.lamonzo.pbb.service.SettingsService;
-import com.lamonzo.pbb.tasks.UpdatePlayerDataService;
 import com.lamonzo.pbb.util.ControllerUtil;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -17,25 +16,25 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.Initializable;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.aop.interceptor.SimpleTraceInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.net.URL;
 import java.util.*;
 
 /**
- * The purpose of the data model layer is to act as the primary cache for the application.
- * Since the amount of data within the DB is relatively small I would like to store most
- * of it in memory when possible to limit the amount of calls to the DB. The service layers
- * will still be used to communicate directly with the repos.
+ * This data model serves 2 purposes in the design
+ *
+ * 1. Act as a primary cache for important data to eliminate having to continuously make
+ * calls to the DB after the application initially starts up.
+ *
+ * 2. To act as a store for data that needs to be shared amongst controllers, I.E. Observable Values.
  */
 @Component
-public class DataModel implements Initializable {
+public class DataModel {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Autowired
     private PositionService positionService;
@@ -48,9 +47,6 @@ public class DataModel implements Initializable {
 
     @Autowired
     private ControllerUtil controllerUtil;
-
-    @Autowired
-    private UpdatePlayerDataService updatePlayerDataService;
 
     @Getter
     private Map<String, SimpleStringProperty> positionVoteMap = new HashMap<>();
@@ -101,12 +97,8 @@ public class DataModel implements Initializable {
     @Getter
     private SimpleBooleanProperty isInitialSubmitBallotLoading = new SimpleBooleanProperty();
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
-
     public void refreshTableData(boolean rebuildTableViews){
         //GET PLAYER DATA FROM THE DATABASE AND CACHE IT
         Iterable<Position> positions;
@@ -181,7 +173,6 @@ public class DataModel implements Initializable {
         showBrowser.set(settings.isShowBrowser());
         rotateProxies.set(settings.isRotateProxies());
     }
-
 
     public void updateSettings(){
         settings.setNumberOfBrowsers(numberOfBrowsers.get());

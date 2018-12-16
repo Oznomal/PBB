@@ -42,9 +42,6 @@ public abstract class SubmitBallotBase extends Task<Boolean> {
 
     protected static final String JS_SCROLL_TO_TOP = "window.scrollTo(0, 0)";
 
-//    @Setter
-//    protected static boolean finished = false;
-
     @Autowired
     protected DataModel dataModel;
 

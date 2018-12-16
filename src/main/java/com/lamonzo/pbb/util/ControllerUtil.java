@@ -10,10 +10,17 @@ import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * This class is used to get all of the instances of the position controllers to call when
+ * a user clicks the 'Update Player Data' button and then the table of players for each position
+ * tab need to be rebuilt.
+ */
 @Component
 @Lazy
 public class ControllerUtil {
 
+    //================================================================================================================//
     //== FIELDS ==
     private final CenterTabController centerTabController;
     private final CornerBackTabController cornerBackTabController;
@@ -38,6 +45,7 @@ public class ControllerUtil {
     @Getter
     private List<BaseTabController> controllers;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     @Autowired
     public ControllerUtil(CenterTabController centerTabController, CornerBackTabController cornerBackTabController,
@@ -76,6 +84,7 @@ public class ControllerUtil {
         this.wideReceiverTabController = wideReceiverTabController;
     }
 
+    //================================================================================================================//
     //== PRIVATE METHODS ==
     @PostConstruct
     private void buildList() {

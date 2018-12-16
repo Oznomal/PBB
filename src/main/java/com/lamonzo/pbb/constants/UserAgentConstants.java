@@ -6,14 +6,6 @@ import java.util.stream.Stream;
 
 /**
  * SOURCE URL: https://developers.whatismybrowser.com/useragents/explore/software_name/chrome/1
- *
- * Directions:
- * Visit the source URL above and start from page 2 (I already went through 1 for the most part)
- * Scroll down the list
- * 1. Match the Operating System Column (OS) to the name in the comment
- * 2. Match the hardware type to the section (Computer or Mobile/Mobile-Tablet)
- * 3. Check the Popularity, Very Common is ideal but common will work too, nothing less than that though
- * 4. Highlight the UserAgent string and put it in the code between the quotation marks in the right section
  */
 public class UserAgentConstants {
 
@@ -346,7 +338,6 @@ public class UserAgentConstants {
 
 
     //================================================================================================================//
-
     //==CONSTRUCTOR==
     private UserAgentConstants(){}
 }

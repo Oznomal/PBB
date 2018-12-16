@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Position {
 
+    //================================================================================================================//
     //== FIELDS ==
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +33,7 @@ public class Position {
     @Column(nullable = false, unique = true)
     private String tabHtmlLink;
 
+    //================================================================================================================//
     //== CONSTRUCTORS ==
     public Position(){}
 
@@ -40,8 +42,8 @@ public class Position {
         this.maxVotes = maxVotes;
     }
 
+    //================================================================================================================//
     //== PUBLIC METHODS ==
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
